@@ -1,0 +1,61 @@
+@charset 'utf-8';
+/* 공통 부분 */
+.flex-box1{
+    display: flex;
+}
+.flex-box2{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 그룹웨어 메인 왼쪽  */
+.group-warp-container-left{
+    width:66.6%;
+    
+}
+
+.group-left-up{
+    padding:10px;
+    height:40vh;
+    /* min-width:1000px; */
+    min-width:500px;
+    background-color:#fff;
+}
+
+.left-down-text1, .left-down-text2,
+.left-down-text3{
+    padding:10px;
+    height:60vh;
+    margin-top:5px;
+    background-color:#fff;
+   flex-basis: 33.1%;
+   min-width:200px;
+   
+}
+
+
+
+
+/* 그룹웨어 메인 오른쪽 */
+.group-warp-container-right{
+    width:20%;
+    
+}
+.group-wrap-up{
+    padding:10px;
+    min-width:100px;
+    height:40vh;
+    background-color:#fff;
+}
+.group-wrap-down{
+    padding:10px;
+    min-width:100px;
+    height:60vh;
+    background-color:#fff;
+    margin-top:5px;
+}
+/* .group-wrap-up, .group-wrap-down{
+    margin-bottom:1px;
+    margin-top:1px;
+
+} */
