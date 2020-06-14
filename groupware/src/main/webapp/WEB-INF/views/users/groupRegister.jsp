@@ -28,7 +28,7 @@
                 <input type="password" name="passwd" id="passwd" placeholder=" 비밀번호 확인" required="required" />
                 <!-- 회사 소속 -->
                 <select class="">
-                    <option value="0">소속을 선택하세요</option>
+                    <option value="0">부서를 선택하세요</option>
                     <option value="1">인사팀</option>
                     <option value="2">기획부</option>
                 </select>
@@ -42,6 +42,7 @@
                
                 <input type="text" name="userName" id="userName" placeholder="사용자 이름" required="required" />
                 <input type="text" name="userEmail" id="userEmail" placeholder="사용자 이메일" required="required" />
+                <input type="text" name="userEmail" id="userPhone" placeholder="사용자 휴대전화" required="required" />
                 <button type="submit" class="btn-blockUp btn btn-primary btn-large">회원가입완료</button>
             </form>
         </div>
