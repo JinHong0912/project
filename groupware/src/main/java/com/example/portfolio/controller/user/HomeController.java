@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	//login
-	@RequestMapping("/login")//localhost:8888/login
+	@RequestMapping("/groupLogin")//localhost:8888/login
 	public String getLogin() {
-		return "/login/login";//views/login.jsp
+		return "/login/groupLogin";//views/login.jsp
 		
 	}
 }

@@ -1,4 +1,4 @@
-package com.example.portfolio.controller.Group;
+package com.example.portfolio.controller.group;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class GroupwareController {
 	
 	//메인 페이지
-	@RequestMapping("/groupMain")
-	public String viewGroupware(){
-		
-		return "/groupware/groupMain";
-		
-	}
+//	@RequestMapping("/groupMain")
+//	public String viewGroupware(){
+//		
+//		return "/groupware/groupMain";
+//		
+//	}
 
 	//관리자 페이지
 	@RequestMapping("/groupAdmin")

@@ -339,7 +339,10 @@ select {
     text-align: center;
     line-height: 35px;
     border:1px solid #ddd;
+	vertical-align: middle;	
 }
+
+.li-he1{line-height: 35px;}
 
 .page-active {
     color:#fff;

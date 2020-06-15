@@ -14,13 +14,25 @@
 		SET
 			userID = #{userID},
 			passwd = #{passwd},
-			
-			
+			department = #{department},
+			userRank = #{userRank},	
 			userName = #{userName},
-			userPhone = #{userPhone},
 			userEmail = #{userEmail},
+			userPhone = #{userPhone},
 			userRegdate = now()
+	
 	</insert>
 	
+<!-- 	그룹웨어 로그인하기 -->
+	
+	<select id="loginCheck" resultType="uservo">
+	
+		SELECT userID, userName, auth FROM users
+		WHERE userID = #{userID} AND passwd = #{passwd}
+	
+<!-- 		SELECT userID, userName, auth FROM users -->
+<!-- 		WHERE userID = 'admin' AND passwd = '1111' -->
+	
+	</select>
 
 </mapper>

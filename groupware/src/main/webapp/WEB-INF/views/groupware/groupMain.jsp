@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+    <link rel="stylesheet" href="../css/jquery.treeview.css" />
+
 
 
 <%@ include file = "../include/head.jspf" %>
@@ -9,8 +14,8 @@
         <div class="logo-wrap">관리자페이지</div>
         <div class="info-wrap">
             <div class="info-title">
-                <span class="info-sName gray">{그린컴퓨터님</span> -
-                <span class="info-sName gray">접속권한 : 9등급}</span>
+                <span class="info-sName gray" >{ ${sessionScope.userName} 님</span> -
+                <span class="info-sName gray" >접속권한 : ${sessionScope.auth} 등급}</span>
             </div>
             <div class="info-auth">
                 <span class="info-sName">{<a href="#" class="gray">로그아웃</a>}</span>
@@ -82,13 +87,20 @@
             </div>
         </div>
 
-<!--  중복되는 부분 -->
-<!-- 달라지는 부분 -->
- 		<!-- 그룹웨어 메인 부분  -->
-      <%--   <c:if test="${template eq 'Reward' && mypage eq 'prepare'}">
-            <%@ include file = "mypageList.jsp" %>
-        </c:if>       
-        --%>
+		<!--  중복되는 부분 -->
+		<!-- 그룹웨어 메인 부분  -->
+         	<!-- 부서 고르는 페이지 -->
+<%--          <c:if test="${template eq 'groupware' && mypage eq 'Department'}"> --%>
+<%--             <%@ include file = "groupDepartment.jsp" %> --%>
+<%--         </c:if> --%>
+        
+         <c:if test="${template eq 'groupware' && mypage eq 'admin'}">
+            <%@ include file = "groupAdmin.jsp" %>
+        </c:if>
+        
+		<!-- 달라지는 부분 -->
+ 		       
+        
 
 
 

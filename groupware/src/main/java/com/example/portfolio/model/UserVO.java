@@ -1,7 +1,7 @@
 package com.example.portfolio.model;
 
 public class UserVO {
-//	
+	
 //	+-------------+-------------+------+-----+---------+----------------+
 //	| Field       | Type        | Null | Key | Default | Extra          |
 //	+-------------+-------------+------+-----+---------+----------------+
@@ -11,28 +11,27 @@ public class UserVO {
 //	| department  | int         | NO   |     | NULL    |                |
 //	| userRank    | int         | NO   |     | NULL    |                |
 //	| userName    | varchar(20) | NO   |     | NULL    |                |
-//	| userPhone   | char(15)    | NO   |     | NULL    |                |
 //	| userEmail   | varchar(50) | YES  |     | NULL    |                |
-//	| userDomain  | varchar(50) | YES  |     | NULL    |                |
-//	| auth        | varchar(20) | YES  |     | 일반    |                |
+//	| userPhone   | char(15)    | NO   |     | NULL    |                |
+//	| auth        | varchar(20) | YES  |     | 일반  	   |                |
 //	| userRegdate | datetime    | YES  |     | NULL    |                |
 //	+-------------+-------------+------+-----+---------+----------------+
 
 	private int uid;
 	private String userID;
 	private String passwd;
-	private int department;
-	private int userRank;
+	private String department;
+	private String userRank;
 	private String userName;
-	private String userPhone;
 	private String userEmail;
+	private String userPhone;
 	private String auth;
 	private String userRegdate;
 	
 	
-
-	//getter,setter
 	
+	
+	//getter,setter
 	public int getUid() {
 		return uid;
 	}
@@ -51,16 +50,16 @@ public class UserVO {
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
-	public int getDepartment() {
+	public String getDepartment() {
 		return department;
 	}
-	public void setDepartment(int department) {
+	public void setDepartment(String department) {
 		this.department = department;
 	}
-	public int getUserRank() {
+	public String getUserRank() {
 		return userRank;
 	}
-	public void setUserRank(int userRank) {
+	public void setUserRank(String userRank) {
 		this.userRank = userRank;
 	}
 	public String getUserName() {
@@ -69,17 +68,17 @@ public class UserVO {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getUserPhone() {
-		return userPhone;
-	}
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
-	}
 	public String getUserEmail() {
 		return userEmail;
 	}
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
+	}
+	public String getUserPhone() {
+		return userPhone;
+	}
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
 	}
 	public String getAuth() {
 		return auth;
@@ -95,6 +94,7 @@ public class UserVO {
 	}
 	
 	
+
 	
 		
 }
