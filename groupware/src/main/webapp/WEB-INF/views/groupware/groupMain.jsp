@@ -92,14 +92,28 @@
 <%--          <c:if test="${template eq 'groupware' && mypage eq 'Department'}"> --%>
 <%--             <%@ include file = "groupDepartment.jsp" %> --%>
 <%--         </c:if> --%>
-        
+
+<!--         	관리자 페이지 -->
          <c:if test="${template eq 'groupware' && mypage eq 'admin'}">
             <%@ include file = "groupAdmin.jsp" %>
         </c:if>
+<!--          	사원 관리 페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'user'}">
+            <%@ include file = "groupUsers.jsp" %>
+        </c:if>        
         
+<!--          	사원 개인 정보 페이지  -->
          <c:if test="${template eq 'groupware' && mypage eq 'memberInfo'}">
             <%@ include file = "groupUserManagement.jsp" %>
         </c:if>
+        
+<!--          	사원 등록 페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'insetInfo'}">
+            <%@ include file = "groupwareMemberInsert.jsp" %>
+        </c:if>        
+        
+        
+        
         
 		<!-- 달라지는 부분 -->
  		       

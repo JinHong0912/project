@@ -31,7 +31,7 @@ public class GroupMainController {
 		}
 		
 	//회원 상세 정보 페이지
-		@RequestMapping("/groupUserManagement")
+		@RequestMapping("/groupwareMemberInsert")
 		public ModelAndView viewGroupwareUserManagement(){
 			
 			ModelAndView mav = new ModelAndView();
@@ -46,9 +46,40 @@ public class GroupMainController {
 			
 			
 		}
+		
+		//회원 관리 페이지
+		@RequestMapping("/groupUsers")
+		public ModelAndView viewGroupwareUser(){
+			
+			ModelAndView mav = new ModelAndView();
+						
+			mav.addObject("template", "groupware");
+			mav.addObject("mypage", "user");
+			
+
+			mav.setViewName("/groupware/groupMain");
+			
+			return mav;
+			
+			
+		}	
 	
-	
-	
+		//회원 등록 페이지
+		@RequestMapping("/groupwareMember")
+		public ModelAndView viewGroupwareManagement(){
+			
+			ModelAndView mav = new ModelAndView();
+						
+			mav.addObject("template", "groupware");
+			mav.addObject("mypage", "insetInfo");
+			
+
+			mav.setViewName("/groupware/groupMain");
+			
+			return mav;
+			
+			
+		}
 	
 	
 	

@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<link rel="stylesheet" href="../css/group/groupUserManagement.css" />
+<script src="../js/groupUserManagement.js"></script>
  <!-- 중복 부분-------------------------------------------------------------------------------------- -->
 
         <div class="tbl-wrap">
