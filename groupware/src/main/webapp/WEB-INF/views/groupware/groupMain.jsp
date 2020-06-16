@@ -34,8 +34,11 @@
                 </div>
                 <ul id="tree">
                     <li>
-                        <img src="../css/fileImg/folder-closed.gif" /> 사원 관리
+                        <img src="../css/fileImg/folder-closed.gif" />사원 정보
                         <ul>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 상세 정보</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 전화번호</a></li>
+                            
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 관리</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">관리자 정보 수정</a></li>
                         </ul>
@@ -45,6 +48,8 @@
                         <ul>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">게시판 조회</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">댓글 전용 조회</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">게시판 관리</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">댓글 관리</a></li>
                         </ul>
                     </li>
                     <!-- <li>
@@ -65,6 +70,7 @@
                         <img src="../css/fileImg/folder-closed.gif" /> 개인 급여처리 내역
                         <ul>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">급여 명세서 확인</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">명세서 작성/a></li>
                         </ul>
                     </li>
                     <li>
@@ -75,14 +81,7 @@
                         </ul>
 
                     </li>
-                    <li>
-                        <img src="../css/fileImg/folder-closed.gif" /> 개인 스케줄 관리
-                        <ul>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">개인 스케줄 관리</a></li>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">팀원 스케줄 관리</a></li>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">세미나 스케줄 관리</a></li>
-                        </ul>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -96,6 +95,10 @@
         
          <c:if test="${template eq 'groupware' && mypage eq 'admin'}">
             <%@ include file = "groupAdmin.jsp" %>
+        </c:if>
+        
+         <c:if test="${template eq 'groupware' && mypage eq 'memberInfo'}">
+            <%@ include file = "groupUserManagement.jsp" %>
         </c:if>
         
 		<!-- 달라지는 부분 -->

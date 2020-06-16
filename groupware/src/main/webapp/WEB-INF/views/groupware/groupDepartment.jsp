@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file ="../include/head.jspf" %>
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/group/groupDepartment.css" />
 

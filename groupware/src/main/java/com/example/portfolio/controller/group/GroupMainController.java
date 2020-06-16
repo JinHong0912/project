@@ -29,7 +29,23 @@ public class GroupMainController {
 			
 			
 		}
-	
+		
+	//회원 상세 정보 페이지
+		@RequestMapping("/groupUserManagement")
+		public ModelAndView viewGroupwareUserManagement(){
+			
+			ModelAndView mav = new ModelAndView();
+						
+			mav.addObject("template", "groupware");
+			mav.addObject("mypage", "memberInfo");
+			
+
+			mav.setViewName("/groupware/groupMain");
+			
+			return mav;
+			
+			
+		}
 	
 	
 	
