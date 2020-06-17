@@ -12,8 +12,9 @@ public interface UserDao {
 	public int setUser(UserVO uvo);
 
 	//접근제한자 List<UserVO>출력 메소드명 입력	
-//	public List<UserVO> getUsersList(int start,int end,String searchOpt, String  words); 
-//	
+//	public List<UserVO> getUsersList(int start,int end,String searchOpt, String  words);
+	public List<UserVO> getUsersList(int start, int end);
+	
 //	//접근제한자(public) 화면출력(int) 메소드이름(getUsersCount) (입력)
 //	public int getUsersCount(String searchOpt, String  words);
 //	

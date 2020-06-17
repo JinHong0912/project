@@ -17,13 +17,6 @@ public class GroupwareController {
 //		
 //	}
 
-	//관리자 페이지
-	@RequestMapping("/groupAdmin")
-	public String viewGroupAdmin(){
-		
-		return "/groupware/groupAdmin";
-		
-	}
 
 	//부서 페이지
 	@RequestMapping("/groupDepartment")

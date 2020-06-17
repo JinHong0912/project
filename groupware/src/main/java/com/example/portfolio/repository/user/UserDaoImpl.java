@@ -17,12 +17,13 @@ public class UserDaoImpl implements UserDao{
 	
 	final static String namespace = "mappers.UsersMapper";
 	
+	//아이디 체크 하는 부분
 	@Override
 	public int idCheck(String userid) {
 	return sql.selectOne(namespace + ".idCheck", userid);
 		
 	}
-
+	//간편 회원가입
 	@Override
 	public int setUser(UserVO uvo) {
 		return sql.insert(namespace + ".setUser" , uvo);
@@ -38,7 +39,17 @@ public class UserDaoImpl implements UserDao{
 //		return sql.selectList(namespace+ ".getUsersList", map);
 //		
 //	}
-//	
+
+	@Override
+	public List<UserVO> getUsersList(int start, int end) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("start",start);
+		map.put("end",end);
+		
+		return sql.selectList(namespace + ".getUsersList", map);
+	}
+	
+	
 //	//Service는 괄호 안에 값을 여러게 가능 -> ex(namespace + ".getUsersCount",A,B,C), dao는 여러개 X (collection -hashMap, dto) 사용해야 한다.	
 //	@Override
 //	public int getUsersCount(String searchOpt, String  words) {
@@ -82,5 +93,6 @@ public class UserDaoImpl implements UserDao{
 //	}
 //
 //	
+
 
 }

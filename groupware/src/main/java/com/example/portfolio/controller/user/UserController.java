@@ -1,5 +1,7 @@
 package com.example.portfolio.controller.user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +43,7 @@ public class UserController {
 		if( result > 0) {
 			sb.append("<script>");
 			sb.append("alert('"+msg+"');");
-			sb.append("location.replace('/login/groupLogin');");
+			sb.append("location.replace('/');");
 			sb.append("</script>");
 		}else {
 			sb.append("<script>");
@@ -94,13 +96,12 @@ public class UserController {
 			 
 				sb.append("<script>");
 //				sb.append("alert('"+msg+"');");
-				sb.append("location.replace('/groupware/groupMain');");
+				sb.append("location.replace('/groupware/groupAdmin');");
 				sb.append("</script>");
 														
 			}
 			return sb.toString();
-			
-		
+					
 	}
 
 

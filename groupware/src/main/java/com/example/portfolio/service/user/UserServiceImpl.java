@@ -38,8 +38,13 @@ public class UserServiceImpl implements UserService{
 //	
 //		return dao.getUsersList(start, end, searchOpt, words);
 //	}
-//
-//
+
+	// 회원 보이는 부분 관리자 페이지에서
+	@Override
+	public List<UserVO> getUsersList(int start, int end) {
+		
+		return dao.getUsersList(start, end);
+	}
 //	@Override
 //	public int getUsersCount(String searchOpt, String  words) {
 //		
@@ -68,7 +73,7 @@ public class UserServiceImpl implements UserService{
 //		return dao.setUsersDelete(uid);
 //	}
 //
-//
+	// 아이디 체크 하는 부분
 	@Override
 	public UserVO loginCheck(UserVO uvo, HttpSession session) {
 		UserVO result = dao.loginCheck(uvo);
@@ -102,5 +107,8 @@ public class UserServiceImpl implements UserService{
 //	
 //		return dao.userUpdate(uvo);
 //	}
+
+
+
 
 }

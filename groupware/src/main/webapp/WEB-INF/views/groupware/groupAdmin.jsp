@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/style.css">
@@ -236,7 +239,7 @@
                                                     <button type="button" class="btn-active margin-l1" id=""
                                                         onClick="location.href='insa.html'">전체목록</button>
                                                     <button type="button" class="btn-off margin-l-2" id=""
-                                                        onClick="location.href='insa_register.html'">사원등록</button>
+                                                        onClick="location.href='/groupware/groupwareUserList'">사원관리</button>
                                                 </span>
                                                 <span class="float-r">
                                                     <select name="" id="" class="select-150">
@@ -253,28 +256,40 @@
                                         <table class="border-color-top2 font-size8">
                                             <tr class="tr-40 center">
                                                 <th class="td-5 bg-color8">번호</th>
-                                                <th class="td-5 bg-color8">부서</th>
-                                                <th class="td-10 bg-color8">부서코드</th>
-                                                <th class="td-5 bg-color8">사원구분</th>
-                                                <th class="td-5 bg-color8">직급</th>
-                                                <th class="td-5 bg-color8">부서장여부</th>
+                                                <th class="td-10 bg-color8">부서</th>
+                                                <th class="td-10 bg-color8">직급</th>
                                                 <th class="td-10 bg-color8">사번</th>
-                                                <th class="td-5 bg-color8">이름</th>
+                                                <th class="td-20 bg-color8">권한</th>
+                                                <th class="td-10 bg-color8">이름</th>
+                                                <th class="td-40 bg-color8">채용 형태</th>
 
                                             </tr>
+                                        
+                                        <c:forEach items ="${usersList}" var="usersList">
                                             <tr class="tr-40 tr-color-odd center">
-                                                <td>1</td>
-                                                <td>영업1팀</td>
-                                                <td>상임</td>
+                                              
+                                                <td>${usersList.uid}</td>
+                                                <td>${usersList.department}</td>
+                                                <td><a href="#" class="bold underline">${usersList.userRank}</a></td>
                                                 <td>부장</td>
-                                                <td>8</td>
-                                                <td><input type="checkbox" name="team_master" class="" /></td>
-                                                <td><a href="#" class="bold underline">20200602</a></td>
-                                                <td><a href="#" class="bold underline">최고다</a></td>
+                                                <td>
+                                                    <!-- <input type="checkbox" name="team_master" class="" /> -->
+                                                    <select class="select-150 ">
+                                                        <option value="0" class="center">권한부여</option>
+                                                        <option value="1">사원</option>
+                                                        <option value="2">팀장</option>
+                                                        <option value="3">부장</option>
+                                                        <option value="4">사장</option>
+                                                        <option value="5">관리자</option>
+                                                    </select>
+                                                </td>
+                                                <td><a href="#" class="bold underline">${usersList.userName}</a></td>
+                                                <td>공개 채용으로 입사하였습니다.</td>
+                                                
 
                                             </tr>
 
-
+										</c:forEach>
                                         </table>
                                     </div>
                                     <div id="everyText" class="tab-two-content">
@@ -329,6 +344,7 @@
                                         </table>
 
                                     </div>
+                                    
                                     <div id="mailEmergency" class="tab-two-content">
                                         <div class="btn-grp magin-bottom4">
                                             <form method="post" id="" class="" action="">
@@ -373,7 +389,7 @@
 
                                             </tr>
 
-
+ㅇㄴㅁㅇㄴㅁㅇㄴㅁ
                                         </table>
                                     </div>
                                 </div>
@@ -397,33 +413,10 @@
 
                                         업무관리 입니다2312312
                                     </div>
-
+ㅇㄴㅁㅇ
 
                                     <div id="notice1" class="tab-content show">
-                                        <div class="Schedule-already-day">
-                                            <div class="already-day1">
-                                                <h2>06.19 금요일</h2>
-                                                <span class="alraedy-day bg-color4">
-                                                    <a href=" "><i class="fas fa-tasks font-color2"></i></a>
-                                                </span>
-                                                <span class="magin-left4 font-size3 fotn-wei1">프로젝트 마무리</span>
-                                            </div>
-                                            <div class="already-day2">
-
-                                                <span class="alraedy-day bg-color2">
-                                                    <a href=" "><i class="fas fa-birthday-cake font-color2"></i></a>
-                                                </span>
-                                                <span class="magin-left4 font-size3 fotn-wei1">김그린님 생일</span>
-                                            </div>
-                                            <div class="already-day3">
-
-                                                <span class="alraedy-day bg-color5">
-                                                    <a href=" "><i
-                                                            class="fas fa-exclamation-square font-color2"></i></a>
-                                                </span>
-                                                <span class="magin-left4 font-size3 fotn-wei1">훈련 수료</span>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <div id="gallery1" class="tab-content">
                                         일정관리 입니다232131

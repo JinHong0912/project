@@ -21,7 +21,7 @@ $(function(){
     $(".tab-two").click(function(e){
         $(".tab-two").removeClass("active-two")
         $(".tab-two-content").removeClass("show")
-        $(this).addClass("newActive");
+        $(this).addClass("active-two");
         $($(this).attr("href")).addClass("show"); 
         e.preventDefault();
 

@@ -11,7 +11,9 @@
 <!-- ---------------------------------------------------------------------------------------- -->
 <body>
     	<div class="top-wrap">
-        <div class="logo-wrap">관리자페이지</div>
+        <div class="logo-wrap">
+        		<a href="/groupware/groupAdmin">관리자페이지</a>
+        </div>
         <div class="info-wrap">
             <div class="info-title">
                 <span class="info-sName gray" >{ ${sessionScope.userName} 님</span> -
@@ -39,7 +41,7 @@
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 상세 정보</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 전화번호</a></li>
                             
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 관리</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/groupwareUserList">사원 관리</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">관리자 정보 수정</a></li>
                         </ul>
                     </li>
@@ -97,19 +99,24 @@
          <c:if test="${template eq 'groupware' && mypage eq 'admin'}">
             <%@ include file = "groupAdmin.jsp" %>
         </c:if>
-<!--          	사원 관리 페이지  -->
+<!--          	사원 메인 페이지  -->
          <c:if test="${template eq 'groupware' && mypage eq 'user'}">
-            <%@ include file = "groupUsers.jsp" %>
+            <%@ include file = "../users/groupUsers.jsp" %>
         </c:if>        
         
-<!--          	사원 개인 정보 페이지  -->
-         <c:if test="${template eq 'groupware' && mypage eq 'memberInfo'}">
-            <%@ include file = "groupUserManagement.jsp" %>
+<!--          	사원  정보  List 확인 페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'userList'}">
+            <%@ include file = "../users/groupwareUserList.jsp" %>
+        </c:if>
+
+<!--          	사원  상세정보 등록  페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'userDetail'}">
+            <%@ include file = "../users/groupwareUserDetail.jsp" %>
         </c:if>
         
-<!--          	사원 등록 페이지  -->
-         <c:if test="${template eq 'groupware' && mypage eq 'insetInfo'}">
-            <%@ include file = "groupwareMemberInsert.jsp" %>
+<!--          	사원 개인 정보 확인 페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'userView'}">
+            <%@ include file = "../users/groupUserView.jsp" %>
         </c:if>        
         
         
@@ -125,9 +132,9 @@
     </div>
 
 </body>
+<!-- 오픈 소스 메뉴 전체 열고 닫기 js -->
 <script>
 
-<!-- 오픈 소스 메뉴 전체 열고 닫기 js -->
     $(".open-tab").click(function () {
         $(".close-tab").removeClass("a-active");
         $(".open-tab").addClass("a-active");

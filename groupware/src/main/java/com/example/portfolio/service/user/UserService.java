@@ -14,6 +14,7 @@ public interface UserService {
 	public int setUser(UserVO uvo);
 	
 //	public List<UserVO> getUsersList(int start,int end,String searchOpt, String  words); 
+	public List<UserVO> getUsersList(int start, int end);
 //	
 //	public int getUsersCount(String searchOpt, String  words);
 //
