@@ -111,6 +111,9 @@ td {
     border:1px solid #f7f7f7;
     
 }
+
+.td-line-he1{ line-height: 35px; }
+
 /* .group-wrap-up, .group-wrap-down{
     margin-bottom:1px;
     margin-top:5px;

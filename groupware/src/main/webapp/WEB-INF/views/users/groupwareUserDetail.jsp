@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="../css/group/groupwareUserInsa_register.css" />
-<script src="../js/groupwareUserInsa_register.js"></script>
+<link rel="stylesheet" href="../css/group/groupwareUserDetail.css" />
+<script src="../js/groupwareUserDetail.js"></script>
 
 <body>
     <!-- 중복 부분-------------------------------------------------------------------------------------- -->

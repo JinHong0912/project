@@ -33,24 +33,24 @@ public class UserServiceImpl implements UserService{
 	}
 
 
-//	@Override
-//	public List<UserVO> getUsersList(int start,int end, String searchOpt, String  words) {
-//	
-//		return dao.getUsersList(start, end, searchOpt, words);
-//	}
+	@Override
+	public List<UserVO> getUsersList(int start,int end, String searchOpt, String  words) {
+	
+		return dao.getUsersList(start, end, searchOpt, words);
+	}
 
 	// 회원 보이는 부분 관리자 페이지에서
-	@Override
-	public List<UserVO> getUsersList(int start, int end) {
-		
-		return dao.getUsersList(start, end);
-	}
 //	@Override
-//	public int getUsersCount(String searchOpt, String  words) {
+//	public List<UserVO> getUsersList(int start, int end) {
 //		
-//		return dao.getUsersCount(searchOpt, words);
-//		
+//		return dao.getUsersList(start, end);
 //	}
+	@Override
+	public int getUsersCount(String searchOpt, String  words) {
+		
+		return dao.getUsersCount(searchOpt, words);
+		
+	}
 //
 //
 //	@Override
