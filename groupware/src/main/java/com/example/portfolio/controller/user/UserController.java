@@ -1,6 +1,7 @@
 package com.example.portfolio.controller.user;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,7 +36,7 @@ public class UserController {
 	@ResponseBody
 	public String setRegister(@ModelAttribute UserVO uvo) {// Model 저장 View 화면 이동 //ModelAndView 저장도 하면서 보여 주는 것이다
 		int result = userService.setUser(uvo);
-		
+				
 		StringBuilder sb = new StringBuilder();
 		String msg = "회원가입이 완료 되었습니다.";
 		String error = "시스템 오류입니다. 관리자에게 문의하세요.";
@@ -71,7 +72,7 @@ public class UserController {
 		return str;
 	}
 
-//아이디 체크
+//	아이디 체크
 	@RequestMapping("/loginCheck")
 	@ResponseBody
 	public String loginCheck(@ModelAttribute UserVO uvo, HttpSession session) {
@@ -83,19 +84,19 @@ public class UserController {
 	
 			StringBuilder sb = new StringBuilder();
 			String msg = "로그인 되었습니다.";
-			String error = "시스템 오류입니다. 관리자에게 문의하세요.";
+			String error = "시스템에 오류가 있습니다. 관리자에게 문의하세요.";
 		
 		 if (userList == null ) {
 
 				sb.append("<script>");
 				sb.append("alert('"+error+"');");
-				sb.append("location.replace('/login/groupLogin');");
+				sb.append("location.replace('/');");
 				sb.append("</script>");
 			
 		 }else {
 			 
 				sb.append("<script>");
-//				sb.append("alert('"+msg+"');");
+				//sb.append("alert('"+msg+"');");
 				sb.append("location.replace('/groupware/groupAdmin');");
 				sb.append("</script>");
 														
@@ -103,8 +104,22 @@ public class UserController {
 			return sb.toString();
 					
 	}
-
-
+	
+	//사원 권한 부여
+	@RequestMapping("/authUpdate")
+	@ResponseBody
+	public String authUpdate(@RequestParam Map<String, Object> map) {
+		int result = userService.authUpdate(map);
+		String msg = null;// 권한을 ajax으로 할 예정
+		
+		if (result > 0 ) {
+			msg = "success";
+		}else {
+			msg = "failure";
+		}
+		return msg;
+	}
+	
 
 
 

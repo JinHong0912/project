@@ -74,6 +74,9 @@ td {
 
 .ma-bottom1{ margin-bottom: 10%;}
 .ma-bottom2{ margin-bottom: 10px;}
+.ma-bottom3{ margin-bottom: 5px;}
+.ma-bottom4{ margin-bottom: 5px;}
+.ma-bottom5{ margin-bottom: 2px;}
 
 .ma-right1{ margin-right: 10%;}
 .ma-right2{ margin-right: 10px;}
@@ -113,6 +116,7 @@ td {
 }
 
 .td-line-he1{ line-height: 35px; }
+
 
 /* .group-wrap-up, .group-wrap-down{
     margin-bottom:1px;

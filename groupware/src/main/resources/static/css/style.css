@@ -358,6 +358,12 @@ select {
     border:1px solid transparent;
     background-color:#3f51b5;
 }
+.page-active-num {
+    
+    border:1px solid transparent;
+    background-color:#fff;
+}
+
 
 /* margin */
 

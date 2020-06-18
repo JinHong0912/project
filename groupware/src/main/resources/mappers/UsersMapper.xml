@@ -6,10 +6,11 @@
 	<!-- 컬럼(column)변수($), 데이터 변수(#) -->
 	<sql id="search">
 		<choose>
-			<when test = "searchOpt == 'all' ">
+			<when test = "searchOpt == 'all'">
 				WHERE userID LIKE CONCAT('%',#{words},'%')
+				OR department LIKE CONCAT('%',#{words},'%')
+				OR userRank LIKE CONCAT('%',#{words},'%')
 				OR userName LIKE CONCAT('%',#{words},'%')
-				OR userEmail LIKE CONCAT('%',#{words},'%')
 			</when>
 		
 			<otherwise>
@@ -39,7 +40,7 @@
 	
 	<select id="loginCheck" resultType="uservo">
 	
-		SELECT userID, userName, auth FROM users
+		SELECT  uid ,userID, userName, auth FROM users
 		WHERE userID = #{userID} AND passwd = #{passwd}
 	
 <!-- 		SELECT userID, userName, auth FROM users -->
@@ -52,10 +53,17 @@
 		SELECT COUNT(*) FROM users WHERE userID = #{userID}
 	</select>
 	
+<!-- 	로그 아웃 하기-->
+	<update id="authUpdate" parameterType="hashMap">
+		<!-- UPDATE 테이블 SET 변경할 컬럼 = 값 WHERE 조건 = 값 ; -->
+		UPDATE users SET auth = #{auth} WHERE uid = #{uid}
+	</update>
+<!-- 	사원 권한 부여 -->
+	
 <!-- getUsersList 결과 가지고 오는 부분 -->
 	<select id="getUsersList"  resultType="uservo">
 		SELECT 
-			uid, userID, auth, userName, userEmail, department, userRank, date_format(userRegdate,'%Y-%m-%d') as userRegdate
+			uid, userID, auth, userName, userEmail,  userPhone,department, userRank, date_format(userRegdate,'%Y-%m-%d') as userRegdate
 		FROM users
 	
 	 		<include refid="search"></include>
@@ -64,10 +72,11 @@
 	
 	</select>
 	
+<!-- 	사원들 검색 과 페이징 처리 -->
 	<select id="getUsersCount" resultType="int">
 		SELECT COUNT(*) FROM users
 			<include refid="search"></include>
 	</select>	
-	
+
 	
 </mapper>

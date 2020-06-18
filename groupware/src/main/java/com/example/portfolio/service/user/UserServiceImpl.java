@@ -33,32 +33,31 @@ public class UserServiceImpl implements UserService{
 	}
 
 
+	// 사원 리스트 검색 페이지
 	@Override
 	public List<UserVO> getUsersList(int start,int end, String searchOpt, String  words) {
 	
 		return dao.getUsersList(start, end, searchOpt, words);
 	}
-
-	// 회원 보이는 부분 관리자 페이지에서
-//	@Override
-//	public List<UserVO> getUsersList(int start, int end) {
-//		
-//		return dao.getUsersList(start, end);
-//	}
+	//사원 카운팅
 	@Override
 	public int getUsersCount(String searchOpt, String  words) {
 		
 		return dao.getUsersCount(searchOpt, words);
 		
 	}
-//
-//
-//	@Override
-//	public int authUpdate(Map<String, Object> map) {
-//		
-//		return dao.authUpdate(map);
-//	}
-//
+
+	//사원 권한 부여 (일반, 중간관리자, 관리자)
+	@Override
+	public int authUpdate(Map<String, Object> map) {
+		
+		return dao.authUpdate(map);
+	}
+
+	
+	
+	
+	//
 //
 //	@Override
 //	public int setUsersDeleteAll(int uid) {
@@ -79,6 +78,7 @@ public class UserServiceImpl implements UserService{
 		UserVO result = dao.loginCheck(uvo);
 		
 		if( result != null) {
+			session.setAttribute("uid", result.getUid());
 			session.setAttribute("userID", result.getUserID());
 			session.setAttribute("userName", result.getUserName());
 			session.setAttribute("auth", result.getAuth());
@@ -88,11 +88,11 @@ public class UserServiceImpl implements UserService{
 	}
 //
 //	//로그아웃 session을 끊어 주는 부분
-//	@Override
-//	public void logout(HttpSession session) {
-//		session.invalidate();
-//		
-//	}
+	@Override
+	public void logout(HttpSession session) {
+		session.invalidate();
+		
+	}
 //
 //
 //	@Override

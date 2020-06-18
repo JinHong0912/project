@@ -8,6 +8,7 @@
 
 
 <%@ include file = "../include/head.jspf" %>
+<%@include file="../include/info.jspf"%>
 <!-- ---------------------------------------------------------------------------------------- -->
 <body>
     	<div class="top-wrap">
@@ -16,11 +17,11 @@
         </div>
         <div class="info-wrap">
             <div class="info-title">
-                <span class="info-sName gray" >{ ${sessionScope.userName} 님</span> -
-                <span class="info-sName gray" >접속권한 : ${sessionScope.auth} 등급}</span>
+                <span class="info-sName gray" >{ ID : ${sessionScope.userName} 님</span> -
+                <span class="info-sName gray" >접속권한 : ${sessionScope.auth} 등급 }</span>
             </div>
             <div class="info-auth">
-                <span class="info-sName">{<a href="#" class="gray">로그아웃</a>}</span>
+                <span class="info-sName">{<a href="/logout" class="gray">로그아웃</a>}</span>
             </div>
         </div>
     </div>

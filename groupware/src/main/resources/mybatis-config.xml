@@ -5,6 +5,7 @@
 	<typeAliases>
 		<!-- 긴 별명을 변경하는 문장 : alias = "uservo" 긴 문장을 이렇게 사용 한다. -->
 		<typeAlias type="com.example.portfolio.model.UserVO" alias = "uservo"/>
+		<typeAlias type="com.example.portfolio.model.UserDetailVO" alias = "userDetailvo"/>
 <!-- 		<typeAlias type="com.greenart.sample.model.BoardVO" alias = "boardvo"/> -->
 <!-- 		<typeAlias type="com.greenart.sample.model.ArticleVO" alias = "articlevo"/> -->
 <!-- 		<typeAlias type="com.greenart.sample.model.CommentVO" alias = "commentvo"/> -->

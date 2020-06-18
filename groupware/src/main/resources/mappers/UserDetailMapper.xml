@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.UserDetailMapper">
+
+
+	<!-- 컬럼(column)변수($), 데이터 변수(#) -->
+	<sql id="search">
+		<choose>
+			<when test="searchOpt == 'all'">
+				WHERE userID LIKE CONCAT('%',#{words},'%')
+				OR
+				department LIKE CONCAT('%',#{words},'%')
+				OR userRank LIKE
+				CONCAT('%',#{words},'%')
+				OR userName LIKE CONCAT('%',#{words},'%')
+			</when>
+
+			<otherwise>
+				WHERE ${searchOpt} LIKE CONCAT('%',#{words},'%')
+			</otherwise>
+		</choose>
+	</sql>
+
+
+	<!-- register 사원 상세 부분 입력 -->
+	<insert id="setUserDetail">
+		INSERT INTO
+		userDetail
+		SET
+		userDetail_id = #{userDetail_id},
+		userName = #{userName},
+		userGender = #{userGender},
+		userBirth = #{userBirth},
+		userPhone = #{userPhone},
+		extensionNumber = #{extensionNumber },
+		telephone = #{telephone},
+		recruitment = #{recruitment},
+		hopeJob = #{hopeJob },
+		userHeight = #{userHeight},
+		userWeight = #{userWeight},
+		militaryService = #{militaryService },
+		religion = #{religion},
+		userHobby = #{userHobby},
+		userSpecialty = #{userSpecialty},
+		disabledCk = #{disabledCk},
+		veteransCk = #{veteransCk},
+		marriageCk = #{marriageCk},
+		aboutMe = #{aboutMe},
+		userRegdate = now()
+
+	</insert>
+
+	<!-- 그룹웨어 로그인하기 -->
+
+
+</mapper>

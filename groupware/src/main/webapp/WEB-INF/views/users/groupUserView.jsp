@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="../css/group/groupUserManagement.css" />
-<script src="../js/groupUserManagement.js"></script>
+<link rel="stylesheet" href="../css/group/groupUserView.css" />
+<script src="../js/groupUserView.js"></script>
  
 <body>
         <!-- 중복 부분-------------------------------------------------------------------------------------- -->
         <!-- 왼쪽 메인 부분 -->
         
-        <div class="tbl-wrap">
+             <div class="tbl-wrap">
 
             <div class="group-left-up ">
                 <div class="btn-grp ma-bottom2">

@@ -29,6 +29,7 @@ public class UserDaoImpl implements UserDao{
 		return sql.insert(namespace + ".setUser" , uvo);
 	}
 
+	//사원 리스트 검색
 	@Override
 	public List<UserVO> getUsersList(int start,int end, String searchOpt, String  words){
 		Map<String, Object> map = new HashMap<>();
@@ -39,27 +40,8 @@ public class UserDaoImpl implements UserDao{
 		return sql.selectList(namespace+ ".getUsersList", map);
 		
 	}
-
-//	@Override
-//	public List<UserVO> getUsersList(int start, int end, String  words) {
-//		Map<String, Object> map = new HashMap<>();
-//		map.put("start",start);
-//		map.put("end",end);
-//		map.put("words", words);
-//		return sql.selectList(namespace + ".getUsersList", map);
-//	}
-//	
-	
-//	//Service는 괄호 안에 값을 여러게 가능 -> ex(namespace + ".getUsersCount",A,B,C), dao는 여러개 X (collection -hashMap, dto) 사용해야 한다.	
-//	@Override
-//	public int getUsersCount(String searchOpt, String  words) {
-//		Map<String, Object> map = new HashMap<>();
-//		map.put("searchOpt", searchOpt);
-//		map.put("words", words);
-//		return sql.selectOne(namespace + ".getUsersCount", map);
-//	}
-
-	
+	//사원 카운트
+	//Service는 괄호 안에 값을 여러게 가능 -> ex(namespace + ".getUsersCount",A,B,C), dao는 여러개 X (collection -hashMap, dto) 사용해야 한다.	
 	@Override
 	public int getUsersCount(String searchOpt, String words) {
 		
@@ -68,14 +50,15 @@ public class UserDaoImpl implements UserDao{
 		map.put("words", words);
 		return sql.selectOne(namespace + ".getUsersCount", map);
 	}
-	
-	
-	
+	//관리자 권한 부여
 //	@Override
 //	public int authUpdate(Map<String, Object> map) {
 //		return sql.update(namespace + ".authUpdate", map);
 //	 }
-//
+	@Override
+	public int authUpdate(Map<String, Object> map) {
+		return sql.update(namespace + ".authUpdate", map);
+	}
 //	@Override
 //	public int setUsersDeleteAll(int uid) {
 //		return sql.delete(namespace + ".setUsersDeleteAll", uid );

@@ -19,9 +19,8 @@
 					<form method="post" id="" class="" action="">
 						<div class="tabs-one">
 							<nav class="tab-list">
-								<a href="#notice" class="tab-one active-one">공지사항(8)</a> <a
-									href="#newText" class="tab-one ">새글(10)</a> <a
-									href="#paymentRequest" class="tab-one">결제요청(11)</a>
+								<a href="#notice" class="tab-one active-one">공지사항(8)</a> <a href="#newText"
+									class="tab-one ">새글(10)</a> <a href="#paymentRequest" class="tab-one">결제요청(11)</a>
 								<div class="clearfix"></div>
 							</nav>
 
@@ -33,11 +32,10 @@
 												onClick="location.href='insa.html'">전체목록</button>
 											<button type="button" class="btn-off margin-l-2" id=""
 												onClick="location.href='insa_register.html'">공지작성</button>
-										</span> <span class="float-r"> <select name="" id=""
-											class="select-150">
+										</span> <span class="float-r"> <select name="" id="" class="select-150">
 												<option>선택하세요</option>
-										</select> <input type="text" class="input-150 margin-l-2" name=""
-											required />
+											</select> <input type="text" class="input-150 margin-l-2" name=""
+												required />
 											<button type="submit" class="btn-on margin-r2 margin-l-2"
 												id="">내용검색</button>
 										</span>
@@ -88,11 +86,10 @@
 												onClick="location.href='insa.html'">전체목록</button>
 											<button type="button" class="btn-off margin-l-2" id=""
 												onClick="location.href='insa_register.html'">새글작성</button>
-										</span> <span class="float-r"> <select name="" id=""
-											class="select-150">
+										</span> <span class="float-r"> <select name="" id="" class="select-150">
 												<option>선택하세요</option>
-										</select> <input type="text" class="input-150 margin-l-2" name=""
-											required />
+											</select> <input type="text" class="input-150 margin-l-2" name=""
+												required />
 											<button type="submit" class="btn-on margin-r2 margin-l-2"
 												id="">내용검색</button>
 										</span>
@@ -175,8 +172,7 @@
 
 							</div>
 
-							<div
-								class="right-up-drafting-box flex-box2 border-color-bottom1 magin-top3">
+							<div class="right-up-drafting-box flex-box2 border-color-bottom1 magin-top3">
 
 								<div class="right-up-drafting-l">
 									<h2 class="">
@@ -223,33 +219,37 @@
 						<form method="post" id="" class="" action="">
 							<div class="tabs-two">
 								<nav class="tab-list">
-									<a href="#mailStatus" class="tab-two active-two">사원현황(1)</a> <a
-										href="#everyText" class="tab-two">최근매일(10)</a> <a
-										href="#mailReceived" class="tab-two">받은메일(10)</a> <a
-										href="#mailEmergency" class="tab-two">긴급메일(1)</a>
+									<a href="#mailStatus" class="tab-two active-two">사원현황(1)</a> <a href="#everyText"
+										class="tab-two">최근매일(10)</a> <a href="#mailReceived"
+										class="tab-two">받은메일(10)</a> <a href="#mailEmergency"
+										class="tab-two">긴급메일(1)</a>
 									<div class="clearfix"></div>
 								</nav>
 								<div id="mailStatus" class="tab-two-content show">
 									<div class="btn-grp magin-bottom4">
-										<form method="post" id="" class=""	action="/groupware/groupAdmin">
+										<form method="post" id="" class="" action="/groupware/groupAdmin">
 											<span class="float-l">
-												<button type="button" class="btn-active margin-l1" onClick="javascript:location.href='/groupware/groupAdmin'">목록보기</button>
+												<button type="button" class="btn-active margin-l1"
+													onClick="javascript:location.href='/groupware/groupAdmin'">목록보기</button>
 												<button type="button" class="btn-off margin-l-2" id=""
 													onClick="location.href='/groupware/groupwareUserList'">사원관리</button>
-											</span> <span class="float-r"> <select name="" id=""
-												class="select-150">
-													<option value="all"
-														<c:if test="${searchOpt eq 'all'}">selected</c:if>>전체</option>
-													<option value="userID"
-														<c:if test="${searchOpt eq 'userID'}">selected</c:if>>아이디</option>
-													<option value="userName"
-														<c:if test="${searchOpt eq 'userName'}">selected</c:if>>이름</option>
-													<option value="auth"
-														<c:if test="${searchOpt eq 'auth'}">selected</c:if>>권한</option>
-											</select> 
-											<input type="search" class="input-150 bo-blue" name="words"	id="words" value="${words}" required />
-											<button type="submit" class="btn-on margin-r2 margin-l-2" id="">내용검색</button>
-												
+											</span>
+											<span class="float-r">
+
+												<select name="searchOpt" id="searchOpt" class="select-150">
+													<option value="all" <c:if test="${searchOpt eq 'all'}">selected
+														</c:if>>전체</option>
+													<option value="department" <c:if
+														test="${searchOpt eq 'department'}">selected</c:if>>부서</option>
+													<option value="userID" <c:if test="${searchOpt eq 'userID'}">
+														selected</c:if>>아이디</option>
+													<%-- 													<option value="userName" <c:if test="${searchOpt eq 'userName'}">selected</c:if>>이름</option> --%>
+												</select>
+												<input type="search" class="input-150 bo-blue" name="words" id="words"
+													value="${words}" required />
+												<button type="submit" class="btn-on margin-r2 margin-l-2"
+													id="">내용검색</button>
+
 											</span>
 											<div class="clearfix"></div>
 										</form>
@@ -260,9 +260,9 @@
 											<th class="td-5 bg-color8">번호</th>
 											<th class="td-10 bg-color8">부서</th>
 											<th class="td-10 bg-color8">직급</th>
+											<th class="td-10 bg-color8">이름</th>
 											<th class="td-10 bg-color8">사번</th>
 											<th class="td-20 bg-color8">권한</th>
-											<th class="td-10 bg-color8">이름</th>
 											<th class="td-40 bg-color8">채용 형태</th>
 
 										</tr>
@@ -273,6 +273,7 @@
 												<td>${usersList.uid}</td>
 												<td>${usersList.department}</td>
 												<td><a href="#" class="bold underline">${usersList.userRank}</a></td>
+												<td><a href="#" class="bold underline">${usersList.userName}</a></td>
 												<td>부장</td>
 												<td>
 													<!-- <input type="checkbox" name="team_master" class="" /> -->
@@ -283,9 +284,8 @@
 														<option value="3">부장</option>
 														<option value="4">사장</option>
 														<option value="5">관리자</option>
-												</select>
+													</select>
 												</td>
-												<td><a href="#" class="bold underline">${usersList.userName}</a></td>
 												<td>공개 채용으로 입사하였습니다.</td>
 
 
@@ -293,6 +293,34 @@
 
 										</c:forEach>
 									</table>
+									<div class="page-grp center">
+										<!--                 	버튼 기호 -->
+										<span class="page">
+											<a href="#" class="gray"><i
+													class="fas fa-chevron-double-left td-line-he1"></i></a>
+										</span>
+										<span class="page">
+											<a href="#" class="gray"><i class="fas fa-chevron-left td-line-he1"></i></a>
+										</span>
+										<c:forEach begin="1" end="${pageNum}" var="num">
+											<!--                 	버튼 번호 -->
+											<span class="">
+												<a class="page page-active"
+													href="/groupware/groupAdmin?num=${num}&searchOpt=${searchOpt}&words=${words}&template=${template}&mypage=${mypage}"
+													class="page-active-num">${num}</a>
+											</span>
+										</c:forEach>
+										<!--                 	버튼 기호 -->
+										<span class="page">
+											<a href="#" class="gray"><i
+													class="fas fa-chevron-right td-line-he1"></i></a>
+										</span>
+										<span class="page">
+											<a href="#" class="gray"><i
+													class="fas fa-chevron-double-right td-line-he1"></i></a>
+										</span>
+
+									</div>
 								</div>
 								<div id="everyText" class="tab-two-content">일정관리 입니다232131
 								</div>
@@ -305,11 +333,10 @@
 													onClick="location.href='insa.html'">전체목록</button>
 												<button type="button" class="btn-off margin-l-2" id=""
 													onClick="location.href='insa_register.html'">사원등록</button>
-											</span> <span class="float-r"> <select name="" id=""
-												class="select-150">
+											</span> <span class="float-r"> <select name="" id="" class="select-150">
 													<option>선택하세요</option>
-											</select> <input type="text" class="input-150 margin-l-2" name=""
-												required />
+												</select> <input type="text" class="input-150 margin-l-2" name=""
+													required />
 												<button type="submit" class="btn-on margin-r2 margin-l-2"
 													id="">내용검색</button>
 											</span>
@@ -353,11 +380,10 @@
 													onClick="location.href='insa.html'">전체목록</button>
 												<button type="button" class="btn-off margin-l-2" id=""
 													onClick="location.href='insa_register.html'">사원등록</button>
-											</span> <span class="float-r"> <select name="" id=""
-												class="select-150">
+											</span> <span class="float-r"> <select name="" id="" class="select-150">
 													<option>선택하세요</option>
-											</select> <input type="text" class="input-150 margin-l-2" name=""
-												required />
+												</select>
+												<input type="text" class="input-150 margin-l-2" name="" required />
 												<button type="submit" class="btn-on margin-r2 margin-l-2"
 													id="">내용검색</button>
 											</span>
@@ -388,7 +414,7 @@
 
 										</tr>
 
-										ㅇㄴㅁㅇㄴㅁㅇㄴㅁ
+
 									</table>
 								</div>
 							</div>
@@ -402,8 +428,8 @@
 						<form method="post" id="" class="" action="">
 							<div class="tabs">
 								<nav class="tab-list">
-									<a href="#board1" class="tab">일정</a> <a href="#notice1"
-										class="tab active">예정일정</a> <a href="#gallery1" class="tab">팀일정</a>
+									<a href="#board1" class="tab">일정</a> <a href="#notice1" class="tab active">예정일정</a>
+									<a href="#gallery1" class="tab">팀일정</a>
 									<div class="clearfix"></div>
 								</nav>
 
