@@ -5,19 +5,23 @@ public class UserDetailVO {
 //	| Field           | Type         | Null | Key | Default | Extra          |
 //	+-----------------+--------------+------+-----+---------+----------------+
 //	| uid             | int          | NO   | PRI | NULL    | auto_increment |
-//	| userDetail_id   | int          | NO   |     | NULL    |                |
+//	| detail_id       | int          | NO   |     | NULL    |                |
 //	| userName        | varchar(20)  | NO   |     | NULL    |                |
 //	| userGender      | int          | NO   |     | NULL    |                |
 //	| userBirth       | varchar(20)  | YES  |     | NULL    |                |
+//	| lunarCalendar   | int          | YES  |     | NULL    |                |
+//	| phone           | int          | YES  |     | NULL    |                |
 //	| userPhone       | char(15)     | NO   |     | NULL    |                |
+//	| extension       | int          | YES  |     | NULL    |                |
 //	| extensionNumber | varchar(20)  | YES  |     | NULL    |                |
+//	| tele            | int          | YES  |     | NULL    |                |
 //	| telephone       | varchar(20)  | YES  |     | NULL    |                |
 //	| recruitment     | int          | YES  |     | NULL    |                |
 //	| hopeJob         | varchar(200) | YES  |     | NULL    |                |
-//	| userHeight      | varchar(15)  | YES  |     | NULL    |                |
+//	| userHeight      | varchar(20)  | YES  |     | NULL    |                |
 //	| userWeight      | varchar(20)  | YES  |     | NULL    |                |
 //	| militaryService | int          | YES  |     | NULL    |                |
-//	| religion        | varchar(20)  | YES  |     | NULL    |                |
+//	| religion        | int          | YES  |     | NULL    |                |
 //	| userHobby       | varchar(100) | YES  |     | NULL    |                |
 //	| userSpecialty   | varchar(100) | YES  |     | NULL    |                |
 //	| disabledCk      | int          | NO   |     | NULL    |                |
@@ -28,26 +32,30 @@ public class UserDetailVO {
 //	+-----------------+--------------+------+-----+---------+----------------+
 
 
-	private int uid;            
-	private int userDetail_id;           
-	private String userName;       
-	private int userGender;     
-	private String userBirth;      
-	private String userPhone;      
+	private int uid;
+	private int detail_id;
+	private String userName;
+	private int userGender;
+	private String userBirth;
+	private int lunarCalendar;
+	private int phone;
+	private String userPhone;
+	private int extension;
 	private String extensionNumber;
-	private String telephone;      
-	private int recruitment;    
-	private String hopeJob;        
-	private String userHeight;     
-	private String userWeight;     
+	private int tele;
+	private String telephone;
+	private int recruitment;
+	private String hopeJob;
+	private String userHeight;
+	private String userWeight;
 	private int militaryService;
-	private int religion;       
-	private String userHobby;      
-	private String userSpecialty;  
-	private int disabledCk;     
-	private int veteransCk;     
-	private int marriageCk;     
-	private String aboutMe;        
+	private int religion;
+	private String userHobby;
+	private String userSpecialty;
+	private int disabledCk;
+	private int veteransCk;
+	private int marriageCk;
+	private String aboutMe;
 	private String userRegdate;
 	
 	
@@ -57,11 +65,11 @@ public class UserDetailVO {
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
-	public int getUserDetail_id() {
-		return userDetail_id;
+	public int getDetail_id() {
+		return detail_id;
 	}
-	public void setUserDetail_id(int userDetail_id) {
-		this.userDetail_id = userDetail_id;
+	public void setDetail_id(int detail_id) {
+		this.detail_id = detail_id;
 	}
 	public String getUserName() {
 		return userName;
@@ -81,17 +89,41 @@ public class UserDetailVO {
 	public void setUserBirth(String userBirth) {
 		this.userBirth = userBirth;
 	}
+	public int getLunarCalendar() {
+		return lunarCalendar;
+	}
+	public void setLunarCalendar(int lunarCalendar) {
+		this.lunarCalendar = lunarCalendar;
+	}
+	public int getPhone() {
+		return phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
 	public String getUserPhone() {
 		return userPhone;
 	}
 	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
+	public int getExtension() {
+		return extension;
+	}
+	public void setExtension(int extension) {
+		this.extension = extension;
+	}
 	public String getExtensionNumber() {
 		return extensionNumber;
 	}
 	public void setExtensionNumber(String extensionNumber) {
 		this.extensionNumber = extensionNumber;
+	}
+	public int getTele() {
+		return tele;
+	}
+	public void setTele(int tele) {
+		this.tele = tele;
 	}
 	public String getTelephone() {
 		return telephone;
@@ -177,10 +209,6 @@ public class UserDetailVO {
 	public void setUserRegdate(String userRegdate) {
 		this.userRegdate = userRegdate;
 	}
-
-	
-	
-	
 	
 	
 	

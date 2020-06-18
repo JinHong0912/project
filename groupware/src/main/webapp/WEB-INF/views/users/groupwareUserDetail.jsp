@@ -56,30 +56,30 @@
                         <td class="td-7 center underline td-color-01 noto bold">생년월일</td>
                         <td class="td-13 padding-lr5">
                             <input type="text" name="userBirth" id="" class="width-50 noto" />
-                            <select name="" id="" class="width-50 height-30">
-                                <option>양력</option>
-                                <option>음력</option>
+                            <select name="lunarCalendar" id="lunarCalendar" class="width-50 height-30">
+                                <option value="0">양력</option>
+                                <option value="1">음력</option>
                             </select>
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">C.P</td>
                         <td class="td-13 padding-lr5">
-                            <select name="" id="" class="width-30 height-30">
-                                <option>010</option>
-                                <option>011</option>
+                            <select name="phone" id="phone" class="width-30 height-30">
+                                <option value="0">010</option>
+                                <option value="1">011</option>
                             </select>
                             <input type="text" name="userPhone" id="userPhone" class="width-70 noto" required />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">내선번호</td>
                         <td class="td-13 padding-lr5">
-                            <select name=" " id=" " class="width-30 height-30">
-                                <option>051</option>
+                            <select name="extension" id="extension" class="width-30 height-30">
+                                <option value="0">051</option>
                             </select>
                             <input type="text" name="extensionNumber " id="extensionNumber " class="width-70 noto" />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">Tel</td>
                         <td class="td-13 padding-lr5">
-                            <select name="" id="" class="width-30 height-30">
-                                <option>051</option>
+                            <select name="tele" id="tele" class="width-30 height-30">
+                                <option value="0">051</option>
                             </select>
                             <input type="text" name="telephone" id="telephone" class="width-70 noto" />
                         </td>
@@ -92,34 +92,35 @@
                         <td class="td-7 center underline td-color-01 noto bold">채용형태</td>
                         <td class="td-13 padding-lr5">
                             <select name="recruitment " id="recruitment " class="width-100 height-30">
-                                <option>공개채용</option>
-                                <option>특별채용</option>
-                                <option>수시채용</option>
+                                <option value="0">인턴채용</option>
+                                <option value="1">공개채용</option>
+                                <option value="2">특별채용</option>
+                                <option value="3">수시채용</option>
                             </select>
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">희망직무</td>
                         <td class="td-13 padding-lr5">
-                            <input type="text" name="hopeJob " id="hopeJob " class="width-100 noto" />
+                            <input type="text" name="hopeJob" id="hopeJob" class="width-100 noto" />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">키/몸무게</td>
                         <td class="td-13 padding-lr5">
-                            <input type="text" name="userHeight " id="userHeight " class="width-50 noto" placeholder="cm" />
-                            <input type="text" name="userWeight " id="userWeight " class="width-50 noto" placeholder="kg" />
+                            <input type="text" name="userHeight" id="userHeight" class="width-50 noto" placeholder="cm" />
+                            <input type="text" name="userWeight" id="userWeight" class="width-50 noto" placeholder="kg" />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">병역구분</td>
                         <td class="td-13 padding-lr5">
-                            <select name="militaryService " id="militaryService " class="width-100 height-30">
-                                <option>병역필</option>
-                                <option>병역미필</option>
-                                <option>공익</option>
+                            <select name="militaryService" id="militaryService" class="width-100 height-30">
+                                <option value="0">병역필</option>
+                                <option value="1">병역미필</option>
+                                <option value="2">공익</option>
                             </select>
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">종교</td>
                         <td class="td-13 padding-lr5">
-                            <select name="religion " id="religion " class="width-100 height-30">
-                                <option>무교</option>
-                                <option>불교</option>
-                                <option>기독교</option>
+                            <select name="religion" id="religion" class="width-100 height-30">
+                                <option value="0">무교</option>
+                                <option value="1">불교</option>
+                                <option value="2">기독교</option>
                             </select>
                         </td>
                     </tr>
@@ -139,22 +140,22 @@
                         <td class="td-7 center underline td-color-01 noto bold">장애인여부</td>
                         <td class="td-13 padding-lr5">
                             <select name="disabledCk " id="disabledCk " class="width-100 height-30">
-                                <option>비장애</option>
-                                <option>장애</option>
+                                <option value="0">비장애</option>
+                                <option value="1">장애</option>
                             </select>
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">보훈대상자여부</td>
                         <td class="td-13 padding-lr5">
                             <select name="veteransCk " id="veteransCk " class="width-100 height-30">
-                                <option>비대상</option>
-                                <option>대상</option>
+                                <option value="0">비대상</option>
+                                <option value="1">대상</option>
                             </select>
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">결혼여부</td>
                         <td class="td-13 padding-lr5">
                             <select name="marriageCk " id="marriageCk " class="width-100 height-30">
-                                <option>미혼</option>
-                                <option>기혼</option>
+                                <option value="0">미혼</option>
+                                <option value="1">기혼</option>
                             </select>
                         </td>
                     </tr>
@@ -168,7 +169,7 @@
                             <textarea name="aboutMe " id="aboutMe" class="width-100 height-100 noto padding-a5"></textarea>
                         </td>
                     </tr>
-                    <tr style="width:100%;height:1px;background-color:#eee;">
+                    <tr style="width:100%;heig    ht:1px;background-color:#eee;">
                         <td colspan="10"></td>
                     </tr>
                 </table>

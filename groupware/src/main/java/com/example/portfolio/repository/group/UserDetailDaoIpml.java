@@ -1,5 +1,7 @@
 package com.example.portfolio.repository.group;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,6 +18,12 @@ public class UserDetailDaoIpml implements UserDetailDao{
 	public int setUserDetail(UserDetailVO udvo) {
 		
 		return sql.insert(namespace + ".setUserDetail", udvo);
+	}
+
+	@Override
+	public int getUserDetailInfo(UserDetailVO udvo) {
+		
+		return sql.selectOne(namespace + ".getUserDetailInfo", udvo);
 	}
 
 }

@@ -23,6 +23,12 @@ public class UserDetailServiceImpl implements UserDetailService {
 		
 		return dao.setUserDetail(udvo);
 	}
+
+	@Override
+	public int getUserDetailInfo(UserDetailVO udvo) {
+		// TODO Auto-generated method stub
+		return dao.getUserDetailInfo(udvo);
+	}
 	
 	
 }

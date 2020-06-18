@@ -22,23 +22,28 @@
 	</sql>
 
 
-	<!-- register 사원 상세 부분 입력 -->
+	<!-- register 사원 상세 입력 부분 -->
 	<insert id="setUserDetail">
 		INSERT INTO
-		userDetail
+		detailInfo
 		SET
-		userDetail_id = #{userDetail_id},
+		uid = #{uid},
+		detail_id = #{detail_id},
 		userName = #{userName},
 		userGender = #{userGender},
 		userBirth = #{userBirth},
+		lunarCalendar = #{lunarCalendar},
+		phone = #{phone},
 		userPhone = #{userPhone},
-		extensionNumber = #{extensionNumber },
+		extension = #{extension},
+		extensionNumber = #{extensionNumber},
+		tele = #{tele},
 		telephone = #{telephone},
 		recruitment = #{recruitment},
-		hopeJob = #{hopeJob },
+		hopeJob = #{hopeJob},
 		userHeight = #{userHeight},
 		userWeight = #{userWeight},
-		militaryService = #{militaryService },
+		militaryService = #{militaryService},
 		religion = #{religion},
 		userHobby = #{userHobby},
 		userSpecialty = #{userSpecialty},
@@ -47,10 +52,12 @@
 		marriageCk = #{marriageCk},
 		aboutMe = #{aboutMe},
 		userRegdate = now()
-
 	</insert>
 
-	<!-- 그룹웨어 로그인하기 -->
+	<!--사원 상세 정보 보는 부분 -->
+	<select id="getUserDetailInfo">
+		SELECT *  FROM detailInfo ORDER BY uid DESC limit
+	</select>
 
 
 </mapper>

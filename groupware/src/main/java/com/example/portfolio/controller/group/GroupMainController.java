@@ -140,6 +140,23 @@ public class GroupMainController {
 		return mav;
 
 	}
+	
+	@RequestMapping("/groupViewDetailInfo")
+	public ModelAndView viewGroupViewDetailInfo(@ModelAttribute UserDetailVO udvo) {
+
+		int info = userDetailService.getUserDetailInfo(udvo);
+		
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("template", "groupware");
+		mav.addObject("mypage", "userView");
+		mav.addObject("info", info);
+
+		mav.setViewName("/groupware/groupMain");
+
+		return mav;
+
+	}
 
 	// 사원 메인 페이지
 	@RequestMapping("/groupUsers")
