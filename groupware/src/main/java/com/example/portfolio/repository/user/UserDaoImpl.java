@@ -26,7 +26,8 @@ public class UserDaoImpl implements UserDao{
 	//간편 회원가입
 	@Override
 	public int setUser(UserVO uvo) {
-		return sql.insert(namespace + ".setUser" , uvo);
+		sql.insert(namespace + ".setUser" , uvo);
+		return uvo.getUid();
 	}
 
 	//사원 리스트 검색

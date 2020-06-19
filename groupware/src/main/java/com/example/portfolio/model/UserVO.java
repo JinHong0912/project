@@ -26,6 +26,14 @@ public class UserVO {
 	private String userEmail;
 	private String userPhone;
 	private String auth;
+	private String companyNumber;
+	
+	public String getCompanyNumber() {
+		return companyNumber;
+	}
+	public void setCompanyNumber(String companyNumber) {
+		this.companyNumber = companyNumber;
+	}
 	private String userRegdate;
 	
 	

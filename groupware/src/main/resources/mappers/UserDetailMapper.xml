@@ -23,54 +23,51 @@
 
 
 	<!-- register 사원 상세 입력 부분 -->
-	<insert id="setUserDetail">
+	<insert id="setUserNewInfo">
 		INSERT INTO
-		detailInfo
+		newDetailInfo
 		SET
-		detail_id 		= #{detail_id},
-		userName 		= #{userName},
-		userGender 		= #{userGender},
-		userBirth 		= #{userBirth},
-		CompanyNumber	= #{CompanyNumber},
-		lunarCalendar 	= #{lunarCalendar},
-		phone 			= #{phone},
-		userPhone 		= #{userPhone},
-		extension 		= #{extension},
-		extensionNumber = #{extensionNumber},
-		tele 			= #{tele},
-		telephone 		= #{telephone},
-		recruitment 	= #{recruitment},
-		hopeJob 		= #{hopeJob},
-		userHeight 		= #{userHeight},
-		userWeight 		= #{userWeight},
-		militaryService = #{militaryService},
-		religion 		= #{religion},
-		userHobby 		= #{userHobby},
-		userSpecialty 	= #{userSpecialty},
-		disabledCk 		= #{disabledCk},
-		veteransCk 		= #{veteransCk},
-		marriageCk 		= #{marriageCk},
-		aboutMe 		= #{aboutMe},
-		userRegdate 	= now()
+		udid = #{udid},
+		grp_userGender=#{grp_userGender},
+		grp_userBirth=#{grp_userBirth},
+		grp_lunarCalendar=#{grp_lunarCalendar},
+		grp_extension=#{grp_extension},
+		grp_extensionNumber=#{grp_extensionNumber},
+		grp_tele=#{grp_tele},
+		grp_telephone=#{grp_telephone},
+		grp_recruitment=#{grp_recruitment},
+		grp_hopeJob=#{grp_hopeJob},
+		grp_userHeight=#{grp_userHeight},
+		grp_userWeight=#{grp_userWeight},
+		grp_militaryService=#{grp_militaryService},
+		grp_religion=#{grp_religion},
+		grp_userHobby=#{grp_userHobby},
+		grp_userSpecialty=#{grp_userSpecialty},
+		grp_disabledCk=#{grp_disabledCk},
+		grp_veteransCk=#{grp_veteransCk},
+		grp_marriageCk=#{grp_marriageCk},
+		grp_finalEducation=#{grp_finalEducation},
+		grp_graduationYear=#{grp_graduationYear},
+		grp_graduate=#{grp_graduate},
+		grp_university=#{grp_university},
+		grp_grades=#{grp_grades},
+		grp_graduation=#{grp_graduation},
+		grp_aboutMe=#{grp_aboutMe},
+		grp_userRegdate=#{grp_userRegdate}
+		
+		
 	</insert>
-<!-- 		사원 정보 보는 리스트 -->
-	<select id="getUserDetailList" resultType="userDetailvo">
-		SELECT
-			udid, userID, auth, userName, userEmail,  userPhone,department, userRank, date_format(userRegdate,'%Y-%m-%d') as userRegdate
-		
-		FROM users
-	</select>
-	
-
-
-<!-- 	사원 검색 및 카운팅 -->
-	<select id="getDetailCount" resultType="int">
-		SELECT COUNT(*) FROM detailInfo
-	</select>
-	<!--사원 상세 정보 보는 부분 -->
-	<select id="getUserDetailInfo" resultType="userDetailvo">
-		SELECT *  FROM detailInfo where udid = #{udid}
-		
+	<!-- 사원 정보 보는 리스트 -->
+	<select id="getNewUserDetail" resultType="userDetailvo">
+		SELECT * FROM newDetailInfo WHERE uid = ${uid}
 	</select>
 
+
+
+	<!-- 사원 검색 및 카운팅 -->
+	<!-- <select id="getDetailCount" resultType="int"> SELECT COUNT(*) FROM 
+		detailInfo </select> -->	<!--사원 상세 정보 보는 부분 -->
+	<!-- <select id="getUserDetailInfo" resultType="userDetailvo"> SELECT * 
+		FROM detailInfo where uid = #{uid} </select> -->	<!-- <update id="modify"> update detailinfo set name=#{name}, birth=#{birth} 
+		<if test="pwd != null"> pwd=#{pwd} </if> </update> -->
 </mapper>

@@ -16,10 +16,10 @@ import com.example.portfolio.repository.user.UserDao;
 
 public interface UserDetailService {
 
-	public int setUserDetail(UserDetailVO udvo);
+	public int setUserNewInfo(UserDetailVO udvo);
 	
 	//사원 상세 정보 등록 정보 보기
-	public UserDetailVO getUserDetailInfo(int udid);
+//	public UserDetailVO setUserNewInfo(int uid)
 	
 	
 

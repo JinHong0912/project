@@ -32,7 +32,15 @@
 			userName = #{userName},
 			userEmail = #{userEmail},
 			userPhone = #{userPhone},
+			companyNumber =#{companyNumber},
 			userRegdate = now()
+			
+			<selectKey order="AFTER" resultType="int" keyProperty="uid">
+			 select uid FROM users WHERE userID = #{userID} order by uid desc 
+			 limit 1
+			
+				
+			</selectKey>
 	
 	</insert>
 	

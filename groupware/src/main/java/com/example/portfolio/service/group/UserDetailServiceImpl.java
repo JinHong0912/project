@@ -19,16 +19,24 @@ public class UserDetailServiceImpl implements UserDetailService {
 	@Autowired UserDetailDao dao;//UserDetailDao에 있는것 가지고 온것
 	
 	@Override
-	public int setUserDetail(UserDetailVO udvo) {
+	public int setUserNewInfo(UserDetailVO udvo) {
 		
-		return dao.setUserDetail(udvo);
+		return dao.setUserNewInfo(udvo);
 	}
 
-	@Override
-	public UserDetailVO getUserDetailInfo(int udid) {
-		// TODO Auto-generated method stub
-		return dao.getUserDetailInfo(udid);
-	}
+//	@Override
+//	public UserDetailVO setUserNewInfo(int uid) {
+//		// TODO Auto-generated method stub
+//		return dao.getUserDetailInfo(uid);
+//	}
+
 	
+
+//	@Override
+//	public UserDetailVO getUserDetailInfo(int uid) {
+//		// TODO Auto-generated method stub
+//		return dao.getUserDetailInfo(uid);
+//	}
+//	
 	
 }

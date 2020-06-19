@@ -15,15 +15,15 @@ public class UserDetailDaoIpml implements UserDetailDao{
 	final static String namespace = "mappers.UserDetailMapper";
 		
 	@Override
-	public int setUserDetail(UserDetailVO udvo) {
+	public int setUserNewInfo(UserDetailVO udvo) {
 		
-		return sql.insert(namespace + ".setUserDetail", udvo);
+		return sql.insert(namespace + ".setUserNewInfo", udvo);
 	}
 
 	@Override
-	public UserDetailVO getUserDetailInfo(int udid) {
+	public UserDetailVO getUserDetailInfo(int uid) {
 		
-		return sql.selectOne(namespace + ".getUserDetailInfo", udid);
+		return sql.selectOne(namespace + ".getUserDetailInfo", uid);
 	}
 
 }
