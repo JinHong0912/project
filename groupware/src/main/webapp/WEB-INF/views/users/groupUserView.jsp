@@ -15,7 +15,7 @@
                     <form method="post" id="" class="" action="">
                         <span class="float-l">
                             <h2 class="">
-                                <i class="fas fa-arrow-alt-square-right font-color2"></i> 재직자
+                                <i class="fas fa-arrow-alt-square-right font-color2"></i> ${info.userName}
                             </h2>
                         </span>
                         <span class="float-r">
@@ -28,13 +28,14 @@
                         <div class="clearfix"></div>
                     </form>
                 </div>
+
                 <table class=" font-size6">
                     <tr class="tr-40 border-top1 left ">
                         <td rowspan="6" class="td-15 center"> 사원 사진 </td>
                         <th class="td-10">성명</th>
-                        <td class="td-15">3</td>
+                        <td class="td-15">${info.userName}</td>
                         <th class="td-10">성별</th>
-                        <td class="td-20">5</td>
+                        <td class="td-20">1</td>
                     </tr>
                     <tr class="tr-40 border-bottom1 tr-color-odd left">
                         <th class="">근무부서</th>
@@ -117,7 +118,7 @@
                                 <td>3</td>
                             </tr>
                         </table>
-
+				
                     </div>
 
 

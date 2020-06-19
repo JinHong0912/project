@@ -21,9 +21,9 @@ public class UserDetailDaoIpml implements UserDetailDao{
 	}
 
 	@Override
-	public int getUserDetailInfo(UserDetailVO udvo) {
+	public UserDetailVO getUserDetailInfo(int udid) {
 		
-		return sql.selectOne(namespace + ".getUserDetailInfo", udvo);
+		return sql.selectOne(namespace + ".getUserDetailInfo", udid);
 	}
 
 }

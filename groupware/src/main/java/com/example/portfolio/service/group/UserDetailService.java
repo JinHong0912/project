@@ -19,7 +19,7 @@ public interface UserDetailService {
 	public int setUserDetail(UserDetailVO udvo);
 	
 	//사원 상세 정보 등록 정보 보기
-	public int getUserDetailInfo(UserDetailVO udvo);
+	public UserDetailVO getUserDetailInfo(int udid);
 	
 	
 

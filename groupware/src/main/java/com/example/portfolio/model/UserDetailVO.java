@@ -1,35 +1,6 @@
 package com.example.portfolio.model;
 
 public class UserDetailVO {
-//	+-----------------+--------------+------+-----+---------+----------------+
-//	| Field           | Type         | Null | Key | Default | Extra          |
-//	+-----------------+--------------+------+-----+---------+----------------+
-//	| uid             | int          | NO   | PRI | NULL    | auto_increment |
-//	| detail_id       | int          | NO   |     | NULL    |                |
-//	| userName        | varchar(20)  | NO   |     | NULL    |                |
-//	| userGender      | int          | NO   |     | NULL    |                |
-//	| userBirth       | varchar(20)  | YES  |     | NULL    |                |
-//	| lunarCalendar   | int          | YES  |     | NULL    |                |
-//	| phone           | int          | YES  |     | NULL    |                |
-//	| userPhone       | char(15)     | NO   |     | NULL    |                |
-//	| extension       | int          | YES  |     | NULL    |                |
-//	| extensionNumber | varchar(20)  | YES  |     | NULL    |                |
-//	| tele            | int          | YES  |     | NULL    |                |
-//	| telephone       | varchar(20)  | YES  |     | NULL    |                |
-//	| recruitment     | int          | YES  |     | NULL    |                |
-//	| hopeJob         | varchar(200) | YES  |     | NULL    |                |
-//	| userHeight      | varchar(20)  | YES  |     | NULL    |                |
-//	| userWeight      | varchar(20)  | YES  |     | NULL    |                |
-//	| militaryService | int          | YES  |     | NULL    |                |
-//	| religion        | int          | YES  |     | NULL    |                |
-//	| userHobby       | varchar(100) | YES  |     | NULL    |                |
-//	| userSpecialty   | varchar(100) | YES  |     | NULL    |                |
-//	| disabledCk      | int          | NO   |     | NULL    |                |
-//	| veteransCk      | int          | YES  |     | NULL    |                |
-//	| marriageCk      | int          | YES  |     | NULL    |                |
-//	| aboutMe         | text         | YES  |     | NULL    |                |
-//	| userRegdate     | datetime     | YES  |     | NULL    |                |
-//	+-----------------+--------------+------+-----+---------+----------------+
 
 
 	private int uid;
@@ -38,6 +9,7 @@ public class UserDetailVO {
 	private int userGender;
 	private String userBirth;
 	private int lunarCalendar;
+	private String CompanyNumber;
 	private int phone;
 	private String userPhone;
 	private int extension;
@@ -57,7 +29,6 @@ public class UserDetailVO {
 	private int marriageCk;
 	private String aboutMe;
 	private String userRegdate;
-	
 	
 	public int getUid() {
 		return uid;
@@ -94,6 +65,12 @@ public class UserDetailVO {
 	}
 	public void setLunarCalendar(int lunarCalendar) {
 		this.lunarCalendar = lunarCalendar;
+	}
+	public String getCompanyNumber() {
+		return CompanyNumber;
+	}
+	public void setCompanyNumber(String companyNumber) {
+		CompanyNumber = companyNumber;
 	}
 	public int getPhone() {
 		return phone;
@@ -209,7 +186,6 @@ public class UserDetailVO {
 	public void setUserRegdate(String userRegdate) {
 		this.userRegdate = userRegdate;
 	}
-	
 	
 	
 }

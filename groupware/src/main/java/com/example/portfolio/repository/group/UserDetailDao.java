@@ -8,6 +8,8 @@ public interface UserDetailDao {
 	public int setUserDetail(UserDetailVO udvo);
 	
 	//사원 상세 정보 등록 정보 보기
-	public int getUserDetailInfo(UserDetailVO udvo);
+	public UserDetailVO getUserDetailInfo(int udid);
 
+//	사원 보이는 부분
+//	public int
 }

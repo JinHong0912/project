@@ -27,37 +27,50 @@
 		INSERT INTO
 		detailInfo
 		SET
-		uid = #{uid},
-		detail_id = #{detail_id},
-		userName = #{userName},
-		userGender = #{userGender},
-		userBirth = #{userBirth},
-		lunarCalendar = #{lunarCalendar},
-		phone = #{phone},
-		userPhone = #{userPhone},
-		extension = #{extension},
+		detail_id 		= #{detail_id},
+		userName 		= #{userName},
+		userGender 		= #{userGender},
+		userBirth 		= #{userBirth},
+		CompanyNumber	= #{CompanyNumber},
+		lunarCalendar 	= #{lunarCalendar},
+		phone 			= #{phone},
+		userPhone 		= #{userPhone},
+		extension 		= #{extension},
 		extensionNumber = #{extensionNumber},
-		tele = #{tele},
-		telephone = #{telephone},
-		recruitment = #{recruitment},
-		hopeJob = #{hopeJob},
-		userHeight = #{userHeight},
-		userWeight = #{userWeight},
+		tele 			= #{tele},
+		telephone 		= #{telephone},
+		recruitment 	= #{recruitment},
+		hopeJob 		= #{hopeJob},
+		userHeight 		= #{userHeight},
+		userWeight 		= #{userWeight},
 		militaryService = #{militaryService},
-		religion = #{religion},
-		userHobby = #{userHobby},
-		userSpecialty = #{userSpecialty},
-		disabledCk = #{disabledCk},
-		veteransCk = #{veteransCk},
-		marriageCk = #{marriageCk},
-		aboutMe = #{aboutMe},
-		userRegdate = now()
+		religion 		= #{religion},
+		userHobby 		= #{userHobby},
+		userSpecialty 	= #{userSpecialty},
+		disabledCk 		= #{disabledCk},
+		veteransCk 		= #{veteransCk},
+		marriageCk 		= #{marriageCk},
+		aboutMe 		= #{aboutMe},
+		userRegdate 	= now()
 	</insert>
-
-	<!--사원 상세 정보 보는 부분 -->
-	<select id="getUserDetailInfo">
-		SELECT *  FROM detailInfo ORDER BY uid DESC limit
+<!-- 		사원 정보 보는 리스트 -->
+	<select id="getUserDetailList" resultType="userDetailvo">
+		SELECT
+			udid, userID, auth, userName, userEmail,  userPhone,department, userRank, date_format(userRegdate,'%Y-%m-%d') as userRegdate
+		
+		FROM users
 	</select>
+	
 
+
+<!-- 	사원 검색 및 카운팅 -->
+	<select id="getDetailCount" resultType="int">
+		SELECT COUNT(*) FROM detailInfo
+	</select>
+	<!--사원 상세 정보 보는 부분 -->
+	<select id="getUserDetailInfo" resultType="userDetailvo">
+		SELECT *  FROM detailInfo where udid = #{udid}
+		
+	</select>
 
 </mapper>

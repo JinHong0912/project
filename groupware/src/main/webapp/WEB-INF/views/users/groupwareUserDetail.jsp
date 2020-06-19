@@ -12,8 +12,8 @@
             <form method="post" id="" class="" action="">
 
                 <!-- ----------------------------------------------------------- -->
-    			<input type="text" name="uid" value="${sessionScope.uid}" />
-<%--     			<input type="text" name="" value="${sessionScope.uid}" /> --%>
+    			<input type="text" name="detail_id" value="${sessionScope.uid}" />
+    			
                 <!-- ----------------------------------------------------------- -->
                 <span class="float-l">
                     <button type="button" class="btn-active margin-l1" id=""

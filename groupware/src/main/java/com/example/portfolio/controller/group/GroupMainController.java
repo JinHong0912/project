@@ -67,6 +67,8 @@ public class GroupMainController {
 		int pageNum = (int) Math.ceil((double) usersCount / end);
 
 		List<UserVO> uvo = UserService.getUsersList(start, end, searchOpt, words);
+//		List<UserDetailVO> udvo = userDetailService.getUserDetailInfo(start, end, searchOpt, words);
+		
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("template", "groupware");
@@ -111,8 +113,8 @@ public class GroupMainController {
 
 		if (result > 0) {
 			sb.append("<script>");
-			sb.append("alert('상세 등록 완료 하였습니다.');");
-			sb.append("location.replace('/groupware/groupUserView');");
+			sb.append("alert('상세 등록 완료 하였습니다.감사합니다.');");
+			sb.append("location.replace('/groupware/groupUserView?uid="+udvo.getUid()+"');");
 			sb.append("</script>");
 
 		} else {
@@ -128,35 +130,36 @@ public class GroupMainController {
 
 	// 사원 등록 후 상세 정보 페이지
 	@RequestMapping("/groupUserView")
-	public ModelAndView viewGroupwareUserView() {
+	public ModelAndView viewGroupwareUserView(@RequestParam int udid) {
 
+		UserDetailVO info = userDetailService.getUserDetailInfo(udid);
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("template", "groupware");
 		mav.addObject("mypage", "userView");
-
+		mav.addObject("info", info);
 		mav.setViewName("/groupware/groupMain");
 
 		return mav;
 
 	}
 	
-	@RequestMapping("/groupViewDetailInfo")
-	public ModelAndView viewGroupViewDetailInfo(@ModelAttribute UserDetailVO udvo) {
-
-		int info = userDetailService.getUserDetailInfo(udvo);
-		
-		ModelAndView mav = new ModelAndView();
-
-		mav.addObject("template", "groupware");
-		mav.addObject("mypage", "userView");
-		mav.addObject("info", info);
-
-		mav.setViewName("/groupware/groupMain");
-
-		return mav;
-
-	}
+//	@RequestMapping("/groupViewDetailInfo")
+//	public ModelAndView viewGroupViewDetailInfo(@RequestParam int uid) {
+//
+//		UserDetailVO info = userDetailService.getUserDetailInfo(uid);
+//		
+//		ModelAndView mav = new ModelAndView();
+//
+//		mav.addObject("template", "groupware");
+//		mav.addObject("mypage", "userDetail");
+//		mav.addObject("info", info);
+//
+//		mav.setViewName("/groupware/groupMain");
+//
+//		return mav;
+//
+//	}
 
 	// 사원 메인 페이지
 	@RequestMapping("/groupUsers")
