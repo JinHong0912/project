@@ -30,17 +30,19 @@
                 <!-- 회사 소속 -->
                 <select class="" name="department" id="department">
                     <option value="0">부서를 선택하세요</option>
-                    <option value="인사">인사팀</option>
-                    <option value="기획">기획부</option>
-                    <option value="관리">총관리</option>
+                    <option value="인사팀">인사팀</option>
+                    <option value="기획팀">기획부</option>
+                    <option value="관리팀">총관리</option>
                 </select>
              
                 <!-- 직급부분 -->
                 <select class="" name="userRank" id="userRank">
                     <option value="0">직급을 선택하세요</option>
                     <option value="사원">사원</option>
-                    <option value="부장">부장</option>
+                    <option value="대리">대리</option>
+                    <option value="차장">부장</option>
                     <option value="과장">과장</option>
+                    <option value="부장">부장</option>
                 </select>
                
                 <input type="text" name="userName" id="userName" placeholder="사용자 이름" required="required" />

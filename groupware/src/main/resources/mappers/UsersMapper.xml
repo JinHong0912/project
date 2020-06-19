@@ -32,7 +32,7 @@
 			userName = #{userName},
 			userEmail = #{userEmail},
 			userPhone = #{userPhone},
-			companyNumber =#{companyNumber},
+			companyNumber = #{companyNumber},
 			userRegdate = now()
 			
 			<selectKey order="AFTER" resultType="int" keyProperty="uid">

@@ -35,11 +35,44 @@ public class UserController {
 	@RequestMapping(value = "/groupRegister", method = RequestMethod.POST)
 	@ResponseBody
 	public String setRegister(@ModelAttribute UserVO uvo) {// Model 저장 View 화면 이동 //ModelAndView 저장도 하면서 보여 주는 것이다
-		int result = userService.setUser(uvo);
+		
 				
 		StringBuilder sb = new StringBuilder();
 		String msg = "회원가입이 완료 되었습니다.";
 		String error = "시스템 오류입니다. 관리자에게 문의하세요.";
+		
+		//사내번호 만들기 (companyNumber)
+		String department_Numder = "";
+		String userRank_Number = "";
+		
+		String company_NumberYear = "20";
+		
+		if(uvo.getDepartment().equals("인사팀")) {
+			department_Numder ="10";
+		}else if(uvo.getDepartment().equals("기획팀")) {
+			department_Numder = "20";
+		}
+		
+		company_NumberYear += department_Numder;
+		
+		if(uvo.getUserRank().equals("사원")) {
+			userRank_Number ="10";
+		}else if(uvo.getUserRank().equals("대리")) {
+			userRank_Number = "20";
+		}else if(uvo.getUserRank().equals("차장")) {
+			userRank_Number = "30";
+		}else if(uvo.getUserRank().equals("과장")) {
+			userRank_Number = "40";
+		}else if(uvo.getUserRank().equals("부장")) {
+			userRank_Number = "50";
+					
+		}
+		
+		company_NumberYear += userRank_Number + uvo.getUid();
+		
+		uvo.setCompanyNumber(company_NumberYear);
+		
+		int result = userService.setUser(uvo);
 		
 		if( result > 0) {
 			sb.append("<script>");

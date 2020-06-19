@@ -1,0 +1,248 @@
+ctrl + shift + t : 종료한 화면 다시 켜기
+groupware-202006016.sql : 처음 작업
+groupware.dump :백업 mysqldump -uroot -p groupware > 202006015.sql
+
+use groupware;
+
+##회원 정보 테이블
+CREATE TABLE users(
+uid int not null auto_increment primary key,
+userID varchar(20) not null,
+passwd varchar(20) not null,
+department varchar(10) not null,
+userRank varchar(10) not null,
+userName varchar(20) not null,
+userEmail varchar(50),
+userPhone char(15) not null,
+auth varchar(20) default '일반',
+userRegdate datetime
+); 
+
+
+##회원 상세 정보 테이블
+회사사번
+권한 부여
+사원아이디
+사원비밀번호
+부서
+직급
+사원명
+이메일
+성별
+생년월일
+양력
+010
+C.P
+사번
+내선번호
+Tel
+채용형채
+희망직무
+키/
+몸무게 
+병역구분(int)
+종교(int)
+취미 
+특기
+장애인 여부(int)
+보훈대상자 여부(int)
+결혼여부(int)
+최종학력 int
+졸업년도 
+졸업학과
+대학교
+학점
+가족 관계
+내용
+/*----------DB 에 넣기-------------------------------*/
+
+CREATE TABLE newDetailInfo(
+uid int not null auto_increment primary key,
+detail_id int not null,
+grp_companyNumber varchar(50) not null, 
+grp_userID varchar(20) not null,
+grp_userPasswd varchar(20) not null,
+grp_department varchar(10) not null,
+grp_userRank varchar(10) not null,
+grp_userName varchar(20) not null,
+grp_userEmail varchar(50),
+grp_userGender varchar(10) not null,
+grp_userBirth varchar(20),
+grp_lunarCalendar varchar(20),
+grp_phone varchar(10),
+grp_userPhone char(15) not null,
+grp_extension varchar(10),
+grp_extensionNumber varchar(20),
+grp_tele varchar(10),
+grp_telephone varchar(20),
+grp_recruitment varchar(20),
+grp_hopeJob varchar(200),
+grp_userHeight varchar(20),
+grp_userWeight varchar(20),
+grp_militaryService varchar(8),
+grp_religion varchar(8),
+grp_userHobby varchar(100),
+grp_userSpecialty varchar(100),
+grp_disabledCk varchar(20) not null,
+grp_veteransCk varchar(20),
+grp_marriageCk varchar(20),
+grp_finalEducation varchar(20),
+grp_graduationYear varchar(25),
+grp_graduate varchar(30),
+grp_university varchar(30),
+grp_grades varchar(20),
+grp_graduation text,
+grp_aboutMe text,
+grp_userRegdate datetime
+);
+/*----------------------------------------------------------------*/
+
+
+
+
+
+
+/*----------------------------------------------------------------*/
+사용자 상세 정보 테이블 만들기
+
+가족사항
+관계
+성명
+생년월일
+직업
+동기부여
+
+CREATE TABLE familyPart(
+fp_relation varchar(10),
+fp_name varchar(20),
+fp_dateBirth varchar(20),
+fp_job varchar(100),
+fp_motivation text
+);
+
+/*----------------------------------------------------------------*/
+
+학력사항
+졸업일
+학교명
+전공
+학점
+졸업상태
+
+
+Graduation day
+School name
+Major
+Grades
+Graduation status
+
+CREATE TABLE educationalPart(
+ep_graduationDay varchar(10),
+ep_schoolName varchar(20),
+ep_major varchar(20),
+ep_grades varchar(100),
+ep_graduationStatus varchar(100)
+);
+/*----------------------------------------------------------------*/
+근무사항
+
+근무 날짜
+근무 부서
+근무 직위
+담당업무
+내용
+
+
+Working date
+Working department
+spot
+Responsibilities
+Contents
+
+CREATE TABLE workingPart(
+wp_workingDate varchar(20),
+wp_workingDepartment varchar(25),
+wp_workingSpot varchar(20),
+wp_responsibilities varchar(100),
+wp_workingContents text
+);
+/*----------------------------------------------------------------*/
+자격사항 /어학 사항
+
+자격
+면허명
+취득일자
+발급기관명
+내용
+
+Qualification
+Qualification
+License name
+Date of acquisition
+Issuing Organization Name
+Contents
+
+CREATE TABLE qualificationPart(
+qp_qualification varchar(20),
+qp_licenseName varchar(30),
+qp_dateAcquisition varchar(20),
+qp_organizationName varchar(50),
+qp_licenseContents text
+);
+/*----------------------------------------------------------------*/
+병력사항
+군별 
+계급
+입영일자
+전역일자
+전역 사요
+
+militaryPart
+group
+rank
+Date of entry
+discharge date
+dischargeContents
+militaryContents
+
+CREATE TABLE militaryPart(
+mp_militaryGroup varchar(10),
+mp_militaryRank varchar(10),
+mp_enlistmentDate varchar(20),
+mp_dischargeDate varchar(20),
+mp_dischargeContents text
+);
+
+/*----------------------------------------------------------------*/
+
+게시판 관리(board)
+
+##게시판 관리 테이블(Board(b-))
+
+CREATE TABLE board(
+bid int not null auto_increment primary key,
+subject varchar(300) not null,
+writer varchar(20) not null,
+boardContent text,
+boardType varchar(20),
+hit int default 0,
+fileName varchar(300),
+fileOriName varchar(300),
+fileUrl varchar(500),
+boardRegdate datetime
+);
+
+INSERT INTO	
+			users
+		SET
+			userID = 'test',
+			passwd = '1234',
+			department = '관리',
+			userRank = '사원',	
+			userName = '테스트',
+			userEmail = 'test @ test.com',
+			userPhone = '010-1234-1234',
+			userRegdate = now();
+
+
+			
