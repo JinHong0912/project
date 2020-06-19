@@ -44,18 +44,17 @@
                     </tr>
                     <tr class="tr-35 font-size6">
                         <td class="td-7 center underline td-color-01 noto bold">회사 사번</td>
-                        <td colspan="5" class="td-13 padding-lr5">
+                        <td colspan="3" class="td-13 padding-lr5">
                             <input type="text" name="userName" id="userName" class="width-100 noto" required
                                 autofocus />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">권한 부여</td>
-                        <td colspan="3" class="td-13 padding-lr5">
+                        <td colspan="5" class="td-13 padding-lr5">
                             <select name="userGender" id="userGender" class="width-100 height-30">
                                 <option value="0">권한을 선택하세요 </option>
                                 <option value="1">일반 </option>
                                 <option value="2">퇴직</option>
-                                <option value="3">승인대기중</option>
-                                <option value="4">관리자</option>
+                                <option value="3">관리자</option>
                             </select>
                         </td>
                     </tr>
@@ -214,29 +213,38 @@
                         </td>
                     </tr>
                     <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">최종 학력</td>
+                        <td class="td-7 center underline td-color-01 noto bold">최종학력</td>
                         <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
+                            <select name="veteransCk " id="veteransCk " class="width-100 height-30">
+                                <option value="0">졸업</option>
+                                <option value="1">퇴학</option>
+                                <option value="2">휴학</option>
+                                <option value="3">중퇴</option>
+                            </select>
+                        </td>
+                        <td class="td-7 center underline td-color-01 noto bold">졸업년도</td>
+                        <td class="td-13 padding-lr5">
+                            <input type="text" name="userSpecialty " id="userSpecialty " class="width-100 noto" />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">졸업학과</td>
                         <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
+                            <input type="text" name="userSpecialty " id="userSpecialty " class="width-100 noto" />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">대학교</td>
                         <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
+                            <input type="text" name="userSpecialty " id="userSpecialty " class="width-100 noto" />
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">학점</td>
                         <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
+                            <input type="text" name="userSpecialty " id="userSpecialty " class="width-100 noto" />
                         </td>
-
+                      
                     </tr>
                     <tr class="tr-35 font-size6">
                         <td class="td-7 center underline td-color-01 noto bold">가족관계</td>
                         <td class="td-13 padding-lr5 padding-tb2" colspan="9">
                             <textarea name="aboutMe " id="aboutMe" class="width-100 height-100 noto padding-a5"
-                                placeholder="가족 관계를 입력하세요."></textarea>
+                                placeholder="가족 관계를 입력하세요. ex) 가족관계 / 성함 / 직업"></textarea>
                         </td>
                     </tr>
                     <tr style="width:100%;height:1px;background-color:#eee;">

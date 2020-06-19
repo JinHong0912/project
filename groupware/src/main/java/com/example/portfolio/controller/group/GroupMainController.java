@@ -176,4 +176,18 @@ public class GroupMainController {
 
 	}
 
+	// 새로운 사원 관리자 등록
+	@RequestMapping("/userNewAdmin")
+	public ModelAndView viewGroupwareUserNewAdmin() {
+
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("template", "groupware");
+		mav.addObject("mypage", "userNewAdmin");
+
+		mav.setViewName("/groupware/groupMain");
+
+		return mav;
+
+	}
 }

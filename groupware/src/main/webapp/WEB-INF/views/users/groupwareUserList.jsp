@@ -26,7 +26,7 @@
                     <button type="button" class="btn-active margin-l1" id=""
                         onClick="javascript:location.href='/groupware/groupwareUserList'">전체목록</button>
                     <button type="button" class="btn-off margin-l-2" id=""
-                        onClick="location.href='/groupware/groupwareUserDetail'">사원등록</button>
+                        onClick="location.href='/groupware/userNewAdmin'">사원등록</button>
                     <span class="info-sName gray td-line-he1"> <strong>[총 사원 수는 : ${usersCount} 명 입니다.] </strong></span>
                 </span>
                 <span class="float-r">
@@ -88,7 +88,7 @@
                         </select>
                     </td>
                     <td>
-                        <button type="button" class="btn-off margin-l-2" id="" onClick="location.href=''">수정</button>
+                        <button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail'">상세</button>
                         <button type="button" class="btn-off margin-l-2" id="" onClick="location.href=''">삭제</button>
                         <!--<button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail'">메일 보내기</button> -->
 

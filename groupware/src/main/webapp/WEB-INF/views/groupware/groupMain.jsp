@@ -110,6 +110,12 @@
             <%@ include file = "../users/groupwareUserList.jsp" %>
         </c:if>
 
+<!--          	신규 사원 관리자 등록   페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'userNewAdmin'}">
+            <%@ include file = "../users/groupUserRegisterAdmin.jsp" %>
+        </c:if>
+
+
 <!--          	사원  상세정보 등록  페이지  -->
          <c:if test="${template eq 'groupware' && mypage eq 'userDetail'}">
             <%@ include file = "../users/groupwareUserDetail.jsp" %>
