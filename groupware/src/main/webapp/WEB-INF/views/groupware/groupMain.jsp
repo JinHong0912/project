@@ -37,9 +37,9 @@
                 </div>
                 <ul id="tree">
                     <li>
-                        <img src="../css/fileImg/folder-closed.gif" />사원 정보
+                        <img src="../css/fileImg/folder-closed.gif" />사원 조회 
                         <ul>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 상세 정보</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/groupwareUserList">사원 조회</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">사원 전화번호</a></li>
                             
                             <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/groupwareUserList">사원 관리</a></li>
@@ -47,10 +47,10 @@
                         </ul>
                     </li>
                     <li>
-                        <img src="../css/fileImg/folder-closed.gif" />게시판 관리
+                        <img src="../css/fileImg/folder-closed.gif" />게시판
                         <ul>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">게시판 조회</a></li>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">댓글 전용 조회</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="/board/getBoardList">게시판 조회</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">댓글 조회</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">게시판 관리</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">댓글 관리</a></li>
                         </ul>
@@ -127,6 +127,16 @@
         </c:if>        
         
         
+<!-- -------------------------------board--------------------------------------------------------         -->
+<!--         게시판 목 부분 -->
+        <c:if test="${template eq 'groupBoard' && mypage eq 'getBoardList'}">
+            <%@ include file = "../board/groupBoardList.jsp" %>
+        </c:if>        
+                     
+<!--         게시판 입력 부분 -->
+        <c:if test="${template eq 'groupBoard' && mypage eq 'setBoardContents'}">
+            <%@ include file = "../board/groupSetBoradContents.jsp" %>
+        </c:if>        
         
         
 		<!-- 달라지는 부분 -->

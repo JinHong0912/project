@@ -229,6 +229,9 @@ ul > li {
 .td-40 {
     width:40%;
 }
+.td-55 {
+    width:55%;
+}
 
 /* align */
 .center {
@@ -273,6 +276,16 @@ button {
 
 .btn-on {
     width:75px;
+    height:35px;
+    text-align:center;
+    line-height:37px;
+    color:#fff;
+    border-radius: 2px;
+    border:1px solid transparent;
+    background-color:#3f51b5;
+}
+.btn-on1 {
+    width:175px;
     height:35px;
     text-align:center;
     line-height:37px;

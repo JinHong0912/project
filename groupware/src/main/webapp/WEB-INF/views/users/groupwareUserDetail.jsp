@@ -74,9 +74,9 @@
                         <td class="td-13 padding-lr5">
                             <select name="userGender" id="userGender" class="width-100 height-30">
                                 <option value="0">부서를 선택하세요 </option>
-                                <option value="1">인사팀 </option>
-                                <option value="2">기획팀</option>
-                                <option value="2">관리팀</option>
+                                <option value="인사팀">인사팀 </option>
+                                <option value="기획팀">기획팀</option>
+                                <option value="관리팀">관리팀</option>
                             </select>
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">직급</td>

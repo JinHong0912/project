@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.example.portfolio.model.UserDetailVO;
 
 @Repository
-public class UserDetailDaoIpml implements UserDetailDao{
+public class UserDetailDaoImpl implements UserDetailDao{
 
 	@Autowired	SqlSession sql; //디비 접속 객체 가져다 쓰기 (@Autowired)
 
