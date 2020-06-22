@@ -95,11 +95,11 @@ public class UserServiceImpl implements UserService{
 	}
 //
 //
-//	@Override
-//	public UserVO getUsersView(int uid) {
-//	
-//		return dao.getUsersView(uid);
-//	}
+	@Override
+	public UserVO getUsersView(int uid) {
+	
+		return dao.getUsersView(uid);
+	}
 //
 //
 //	@Override

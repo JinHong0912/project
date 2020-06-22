@@ -18,6 +18,7 @@ public class UserVO {
 //	+-------------+-------------+------+-----+---------+----------------+
 
 	private int uid;
+	private int udid;
 	private String userID;
 	private String passwd;
 	private String department;

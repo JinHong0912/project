@@ -24,11 +24,11 @@ public class UserDetailServiceImpl implements UserDetailService {
 		return dao.setUserNewInfo(udvo);
 	}
 
-//	@Override
-//	public UserDetailVO setUserNewInfo(int uid) {
-//		// TODO Auto-generated method stub
-//		return dao.getUserDetailInfo(uid);
-//	}
+	@Override
+	public UserDetailVO getNewUserDetail(int uid) {
+		// TODO Auto-generated method stub
+		return dao.getNewUserDetail(uid);
+	}
 
 	
 

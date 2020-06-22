@@ -87,20 +87,27 @@ public class GroupMainController {
 
 	}
 
-	// 사원 상세등록 페이지
-	@RequestMapping("/groupwareUserDetail")
-	public ModelAndView viewUserDetail() {
+
+	
+	
+	
+	// 새로운 사원 관리자 등록
+	@RequestMapping("/userNewAdmin")
+	public ModelAndView viewGroupwareUserNewAdmin() {
 
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("template", "groupware");
-		mav.addObject("mypage", "userDetail");
+		mav.addObject("mypage", "userNewAdmin");
 
 		mav.setViewName("/groupware/groupMain");
 
 		return mav;
 
 	}
+	
+	
+	
 
 	// 사원 상세 들어가는 페이지
 	@RequestMapping("/setUserNewInfo")
@@ -116,14 +123,14 @@ public class GroupMainController {
 		if (result > 0) {
 			sb.append("<script>");
 			sb.append("alert('상세 등록 완료 하였습니다.감사합니다.');");
-			sb.append("location.replace('/groupware/groupUserView?uid="+udvo.getUid()+"');");
+			sb.append("location.replace('/groupware/getUsersView?uid="+uvo.getUid()+"');");
 //			sb.append("location.replace('/groupware/groupUserView');");
 			sb.append("</script>");
 
 		} else {
 			sb.append("<script>");
 			sb.append("alert('상세등록이 오류 입니다. 관리자 게시판에 문의 하세요.');");
-			sb.append("location.replace('/groupware/groupwareUserDetail');");
+			sb.append("location.replace('/groupware/getUsersView');");
 			sb.append("</script>");
 		}
 
@@ -132,20 +139,38 @@ public class GroupMainController {
 	}
 
 	// 사원 등록 후 상세 정보 페이지
-//	@RequestMapping("/groupUserView")
-//	public ModelAndView viewGroupwareUserView(@RequestParam int udid) {
-//
-//		UserDetailVO info = userDetailService.getUserDetailInfo(udid);
+//	@RequestMapping("/groupUsersView")
+//	public ModelAndView viewGroupwareUserView(@ModelAttribute int uid) {
+//		
+////		UserVO uvo = UserService.get
+//		
 //		ModelAndView mav = new ModelAndView();
 //
 //		mav.addObject("template", "groupware");
 //		mav.addObject("mypage", "userView");
-//		mav.addObject("info", info);
+////		mav.addObject("info", info);
 //		mav.setViewName("/groupware/groupMain");
 //
 //		return mav;
 //
 //	}
+//	
+	@RequestMapping("/getUsersView")
+	public ModelAndView getUsersView(@RequestParam int uid) {
+		UserDetailVO udtvo = userDetailService.getNewUserDetail(uid);
+		UserVO uvo = UserService.getUsersView(uid);
+		
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("template","groupware");
+		mav.addObject("mypage","userView");
+		mav.addObject("usersInfo",udtvo);
+		mav.addObject("usersView",uvo);
+		mav.setViewName("/groupware/groupMain");
+		return mav;
+
+	}
+	
 	
 //	@RequestMapping("/groupViewDetailInfo")
 //	public ModelAndView viewGroupViewDetailInfo(@RequestParam int uid) {
@@ -179,14 +204,14 @@ public class GroupMainController {
 
 	}
 
-	// 새로운 사원 관리자 등록
-	@RequestMapping("/userNewAdmin")
-	public ModelAndView viewGroupwareUserNewAdmin() {
+	// 사원 상세등록 페이지
+	@RequestMapping("/groupwareUserDetail")
+	public ModelAndView viewUserDetail() {
 
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("template", "groupware");
-		mav.addObject("mypage", "userNewAdmin");
+		mav.addObject("mypage", "userDetail");
 
 		mav.setViewName("/groupware/groupMain");
 

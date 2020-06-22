@@ -47,19 +47,9 @@ public class UserDetailVO {
 	
 	private int uid;
 	private int udid;
-	private String grp_companyNumber;
-	private String grp_auth;
-	private String grp_userID;
-	private String grp_userPasswd;
-	private String grp_department;
-	private String grp_userRank;
-	private String grp_userName;
-	private String grp_userEmail;
 	private String grp_userGender;
 	private String grp_userBirth;
 	private String grp_lunarCalendar;
-	private String grp_phone;
-	private String grp_userPhone;
 	private String grp_extension;
 	private String grp_extensionNumber;
 	private String grp_tele;
@@ -96,54 +86,6 @@ public class UserDetailVO {
 	public void setUdid(int udid) {
 		this.udid = udid;
 	}
-	public String getGrp_companyNumber() {
-		return grp_companyNumber;
-	}
-	public void setGrp_companyNumber(String grp_companyNumber) {
-		this.grp_companyNumber = grp_companyNumber;
-	}
-	public String getGrp_auth() {
-		return grp_auth;
-	}
-	public void setGrp_auth(String grp_auth) {
-		this.grp_auth = grp_auth;
-	}
-	public String getGrp_userID() {
-		return grp_userID;
-	}
-	public void setGrp_userID(String grp_userID) {
-		this.grp_userID = grp_userID;
-	}
-	public String getGrp_userPasswd() {
-		return grp_userPasswd;
-	}
-	public void setGrp_userPasswd(String grp_userPasswd) {
-		this.grp_userPasswd = grp_userPasswd;
-	}
-	public String getGrp_department() {
-		return grp_department;
-	}
-	public void setGrp_department(String grp_department) {
-		this.grp_department = grp_department;
-	}
-	public String getGrp_userRank() {
-		return grp_userRank;
-	}
-	public void setGrp_userRank(String grp_userRank) {
-		this.grp_userRank = grp_userRank;
-	}
-	public String getGrp_userName() {
-		return grp_userName;
-	}
-	public void setGrp_userName(String grp_userName) {
-		this.grp_userName = grp_userName;
-	}
-	public String getGrp_userEmail() {
-		return grp_userEmail;
-	}
-	public void setGrp_userEmail(String grp_userEmail) {
-		this.grp_userEmail = grp_userEmail;
-	}
 	public String getGrp_userGender() {
 		return grp_userGender;
 	}
@@ -162,18 +104,7 @@ public class UserDetailVO {
 	public void setGrp_lunarCalendar(String grp_lunarCalendar) {
 		this.grp_lunarCalendar = grp_lunarCalendar;
 	}
-	public String getGrp_phone() {
-		return grp_phone;
-	}
-	public void setGrp_phone(String grp_phone) {
-		this.grp_phone = grp_phone;
-	}
-	public String getGrp_userPhone() {
-		return grp_userPhone;
-	}
-	public void setGrp_userPhone(String grp_userPhone) {
-		this.grp_userPhone = grp_userPhone;
-	}
+	
 	public String getGrp_extension() {
 		return grp_extension;
 	}

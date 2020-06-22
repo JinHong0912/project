@@ -47,12 +47,12 @@ public class GroupBoardController {
 	// 게시판 등록하기 
 		@RequestMapping(value = "/setBoardContents", method = RequestMethod.GET)
 		public ModelAndView getArticle(@ModelAttribute UserVO uvo) {
-		int uservo = userService.setUser(uvo);
+	
 		
 		ModelAndView mav = new ModelAndView();
 
-		mav.addObject("template", uvo);
-		mav.addObject("mypage", "getBoardList");
+		mav.addObject("template","groupBoard");
+		mav.addObject("mypage", "setBoardContents");
 		mav.setViewName("/groupware/groupMain");
 
 		return mav;
@@ -100,8 +100,8 @@ public class GroupBoardController {
 			String msg = "입력하신 게시물이 저장되었습니다.";
 
 			sb.append("<script>");// <script>
-			sb.append("alert('" + msg + "tst : " + bvo.getGrpboard_ref() + "');");// alert('');
-			sb.append("location.replace('/board/getBoardList" + bvo.getBid() + "')");
+			sb.append("alert('" + msg +"');");// alert('');
+			sb.append("location.replace('/board/getBoardList')");
 			sb.append("</script>");// </script>
 
 			return sb.toString();

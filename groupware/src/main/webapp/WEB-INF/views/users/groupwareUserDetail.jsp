@@ -36,7 +36,7 @@
             <%--         <input type="hidden" name="audit_id" value="${auditId}" /> --%>
         </div>
         <!-- 개인 신상 -->
-        <form method="post" action="/groupware/groupSetUser">
+        <form method="post" action="">
             <div id="personalIdentity" class="info show">
                 <table>
                     <tr style="width:100%;height:1px;background-color:#eee;">

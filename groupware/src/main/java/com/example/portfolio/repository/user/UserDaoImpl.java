@@ -76,12 +76,12 @@ public class UserDaoImpl implements UserDao{
 		return sql.selectOne(namespace + ".loginCheck" , uvo);
 	}
 //
-//	@Override
-//	public UserVO getUsersView(int uid) {
-//		
-//		return sql.selectOne(namespace + ".getUsersView", uid);
-//	}
-//
+	@Override
+	public UserVO getUsersView(int uid) {
+		
+		return sql.selectOne(namespace + ".getUsersView", uid);
+	}
+
 //	@Override
 //	public int userUpdate(UserVO uvo) {
 //		

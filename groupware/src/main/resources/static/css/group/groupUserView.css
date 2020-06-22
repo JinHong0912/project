@@ -60,7 +60,7 @@ table{
 }
 /* ------------------------------------------------- */
 
-table{
+.font-style1{
     font-family: 'Nunito', sans-serif;
 }
 
@@ -92,6 +92,7 @@ table{
 .bg-color3{background-color: #3da4ab;}
 .bg-color4{background-color: #f7f7f7;}
 .bg-color5{background-color: #ff9c71;}
+.td-color-01{ background-color: #e7e7e7;}
 
 /* 글자색 */
 .font-color1{color: #fff;}
@@ -105,7 +106,11 @@ table{
 .font-size4{font-size: 22px;}
 .font-size5{font-size: 20px;}
 .font-size6{font-size: 12px;}
-.font-size7{font-size: 10px;}
+.font-size{font-size: 10px;}
+.font-size8{font-size: 17px;}
+.font-size9{font-size: 15px;}
+.font-size10{font-size: 30px;}
+.font-size11{font-size: 10px;}
 
 
 /* 글자 굵기 */

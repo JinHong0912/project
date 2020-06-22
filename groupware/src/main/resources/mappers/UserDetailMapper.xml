@@ -59,7 +59,7 @@
 	</insert>
 	<!-- 사원 정보 보는 리스트 -->
 	<select id="getNewUserDetail" resultType="userDetailvo">
-		SELECT * FROM newDetailInfo WHERE uid = ${uid}
+		SELECT * FROM newDetailInfo WHERE udid = #{uid}
 	</select>
 
 

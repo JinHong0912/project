@@ -21,7 +21,7 @@
 
 
 	<!-- register 회원가입 입력하는 부분 -->
-	<insert id ="setUser">
+	<insert id ="setUser" parameterType="userDetailvo">
 		INSERT INTO	
 			users
 		SET
@@ -35,11 +35,9 @@
 			companyNumber = #{companyNumber},
 			userRegdate = now()
 			
-			<selectKey order="AFTER" resultType="int" keyProperty="uid">
+			<selectKey order="AFTER" resultType="int" keyProperty="uid" >
 			 select uid FROM users WHERE userID = #{userID} order by uid desc 
-			 limit 1
-			
-				
+			 limit 1 
 			</selectKey>
 	
 	</insert>
@@ -84,6 +82,11 @@
 	<select id="getUsersCount" resultType="int">
 		SELECT COUNT(*) FROM users
 			<include refid="search"></include>
+	</select>	
+
+<!-- 	사원들 검색 과 페이징 처리 -->
+	<select id="getUsersView" resultType="uservo">
+		SELECT  * FROM users WHERE uid = #{uid}
 	</select>	
 
 	

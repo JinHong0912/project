@@ -21,9 +21,9 @@ public class UserDetailDaoImpl implements UserDetailDao{
 	}
 
 	@Override
-	public UserDetailVO getUserDetailInfo(int uid) {
+	public UserDetailVO getNewUserDetail(int uid) {
 		
-		return sql.selectOne(namespace + ".getUserDetailInfo", uid);
+		return sql.selectOne(namespace + ".getNewUserDetail", uid);
 	}
 
 }

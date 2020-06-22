@@ -29,7 +29,7 @@ public interface UserDao {
 //	//public 출력 loginCheck(입력) 한개가 아닐때 배열을 사용!!
 	public UserVO loginCheck(UserVO uvo);
 //	
-//	public UserVO getUsersView(int uid);
+	public UserVO getUsersView(int uid);
 //	
 //	// 회원 수정 부분
 //	public int userUpdate(UserVO uvo);

@@ -70,7 +70,7 @@
                     <td>${usersList.department}</td>
                     <td>${usersList.userRank}</td>
                     <td>
-                    <a href="/groupware/groupUserView?detail_id=${usersList.uid}"  class="">${usersList.userName}</a>
+                    <a href="/groupware/getUsersView?uid=${usersList.uid}"  class="">${usersList.userName}</a>
                     </td>
                     <td>4567</td>
                     <td>${usersList.userPhone}</td>
