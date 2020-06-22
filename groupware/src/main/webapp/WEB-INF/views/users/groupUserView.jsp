@@ -33,7 +33,7 @@
                 </form>
             </div>
             <div class="">
-                <h3 class="noto font-14 tomato margin-t20 margin-b5"><i class="fas fa-circle"></i> 게시판 입니다</h3>
+                <h3 class="noto font-14 tomato margin-t20 margin-b5"><i class="fas fa-circle"></i> 사원 정보 입니다.</h3>
                 <%--         <input type="hidden" name="audit_id" value="${auditId}" /> --%>
             </div>
             <!-- 개인 신상 -->
@@ -142,23 +142,23 @@
                             </td>
                             <td class="td-7 center underline td-color-01 noto bold">종교</td>
                             <td class="td-13 padding-lr5" >
-                                ${usersInfo.grp_militaryService}
+                                ${usersInfo.grp_disabledCk}
                             </td>
                             <td class="td-7 center underline td-color-01 noto bold">보훈대상자여부</td>
                             <td class="td-13 padding-lr5" colspan="2">
-                                ${usersInfo.grp_militaryService}
+                                ${usersInfo.grp_veteransCk}
                             </td>
                             
                         </tr>
                         <tr class="tr-35 font-size6">
                             <td class="td-7 center underline td-color-01 noto bold">결혼여부</td>
                             <td class="td-13 padding-lr5">
-                                ${usersInfo.grp_militaryService}
+                                ${usersInfo.grp_marriageCk}
                             </td>
 
                             <td class="td-7 center underline td-color-01 noto bold">장애인여부</td>
                             <td class="td-13 padding-lr5">
-                                ${usersInfo.grp_militaryService}
+                                ${usersInfo.grp_finalEducation}
                             </td>
                            
 
@@ -167,15 +167,15 @@
                         <tr class="tr-35 font-size6">
                             <td class="td-7 center underline td-color-01 noto bold">최종학력</td>
                             <td class="td-13 padding-lr5">
-                                ${usersInfo.grp_finalEducation}
+                                ${usersInfo.grp_graduationYear}
                             </td>
                             <td class="td-7 center underline td-color-01 noto bold">졸업년도</td>
                             <td class="td-13 padding-lr5">
-                                ${usersInfo.grp_graduationYear}
+                                ${usersInfo.grp_graduate}
                             </td>
                             <td class="td-7 center underline td-color-01 noto bold">졸업학과</td>
                             <td class="td-13 padding-lr5">
-                                ${usersInfo.grp_graduate}
+                                ${usersInfo.grp_grades}
                             </td>
                             <td class="td-7 center underline td-color-01 noto bold">대학교</td>
                             <td class="td-13 padding-lr5">
@@ -191,7 +191,7 @@
                             <td class="td-7 center underline td-color-01 noto bold">가족관계</td>
                             <td class="td-13 padding-lr5 padding-tb2" colspan="9">
                                 <textarea name="grp_graduation" id="grp_graduation" class="width-100 height-100 noto padding-a5"
-                                    placeholder="가족 관계를 입력하세요. ex) 가족관계 / 성함 / 직업"></textarea>
+                                    placeholder="가족 관계를 입력하세요. ex) 가족관계 / 성함 / 직업">${usersInfo.grp_graduation}</textarea>
                             </td>
                         </tr>
                         <tr style="width:100%;height:1px;background-color:#eee;">
@@ -202,7 +202,7 @@
                             <td class="td-7 center underline td-color-01 noto bold">내용</td>
                             <td class="td-13 padding-lr5 padding-tb2" colspan="9">
                                 <textarea name="grp_aboutMe" id="grp_aboutMe" class="width-100 height-100 noto padding-a5"
-                                    placeholder="하고 싶은 말을 적으세요."></textarea>
+                                    placeholder="하고 싶은 말을 적으세요.">${usersInfo.grp_aboutMe}</textarea>
                             </td>
                         </tr>
                         <tr style="width:100%;height:1px;background-color:#eee;">
@@ -358,7 +358,7 @@
                         </table>
                         <div class="btn-grp center margin-t10">
                             <button type="submit" class="btn-active margin-l1" id="">내용저장</button>
-                            <button type="reset" class="btn-off tab margin-l-2" id="">새로고침</button>
+                            <button type="reset" class="btn-off margin-l-2" id="">새로고침</button>
                         </div>
                     </form>
                 </div>
