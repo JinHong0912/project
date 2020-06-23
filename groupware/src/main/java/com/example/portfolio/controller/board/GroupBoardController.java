@@ -68,18 +68,18 @@ public class GroupBoardController {
 				//첨부파일 저장 되는 위치
 				//Spring 보안 상 : 외부파일을 접근해서 저장
 				//논리적 경로 : /../ 물리적 :c , d
-				String grpboard_fileUrl= "/Users/jinhong/git/project/groupware/src/main/resources/static/allimg//";
+				String grpBoard_fileUrl= "/Users/jinhong/git/project/groupware/src/main/resources/static/allimg/";
 				
 				//파일 이름 변경
-				String grpboard_fileName = files.getOriginalFilename();
-				String grpboard_fileNameExtension = FilenameUtils.getExtension(grpboard_fileName).toLowerCase();
+				String grpBoard_fileName = files.getOriginalFilename();
+				String grpBoard_fileNameExtension = FilenameUtils.getExtension(grpBoard_fileName).toLowerCase();
 				
 				File destinationFile = null;
 				String destinationFileName;
 				
 				do{
-					destinationFileName = RandomStringUtils.randomAlphanumeric(32)+ "."+ grpboard_fileNameExtension;
-					destinationFile = new File(grpboard_fileUrl + destinationFileName);
+					destinationFileName = RandomStringUtils.randomAlphanumeric(32)+ "."+ grpBoard_fileNameExtension;
+					destinationFile = new File(grpBoard_fileUrl + destinationFileName);
 				
 				
 				}while(destinationFile.exists());
@@ -87,9 +87,9 @@ public class GroupBoardController {
 				destinationFile.getParentFile().mkdirs();
 				files.transferTo(destinationFile);
 				
-				bvo.setGrpboard_fileName(destinationFileName);
-				bvo.setGrpboard_fileOriName(grpboard_fileName);
-				bvo.setGrpboard_fileUrl(grpboard_fileUrl);
+				bvo.setGrpBoard_fileName(destinationFileName);
+				bvo.setGrpBoard_fileOriName(grpBoard_fileName);
+				bvo.setGrpBoard_fileUrl(grpBoard_fileUrl);
 					
 					
 					

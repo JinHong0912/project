@@ -1,5 +1,6 @@
 package com.example.portfolio.controller.user;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,12 @@ public class UserController {
 	@RequestMapping(value = "/groupRegister", method = RequestMethod.POST)
 	@ResponseBody
 	public String setRegister(@ModelAttribute UserVO uvo) {// Model 저장 View 화면 이동 //ModelAndView 저장도 하면서 보여 주는 것이다
+		int company_NumberYear = Calendar.getInstance().get(Calendar.YEAR);
+		
+		UserVO selectUvo = new UserVO();
+		selectUvo.setDepartment(uvo.getDepartment());
+		selectUvo.setUserRegdate(company_NumberYear+"-01-01 00:00:00");
+		int oidcompany = userService.getCompanynumber(selectUvo);
 		
 				
 		StringBuilder sb = new StringBuilder();
@@ -45,32 +52,35 @@ public class UserController {
 		String department_Numder = "";
 		String userRank_Number = "";
 		
-		String company_NumberYear = "20";
 		
-		if(uvo.getDepartment().equals("인사팀")) {
-			department_Numder ="10";
-		}else if(uvo.getDepartment().equals("기획팀")) {
-			department_Numder = "20";
+		String company_Number = "";
+		if(oidcompany==0) {
+			company_NumberYear-=2000;
+			company_Number = ""+company_NumberYear;
+			if(uvo.getDepartment().equals("인사팀")) {
+				department_Numder ="10";
+			}else if(uvo.getDepartment().equals("기획팀")) {
+				department_Numder = "20";
+			}
+			
+			company_Number += department_Numder+"0001";
+			
+//			if(uvo.getUserRank().equals("사원")) {
+//				userRank_Number ="10";
+//			}else if(uvo.getUserRank().equals("대리")) {
+//				userRank_Number = "20";
+//			}else if(uvo.getUserRank().equals("차장")) {
+//				userRank_Number = "30";
+//			}else if(uvo.getUserRank().equals("과장")) {
+//				userRank_Number = "40";
+//			}else if(uvo.getUserRank().equals("부장")) {
+//				userRank_Number = "50";
+//			}	
+		}else {//2020년도 -01-01 00:00:00; 시에 가입 한 사람들에서 사내 번호 만들기 처음애 값이 있으면 안들어 가고 없으면 들어 간다 =.
+			oidcompany++;
+			company_Number=""+oidcompany;
 		}
-		
-		company_NumberYear += department_Numder;
-		
-		if(uvo.getUserRank().equals("사원")) {
-			userRank_Number ="10";
-		}else if(uvo.getUserRank().equals("대리")) {
-			userRank_Number = "20";
-		}else if(uvo.getUserRank().equals("차장")) {
-			userRank_Number = "30";
-		}else if(uvo.getUserRank().equals("과장")) {
-			userRank_Number = "40";
-		}else if(uvo.getUserRank().equals("부장")) {
-			userRank_Number = "50";
-					
-		}
-		
-		company_NumberYear += userRank_Number + uvo.getUid();
-		
-		uvo.setCompanyNumber(company_NumberYear);
+		uvo.setCompanyNumber(company_Number);
 		
 		int result = userService.setUser(uvo);
 		

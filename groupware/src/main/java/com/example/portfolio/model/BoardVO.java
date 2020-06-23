@@ -23,100 +23,85 @@ public class BoardVO {
 //	+-------------------------+--------------+------+-----+---------+----------------+
 
 	
-	private int bid;                     
-	private String grpboard_subject;        
-	private String grpboard_writer;         
-	private String grpboard_userDepartment; 
-	private String grpboard_userRank;       
-	private String grpboard_userEamil;      
-	private String grpboard_type;           
-	private String grpboard_content;        
-	private String grpboard_regdate;        
-	private int grpboard_hit;            
-	private String grpboard_fileName;       
-	private String grpboard_fileOriName;    
-	private String grpboard_fileUrl;        
+	private int bid;    
+	private int grp_id; 
+	private String grpBoard_subject;        
+	private String grpBoard_writer;             
+	private String grpBoard_boardType;           
+	private String grpBoard_boardContents;        
+	private String grpBoard_boardRegdate;        
+	private int grpBoard_hit;            
+	private String grpBoard_fileName;       
+	private String grpBoard_fileOriName;    
+	private String grpBoard_fileUrl;        
 	private int grpboard_ref;            
 	private int grpboard_re_step;        
 	private int grpboard_re_level;
-
 	public int getBid() {
 		return bid;
 	}
 	public void setBid(int bid) {
 		this.bid = bid;
 	}
-	public String getGrpboard_subject() {
-		return grpboard_subject;
+	public int getGrp_id() {
+		return grp_id;
 	}
-	public void setGrpboard_subject(String grpboard_subject) {
-		this.grpboard_subject = grpboard_subject;
+	public void setGrp_id(int grp_id) {
+		this.grp_id = grp_id;
 	}
-	public String getGrpboard_writer() {
-		return grpboard_writer;
+	public String getGrpBoard_subject() {
+		return grpBoard_subject;
 	}
-	public void setGrpboard_writer(String grpboard_writer) {
-		this.grpboard_writer = grpboard_writer;
+	public void setGrpBoard_subject(String grpBoard_subject) {
+		this.grpBoard_subject = grpBoard_subject;
 	}
-	public String getGrpboard_userDepartment() {
-		return grpboard_userDepartment;
+	public String getGrpBoard_writer() {
+		return grpBoard_writer;
 	}
-	public void setGrpboard_userDepartment(String grpboard_userDepartment) {
-		this.grpboard_userDepartment = grpboard_userDepartment;
+	public void setGrpBoard_writer(String grpBoard_writer) {
+		this.grpBoard_writer = grpBoard_writer;
 	}
-	public String getGrpboard_userRank() {
-		return grpboard_userRank;
+	public String getGrpBoard_type() {
+		return grpBoard_boardType ;
 	}
-	public void setGrpboard_userRank(String grpboard_userRank) {
-		this.grpboard_userRank = grpboard_userRank;
+	public void setGrpBoard_type(String grpBoard_type) {
+		this.grpBoard_boardType  = grpBoard_type;
 	}
-	public String getGrpboard_userEamil() {
-		return grpboard_userEamil;
+	public String getGrpBoard_boardContents() {
+		return grpBoard_boardContents;
 	}
-	public void setGrpboard_userEamil(String grpboard_userEamil) {
-		this.grpboard_userEamil = grpboard_userEamil;
+	public void setGrpBoard_boardContents(String grpBoard_boardContents) {
+		this.grpBoard_boardContents = grpBoard_boardContents;
 	}
-	public String getGrpboard_type() {
-		return grpboard_type;
+	public String getGrpBoard_boardRegdate() {
+		return grpBoard_boardRegdate;
 	}
-	public void setGrpboard_type(String grpboard_type) {
-		this.grpboard_type = grpboard_type;
+	public void setGrpBoard_boardRegdate(String grpBoard_boardRegdate) {
+		this.grpBoard_boardRegdate = grpBoard_boardRegdate;
 	}
-	public String getGrpboard_content() {
-		return grpboard_content;
+	public int getGrpBoard_hit() {
+		return grpBoard_hit;
 	}
-	public void setGrpboard_content(String grpboard_content) {
-		this.grpboard_content = grpboard_content;
+	public void setGrpBoard_hit(int grpBoard_hit) {
+		this.grpBoard_hit = grpBoard_hit;
 	}
-	public String getGrpboard_regdate() {
-		return grpboard_regdate;
+	public String getGrpBoard_fileName() {
+		return grpBoard_fileName;
 	}
-	public void setGrpboard_regdate(String grpboard_regdate) {
-		this.grpboard_regdate = grpboard_regdate;
+	public void setGrpBoard_fileName(String grpBoard_fileName) {
+		this.grpBoard_fileName = grpBoard_fileName;
 	}
-	public int getGrpboard_hit() {
-		return grpboard_hit;
+	public String getGrpBoard_fileOriName() {
+		return grpBoard_fileOriName;
 	}
-	public void setGrpboard_hit(int grpboard_hit) {
-		this.grpboard_hit = grpboard_hit;
+	public void setGrpBoard_fileOriName(String grpBoard_fileOriName) {
+		this.grpBoard_fileOriName = grpBoard_fileOriName;
 	}
-	public String getGrpboard_fileName() {
-		return grpboard_fileName;
+	public String getGrpBoard_fileUrl() {
+		return grpBoard_fileUrl;
 	}
-	public void setGrpboard_fileName(String grpboard_fileName) {
-		this.grpboard_fileName = grpboard_fileName;
-	}
-	public String getGrpboard_fileOriName() {
-		return grpboard_fileOriName;
-	}
-	public void setGrpboard_fileOriName(String grpboard_fileOriName) {
-		this.grpboard_fileOriName = grpboard_fileOriName;
-	}
-	public String getGrpboard_fileUrl() {
-		return grpboard_fileUrl;
-	}
-	public void setGrpboard_fileUrl(String grpboard_fileUrl) {
-		this.grpboard_fileUrl = grpboard_fileUrl;
+	public void setGrpBoard_fileUrl(String grpBoard_fileUrl) {
+		this.grpBoard_fileUrl = grpBoard_fileUrl;
 	}
 	public int getGrpboard_ref() {
 		return grpboard_ref;
@@ -135,8 +120,8 @@ public class BoardVO {
 	}
 	public void setGrpboard_re_level(int grpboard_re_level) {
 		this.grpboard_re_level = grpboard_re_level;
-	}      
-	
+	}
+
 	
 	
 }

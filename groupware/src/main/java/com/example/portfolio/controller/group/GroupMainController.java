@@ -186,7 +186,9 @@ public class GroupMainController {
 	
 	@RequestMapping("/userUpdateView")
 	@ResponseBody
-	public String userUpdateView(@ModelAttribute UserVO uvo,@ModelAttribute UserDetailVO udvo) {
+	public String userUpdateView(@ModelAttribute UserVO uvo,@ModelAttribute UserDetailVO udvo,@RequestParam int uid,@RequestParam int udid) {
+		
+		
 		UserService.userUpdateView(uvo);
 		userDetailService.updateDetailView(udvo);
 		StringBuilder sb = null;

@@ -28,19 +28,17 @@
 
 	<insert id="setBoardContents">
 		INSERT INTO
-			groupBoard
+			grp_board
 			SET
-			grpboard_subject = #{grpboard_subject},
-			grpboard_writer = #{grpboard_writer},
-			grpboard_userDepartment = #{grpboard_userDepartment},
-			grpboard_userRank = #{grpboard_userRank},
-			grpboard_userEamil = #{grpboard_userEamil},
-			grpboard_type = #{grpboard_type},
-			grpboard_content = #{grpboard_content},
-			grpboard_hit = #{grpboard_hit},
-			grpboard_fileName = #{grpboard_fileName},
-			grpboard_fileOriName = #{grpboard_fileOriName},
-			grpboard_fileUrl = #{grpboard_fileUrl},
+			grp_id = #{grp_id},
+			grpBoard_subject = #{grpBoard_subject},
+			grpBoard_writer = #{grpBoard_writer},
+			grpBoard_boardType  = #{grpBoard_boardType},
+			grpBoard_boardContents = #{grpBoard_boardContents},
+			grpBoard_hit = #{grpBoard_hit},
+			grpBoard_fileName = #{grpBoard_fileName},
+			grpBoard_fileOriName = #{grpBoard_fileOriName},
+			grpBoard_fileUrl = #{grpBoard_fileUrl},
 			grpboard_ref = #{grpboard_ref},
 			grpboard_re_step = #{grpboard_re_step},
 			grpboard_re_level = #{grpboard_re_level}

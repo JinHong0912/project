@@ -109,6 +109,13 @@ public class UserServiceImpl implements UserService{
 	}
 
 
+	@Override
+	public int getCompanynumber(UserVO uvo) {
+		// TODO Auto-generated method stub
+		return dao.getCompanynumber(uvo);
+	}
+
+
 
 
 

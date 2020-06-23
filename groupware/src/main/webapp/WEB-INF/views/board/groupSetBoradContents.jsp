@@ -23,7 +23,7 @@
 
     <div class="tbl-wrap">
             <div class="btn-grp">
-                <form method="post" id="" class="" action="/setBoardContents" enctype="multipart/form-data">
+                
                     <span class="float-l">
                         <!-- <button type="button" class="btn-active margin-l1" id=""
                             onClick="location.href='insa.html'">전체목록</button> -->
@@ -35,92 +35,58 @@
                         <!-- <button type="button" class="btn-on margin-l-2" id="" onClick="location.href=''">개인신상</button> -->
                     </span>
                     <div class="clearfix"></div>
-                </form>
+                
             </div>
             <div class="">
                 <!-- <h3 class="noto font-14 tomato margin-t20 margin-b5"><i class="fas fa-circle"></i>게시판입니.</h3> -->
                 <button type="button" class="btn-active margin-l1 margin-b5" id=""
                             onClick="location.href='insa.html'">전체목록</button>
             </div>
-            <form method="post" action="">
+            <form method="post" id="" class="" action="/board/setBoardContents" enctype="multipart/form-data">
+               <input type="hidden" name="grpBoard_writer" value="${sessionScope.uid}"/>
                 <table class="font-size4">
                     <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
+                        <td colspan=""></td>
                     </tr>
                     <tr class="tr-35">
-                        <td class="td-7 center underline td-color-01 noto bold">게시물 제목</td>
-                        <td class="td-13 padding-lr5" colspan="9" >
-                            <input type="text" name="grpboard_subject" id="grpboard_subject" class="width-100 noto" required autofocus />    
+                        <td class="td-3 center underline td-color-01 noto bold">게시물 제목</td>
+                        <td class="td-13 padding-lr5" colspan="2" >
+                            <input type="text" name="grpBoard_subject" id="grpboard_subject" class="width-100 noto" required autofocus />    
                         </td>
                         
                        
                     </tr>
                     <!-- -->
                     <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
+                        <td colspan=""></td>
                     </tr>
-                    <tr class="tr-35">
-                        <td class="td-7 center underline td-color-01 noto bold">작성자</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="" id="" class="width-100 noto" placeholder="${sessionScope.userName}"/>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">부서</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="" id="" class="width-100 height-30">
-                                <option value="0">부서를 선택하세요</option>
-                                <option value="1">인사부</option>
-                                <option value="2">기획부</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">직급</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="" id="" class="width-100 height-30">
-                                <option value="0">직급을 선택하세요</option>
-                                <option value="1">사원</option>
-                                <option value="2">대리</option>
-                                <option value="3">과장</option>
-                                <option value="4">부장</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">작성일자</td>
-                        <td class="td-13 padding-lr5" colspan="3">
-                            <input type="text" name="grpboard_regdate" id="grpboard_regdate" class="width-100 noto" placeholder="" />
-                        </td>
-                     
-                    </tr>
+                  
                     <!---->
                     <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
+                        <td colspan=""></td>
                     </tr>
                     <tr class="tr-35">
-                        <td class="td-7 center underline td-color-01 noto bold">게시물 형태</td>
-                        <td class="td-13 padding-lr5" colspan="3">
-                            <select name="grpboard_type" id="grpboard_type" class="width-100 height-30">
+                        <td class="td-3 center underline td-color-01 noto bold">게시물 형태</td>
+                        <td class="td-13 padding-lr5" colspan="">
+                            <select name="grpBoard_boardType" id="grpboard_type" class="width-100 height-30">
                                 <option value="0">게시물 형태를 선택 하세요</option>
-                                <option value="1">새소식</option>  
-                                <option value="2">공지사항</option>  
-                                <option value="3">업무사항</option>  
+                                <option value="새소식">새소식</option>  
+                                <option value="공지사항">공지사항</option>  
+                                <option value="업무사항">업무사항</option>  
                             </select>
                         </td>
                 
-                        <td class="td-7 center underline td-color-01 noto bold">작성자 이메일</td>
-                        <td class="td-13 padding-lr5" colspan="4">
-                            <input type="text" name="grpboard_userEamil" id="grpboard_userEamil" class="width-100 noto" placeholder="${sessionScope.userEmail}" />
-                        </td>
-                        <td class="td-3 right" >
-                            <button type="button" class="btn-on1 " id="" onClick="location.href=''">주소록</button>
-                        </td>
                         
                      
                     </tr>
                     <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
+                        <td colspan=""></td>
                     </tr>
                     <!---->
                     <tr class="tr-35">
-                        <td class="td-7 center underline td-color-01 noto bold">게시물 내용</td>
-                            <td class="width-100 padding-lr-10" colspan="9">
-                                <textarea name="content" id="editor"></textarea></td>
+                        <td class="td-3 center underline td-color-01 noto bold">게시물 내용</td>
+                            <td class="width-100 padding-lr-10" colspan="2">
+                                <textarea name="grpBoard_boardContents" id="editor"></textarea></td>
                                     <!--------글쓰기에 필요한 부분 ---------->
                                     <script>
                                         CKEDITOR.replace("editor");
@@ -129,9 +95,9 @@
                                     <!---+-------------------------+--->
                     </tr>
                     <tr class="tr-35">
-                        <td class="td-7 center underline td-color-01 noto bold">첨부 파일</td>
-                        <td class="td-13 padding-lr5" colspan="9">
-                            <input type="file" name="files" id="" class="width-100 noto" required autofocus />    
+                        <td class="td-3 center underline td-color-01 noto bold">첨부 파일</td>
+                        <td class="td-13 padding-lr5" colspan="2">
+                            <input type="file" name="files" id="" class="width-100 noto"  autofocus />    
                         </td>
 <!--                         <td class="td-3 right" > -->
 <!--                             <button type="button" class="btn-on  margin-r5" id="" onClick="location.href=''">파일 첨부</button> -->
@@ -145,7 +111,7 @@
                     </tr>
                    
                     <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
+                        <td colspan="2"></td>
                     </tr>
                 </table>
                 <div class="btn-grp left margin-t10">

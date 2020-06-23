@@ -99,11 +99,18 @@
 		UPDATE users SET
 		passwd = #{passwd},
 		department = #{department},
-		userRank = #{userRank },
+		userRank = #{userRank},
 		userName = #{userName},
 		userEmail = #{userEmail},
 		userPhone = #{userPhone}
 		WHERE uid = #{uid}
 	</update>
-
+	
+	<!--  	사원 번호 만들기 -->
+	<select id="getCompanynumber" resultType="int">
+			SELECT 
+			 	 ifnull(max(companyNumber),0)
+			FROM users WHERE department = #{department} and  userRegdate > #{userRegdate}
+	
+	</select>
 </mapper>

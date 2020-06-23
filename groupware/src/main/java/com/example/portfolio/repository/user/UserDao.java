@@ -34,5 +34,8 @@ public interface UserDao {
 //	// 회원 수정 부분
 	public int userUpdateView(UserVO uvo);
 	
-
+	//사원번호 만들기
+	 public int getCompanynumber(UserVO uvo);
+	
+	
 }

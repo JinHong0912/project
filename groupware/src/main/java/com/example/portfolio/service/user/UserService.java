@@ -35,4 +35,6 @@ public interface UserService {
 	public UserVO getUsersView(int uid);
 //	
 	public int userUpdateView(UserVO uvo);
+	
+	public int getCompanynumber(UserVO uvo);
 }
