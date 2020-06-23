@@ -87,10 +87,6 @@ public class GroupMainController {
 
 	}
 
-
-	
-	
-	
 	// 새로운 사원 관리자 등록
 	@RequestMapping("/userNewAdmin")
 	public ModelAndView viewGroupwareUserNewAdmin() {
@@ -139,22 +135,6 @@ public class GroupMainController {
 	}
 
 	// 사원 등록 후 상세 정보 페이지
-//	@RequestMapping("/groupUsersView")
-//	public ModelAndView viewGroupwareUserView(@ModelAttribute int uid) {
-//		
-////		UserVO uvo = UserService.get
-//		
-//		ModelAndView mav = new ModelAndView();
-//
-//		mav.addObject("template", "groupware");
-//		mav.addObject("mypage", "userView");
-////		mav.addObject("info", info);
-//		mav.setViewName("/groupware/groupMain");
-//
-//		return mav;
-//
-//	}
-//	
 	@RequestMapping("/getUsersView")
 	public ModelAndView getUsersView(@RequestParam int uid) {
 		UserDetailVO udtvo = userDetailService.getNewUserDetail(uid);
@@ -171,23 +151,6 @@ public class GroupMainController {
 
 	}
 	
-	
-//	@RequestMapping("/groupViewDetailInfo")
-//	public ModelAndView viewGroupViewDetailInfo(@RequestParam int uid) {
-//
-//		UserDetailVO info = userDetailService.getUserDetailInfo(uid);
-//		
-//		ModelAndView mav = new ModelAndView();
-//
-//		mav.addObject("template", "groupware");
-//		mav.addObject("mypage", "userDetail");
-//		mav.addObject("info", info);
-//
-//		mav.setViewName("/groupware/groupMain");
-//
-//		return mav;
-//
-//	}
 
 	// 사원 메인 페이지
 	@RequestMapping("/groupUsers")
@@ -204,18 +167,48 @@ public class GroupMainController {
 
 	}
 
-	// 사원 상세등록 페이지
+	// 사원 상세 수정 페이지
 	@RequestMapping("/groupwareUserDetail")
-	public ModelAndView viewUserDetail() {
-
+	public ModelAndView viewUserDetail(@RequestParam int uid) {
+		UserDetailVO udtvo = userDetailService.getNewUserDetail(uid);
+		UserVO uvo = UserService.getUsersView(uid);
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("template", "groupware");
 		mav.addObject("mypage", "userDetail");
-
+		mav.addObject("usersInfo",udtvo);
+		mav.addObject("usersView",uvo);
 		mav.setViewName("/groupware/groupMain");
 
 		return mav;
 
 	}
+	
+	@RequestMapping("/userUpdateView")
+	@ResponseBody
+	public String userUpdateView(@ModelAttribute UserVO uvo,@ModelAttribute UserDetailVO udvo) {
+		UserService.userUpdateView(uvo);
+		userDetailService.updateDetailView(udvo);
+		StringBuilder sb = null;
+
+				sb = new StringBuilder();
+				sb.append("<script>");
+				sb.append("alert('사원정보가 정상적으로 수정 되었습니다.');");
+				sb.append("window.location.replace('/groupware/getUsersView?uid="+udvo.getUdid()+"');");
+				sb.append("</script>");
+		
+//			sb = new StringBuilder();
+//			sb.append("<script>");
+//			sb.append("alert('사원 정보가 수정 되지 않았습니다. 관리자에게 문의 하세요')");
+//			sb.append("window.location.replace('/groupware/groupwareUserList')");
+//			sb.append("</script>");
+//			
+			
+		
+		return sb.toString();
+
+	}
+	
+	
+	
 }

@@ -37,10 +37,10 @@
                 </div>
                 <ul id="tree">
                     <li>
-                        <img src="../css/fileImg/folder-closed.gif" />사원 조회 
+                        <img src="../css/fileImg/folder-closed.gif" />사원 정보
                         <ul>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/getUsersView?uid=${sessionScope.uid}">사원 정보</a></li>
-                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">사내 전화번호</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/getUsersView?uid=${sessionScope.uid}">사원 개인정보</a></li>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">사내 연락망 조회</a></li>
                             
                             <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/groupwareUserList">사원 관리</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">관리자 정보 수정</a></li>
@@ -125,6 +125,13 @@
          <c:if test="${template eq 'groupware' && mypage eq 'userView'}">
             <%@ include file = "../users/groupUserView.jsp" %>
         </c:if>        
+        
+<!--          	사원 개인 정보 확인 페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'userDetailView'}">
+            <%@ include file = "../users/groupwareUserList.jsp" %>
+        </c:if>        
+        
+        
         
         
 <!-- -------------------------------board--------------------------------------------------------         -->

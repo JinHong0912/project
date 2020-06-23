@@ -30,6 +30,12 @@ public class UserDetailServiceImpl implements UserDetailService {
 		return dao.getNewUserDetail(uid);
 	}
 
+	@Override
+	public int updateDetailView(UserDetailVO udvo) {
+		// TODO Auto-generated method stub
+		return dao.updateDetailView(udvo);
+	}
+
 	
 
 //	@Override

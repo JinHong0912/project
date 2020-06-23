@@ -102,11 +102,13 @@ public class UserServiceImpl implements UserService{
 	}
 //
 //
-//	@Override
-//	public int userUpdate(UserVO uvo) {
-//	
-//		return dao.userUpdate(uvo);
-//	}
+	@Override
+	public int userUpdateView(UserVO uvo) {
+	
+		return dao.userUpdateView(uvo);
+	}
+
+
 
 
 

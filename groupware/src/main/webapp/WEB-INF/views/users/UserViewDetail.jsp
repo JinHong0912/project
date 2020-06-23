@@ -176,10 +176,10 @@
                             <td class="td-13 padding-lr5">
                                 ${usersInfo.grp_university}
                             </td>
-<!--                             <td class="td-7 center underline td-color-01 noto bold">학점</td> -->
-<!--                             <td class="td-13 padding-lr5"> -->
-<!--                                 <input type="text" name="grp_grades" id="grp_grades" class="width-100 noto" /> -->
-<!--                             </td> -->
+                            <td class="td-7 center underline td-color-01 noto bold">학점</td>
+                            <td class="td-13 padding-lr5">
+                                <input type="text" name="grp_grades" id="grp_grades" class="width-100 noto" />
+                            </td>
                           
                         </tr>
                         <tr style="width:100%;height:1px;background-color:#eee;">
@@ -208,7 +208,7 @@
                         </tr>
                     </table>
                     <div class="btn-grp center margin-t10">
-                        <button type="submit" class="btn-on margin-l1" id="">내용저장</button>
+                        <button type="submit" class="btn-active margin-l1" id="">내용저장</button>
                         <button type="reset" class="btn-off margin-l-2" id="">새로고침</button>
                     </div>
                  </form>

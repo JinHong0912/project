@@ -34,5 +34,5 @@ public interface UserService {
 //
 	public UserVO getUsersView(int uid);
 //	
-//	public int userUpdate(UserVO uvo);
+	public int userUpdateView(UserVO uvo);
 }

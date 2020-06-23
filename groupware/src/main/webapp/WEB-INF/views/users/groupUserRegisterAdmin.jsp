@@ -230,10 +230,10 @@
                         <td class="td-13 padding-lr5">
                             <input type="text" name="grp_university" id="grp_university" class="width-100 noto" />
                         </td>
-                        <td class="td-7 center underline td-color-01 noto bold">학점</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="grp_grades" id="grp_grades" class="width-100 noto" />
-                        </td>
+<!--                         <td class="td-7 center underline td-color-01 noto bold">학점</td> -->
+<!--                         <td class="td-13 padding-lr5"> -->
+<!--                             <input type="text" name="grp_grades" id="grp_grades" class="width-100 noto" /> -->
+<!--                         </td> -->
                       
                     </tr>
                     <tr class="tr-35 font-size6">

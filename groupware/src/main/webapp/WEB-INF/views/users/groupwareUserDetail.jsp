@@ -18,8 +18,8 @@
                 <span class="float-l">
                     <button type="button" class="btn-active margin-l1" id=""
                         onClick="location.href='/groupware/groupwareUserList'">전체목록</button>
-                    <button type="button" class="btn-off margin-l-2" id=""
-                        onClick="location.href='insa_register.html'">사원등록</button>
+                    <!-- <button type="button" class="btn-off margin-l-2" id=""
+                        onClick="location.href='insa_register.html'">사원등록</button> -->
                 </span>
                 <span class="float-r ">
                     <a href="#personalIdentity" class="btn-off display-style margin-l-3 active" id="">개인신상</a>
@@ -32,235 +32,224 @@
             </form>
         </div>
         <div class="">
-            <h3 class="noto font-14 tomato margin-t20 margin-b5"><i class="fas fa-circle"></i> 신상정보</h3>
+            <h3 class="noto font-14 tomato margin-t20 margin-b5"><i class="fas fa-circle"></i> 개인 신상 정보</h3>
             <%--         <input type="hidden" name="audit_id" value="${auditId}" /> --%>
         </div>
         <!-- 개인 신상 -->
-        <form method="post" action="">
-            <div id="personalIdentity" class="info show">
-                <table>
-                    <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
-                    </tr>
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">회사 사번</td>
-                        <td colspan="5" class="td-13 padding-lr5">
-                            <input type="text" name="userName" id="userName" class="width-100 noto" required
-                                autofocus />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">권한 부여</td>
-                        <td colspan="3" class="td-13 padding-lr5">
-                            <select name="userGender" id="userGender" class="width-100 height-30">
-                                <option value="0">권한을 선택하세요 </option>
-                                <option value="1">일반 </option>
-                                <option value="2">퇴직</option>
-                                <option value="3">승인대기중</option>
-                                <option value="4">관리자</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">사원아이디</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userName" id="userName" class="width-100 noto" required
-                                autofocus />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">사원 비밀번호</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userName" id="userName" class="width-100 noto" required
-                                autofocus />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">부서</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="userGender" id="userGender" class="width-100 height-30">
-                                <option value="0">부서를 선택하세요 </option>
-                                <option value="인사팀">인사팀 </option>
-                                <option value="기획팀">기획팀</option>
-                                <option value="관리팀">관리팀</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">직급</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="userGender" id="userGender" class="width-100 height-30">
-                                <option value="0">직급을 선택하세요</option>
-                                <option value="1">사원</option>
-                                <option value="2">부장</option>
-                                <option value="3">사장</option>
-                                <option value="3">관리자</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">이메일</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userName" id="userName" class="width-100 noto" required
-                                autofocus />
-                        </td>
+		<form method="post" action="/groupware/userUpdateView">
+			<input type="hidden" name="udid" value="${usersInfo.udid}" />
+			<div id="personalIdentity" class="info show">
+				<table>
+					<tr style="width: 100%; height: 1px; background-color: #eee;">
+						<td colspan="10"></td>
+					</tr>
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">회사 사번</td>
+						<td colspan="5" class="td-13 padding-lr5">
+							${usersView.companyNumber}</td>
+						<td class="td-7 center underline td-color-01 noto bold">권한 부여</td>
+						<td colspan="3" class="td-13 padding-lr5">${usersView.auth}</td>
+					</tr>
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">사원아이디</td>
+						<td class="td-13 padding-lr5">${usersView.userID}</td>
+						<td class="td-7 center underline td-color-01 noto bold">사원
+							비밀번호</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="userName" id="userName" class="width-100 noto" autofocus />
+						</td>
+						<td class="td-7 center underline td-color-01 noto bold">부서</td>
+						<td class="td-13 padding-lr5"><input type="text" name=""
+							id="" class="width-50 noto" placeholder="${usersView.department}"
+							autofocus /> <select name="department" id="department"
+							class="width-50 height-30">
+								<option value="0">부서를 선택하세요</option>
+								<option value="인사팀">인사팀</option>
+								<option value="기획팀">기획팀</option>
+								<option value="관리팀">관리팀</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">직급</td>
+						<td class="td-13 padding-lr5"><input type="text" name=""
+							id="" class="width-50 noto" placeholder="${usersView.userRank}"
+							autofocus /> <select name="userRank" id="userRank"
+							class="width-50 height-30">
+								<option value="0">직급을 선택하세요</option>
+								<option value="1">사원</option>
+								<option value="2">부장</option>
+								<option value="3">사장</option>
+								<option value="3">관리자</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">이메일</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="userEmail" id="userEmail" class="width-100 noto"
+							placeholder="${usersView.userEmail}" autofocus /></td>
 
-                    </tr>
-                    <tr class="tr-35 font-size6 ">
-                        <td class="td-7 center underline td-color-01 noto bold">사원명/성별</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userName" id="userName" class="width-50 noto" required autofocus />
-                            <select name="userGender" id="userGender" class="width-50 height-30">
-                                <option value="0">남자</option>
-                                <option value="1">여자</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">생년월일</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userBirth" id="" class="width-50 noto" />
-                            <select name="lunarCalendar" id="lunarCalendar" class="width-50 height-30">
-                                <option value="0">양력</option>
-                                <option value="1">음력</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">C.P</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="phone" id="phone" class="width-30 height-30">
-                                <option value="0">010</option>
-                                <option value="1">011</option>
-                            </select>
-                            <input type="text" name="userPhone" id="userPhone" class="width-70 noto" required />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">내선번호</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="extension" id="extension" class="width-30 height-30">
-                                <option value="0">051</option>
-                            </select>
-                            <input type="text" name="extensionNumber " id="extensionNumber " class="width-70 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">Tel</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="tele" id="tele" class="width-30 height-30">
-                                <option value="0">051</option>
-                            </select>
-                            <input type="text" name="telephone" id="telephone" class="width-70 noto" />
-                        </td>
-                    </tr>
-                    <!-- -->
-                    <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
-                    </tr>
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">채용형태</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="recruitment " id="recruitment " class="width-100 height-30">
-                                <option value="0">인턴채용</option>
-                                <option value="1">공개채용</option>
-                                <option value="2">특별채용</option>
-                                <option value="3">수시채용</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">희망직무</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="hopeJob" id="hopeJob" class="width-100 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">키/몸무게</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userHeight" id="userHeight" class="width-50 noto"
-                                placeholder="cm" />
-                            <input type="text" name="userWeight" id="userWeight" class="width-50 noto"
-                                placeholder="kg" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">병역구분</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="militaryService" id="militaryService" class="width-100 height-30">
-                                <option value="0">병역필</option>
-                                <option value="1">병역미필</option>
-                                <option value="2">공익</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">종교</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="religion" id="religion" class="width-100 height-30">
-                                <option value="0">무교</option>
-                                <option value="1">불교</option>
-                                <option value="2">기독교</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <!---->
-                    <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
-                    </tr>
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">취미</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">특기</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userSpecialty " id="userSpecialty " class="width-100 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">장애인여부</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="disabledCk " id="disabledCk " class="width-100 height-30">
-                                <option value="0">비장애</option>
-                                <option value="1">장애</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">보훈대상자여부</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="veteransCk " id="veteransCk " class="width-100 height-30">
-                                <option value="0">비대상</option>
-                                <option value="1">대상</option>
-                            </select>
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">결혼여부</td>
-                        <td class="td-13 padding-lr5">
-                            <select name="marriageCk " id="marriageCk " class="width-100 height-30">
-                                <option value="0">미혼</option>
-                                <option value="1">기혼</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">최종 학력</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">졸업학과</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">대학교</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
-                        </td>
-                        <td class="td-7 center underline td-color-01 noto bold">학점</td>
-                        <td class="td-13 padding-lr5">
-                            <input type="text" name="userHobby " id="userHobby " class="width-100 noto" />
-                        </td>
+					</tr>
+					<tr class="tr-35 font-size6 ">
+						<td class="td-7 center underline td-color-01 noto bold">사원명/성별</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="userName" id="userName" class="width-50 noto"
+							placeholder="${usersView.userName}" autofocus /> 
+							<select	name="grp_userGender" id="userGender" class="width-50 height-30">
+								<option value="0">남자</option>
+								<option value="1">여자</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">생년월일</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_userBirth" id="grp_userBirth" class="width-50 noto"
+							placeholder=" ${usersInfo.grp_userBirth}" /> <select
+							name="grp_lunarCalendar" id="lunarCalendar"
+							class="width-50 height-30">
+								<option value="0">양력</option>
+								<option value="1">음력</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">C.P</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="userPhone" id="userPhone" class="width-100 noto"
+							placeholder="${usersView.userPhone}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">내선번호</td>
+						<td class="td-13 padding-lr5 font-wei1 noto bold">
+							${usersInfo.grp_extension} - ${usersInfo.grp_extensionNumber}</td>
+						<td class="td-7 center underline td-color-01 noto bold">Tel</td>
+						<td class="td-13 padding-lr5 noto"><select name="tele"
+							id="tele" class="width-30 height-30">
+								<option value="0">051</option>
+						</select> <input type="text" name="telephone" id="telephone"
+							class="width-70 noto" /></td>
+					</tr>
+					<!-- -->
+					<tr style="width: 100%; height: 1px; background-color: #eee;">
+						<td colspan="10"></td>
+					</tr>
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">채용형태</td>
+						<td class="td-13 padding-lr5 bold noto">
+							${usersInfo.grp_recruitment}</td>
+						<td class="td-7 center underline td-color-01 noto bold">희망직무</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_hopeJob" id="grp_hopeJob" class="width-100 noto"
+							placeholder="${usersInfo.grp_hopeJob}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">키/몸무게</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_userHeight" id="" class="width-50 noto"
+							placeholder="${usersInfo.grp_userHeight} cm" /> <input
+							type="text" name="grp_userWeight" id="grp_userWeight"
+							class="width-50 noto"
+							placeholder="${usersInfo.grp_userWeight} kg" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">병역구분</td>
+						<td class="td-13 padding-lr5 bold noto">
+							${usersInfo.grp_militaryService}</td>
+						<td class="td-7 center underline td-color-01 noto bold">종교</td>
+						<td class="td-13 padding-lr5"><input type="text" name=""
+							id="religion" class="width-50 noto"
+							placeholder="${usersInfo.grp_religion}" /> <select
+							name="grp_religion" id="grp_religion" class="width-50 height-30">
+								<option value="무교">무교</option>
+								<option value="불교">불교</option>
+								<option value="기독교">기독교</option>
+						</select></td>
+					</tr>
+					<!---->
+					<tr style="width: 100%; height: 1px; background-color: #eee;">
+						<td colspan="10"></td>
+					</tr>
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">취미</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_userHobby" id="grp_userHobby" class="width-100 noto"
+							placeholder="${usersInfo.grp_userHobby}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">특기</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_userSpecialty" id="grp_userSpecialty"
+							class="width-100 noto"
+							placeholder="${usersInfo.grp_userSpecialty}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">장애인여부</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_disabledCk" id="" class="width-50 noto"
+							placeholder="${usersInfo.grp_disabledCk}" /> <select
+							name="grp_disabledCk" id="grp_disabledCk"
+							class="width-50 height-30">
+								<option value="비장애">비장애</option>
+								<option value="장애">장애</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">보훈대상자여부</td>
+						<td class="td-13 padding-lr5"><input type="text" name=""
+							id=" " class="width-50 noto"
+							placeholder="${usersInfo.grp_veteransCk}" /> <select
+							name="grp_veteransCk" id="veteransCk"
+							class="width-50 height-30">
+								<option value="비대상">비대상</option>
+								<option value="대상">대상</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">결혼여부</td>
+						<td class="td-13 padding-lr5"><input type="text" name=""
+							id=" " class="width-50 noto"
+							placeholder="${usersInfo.grp_marriageCk}" /> <select
+							name="grp_marriageCk" id="grp_marriageCk"
+							class="width-50 height-30">
+								<option value="0">미혼</option>
+								<option value="1">기혼</option>
+						</select></td>
+					</tr>
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">최종학력</td>
+						<td class="td-13 padding-lr5"><input type="text" name=""
+							id=" " class="width-50 noto"
+							placeholder="${usersInfo.grp_finalEducation}" /> <select
+							name="grp_finalEducation" id="grp_finalEducation"
+							class="width-50 height-30">
+								<option value="졸업">졸업</option>
+								<option value="퇴학">퇴학</option>
+								<option value="휴학">휴학</option>
+								<option value="중퇴">중퇴</option>
+						</select></td>
+						<td class="td-7 center underline td-color-01 noto bold">졸업년도</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_graduationYear" id="grp_graduationYear"
+							class="width-100 noto"
+							placeholder="${usersInfo.grp_graduationYear}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">졸업학과</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_graduate" id="grp_graduate" class="width-100 noto"
+							placeholder="${usersInfo.grp_graduate}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">대학교</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_university" id="grp_university" class="width-100 noto"
+							placeholder="${usersInfo.grp_university}" /></td>
+						<td class="td-7 center underline td-color-01 noto bold">학점(선택사항)</td>
+						<td class="td-13 padding-lr5"><input type="text"
+							name="grp_grades" id="grp_grades" class="width-100 noto" /></td>
 
-                    </tr>
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">가족관계</td>
-                        <td class="td-13 padding-lr5 padding-tb2" colspan="9">
-                            <textarea name="aboutMe " id="aboutMe" class="width-100 height-100 noto padding-a5"
-                                placeholder="가족 관계를 입력하세요."></textarea>
-                        </td>
-                    </tr>
-                    <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
-                    </tr>
-                    <!---->
-                    <tr class="tr-35 font-size6">
-                        <td class="td-7 center underline td-color-01 noto bold">내용</td>
-                        <td class="td-13 padding-lr5 padding-tb2" colspan="9">
-                            <textarea name="aboutMe " id="aboutMe" class="width-100 height-100 noto padding-a5"
-                                placeholder="하고 싶은 말을 적으세요."></textarea>
-                        </td>
-                    </tr>
-                    <tr style="width:100%;height:1px;background-color:#eee;">
-                        <td colspan="10"></td>
-                    </tr>
-                </table>
-                <div class="btn-grp center margin-t10">
-                    <button type="submit" class="btn-active margin-l1" id="">내용저장</button>
-                    <button type="reset" class="btn-off margin-l-2" id="">새로고침</button>
-                </div>
-            </div>
-
-            <!-- 가족사항 -->
+					</tr>
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">가족관계</td>
+						<td class="td-13 padding-lr5 padding-tb2" colspan="9"><textarea
+								name="grp_graduation" id="aboutMe"
+								class="width-100 height-100 noto padding-a5"
+								placeholder="${usersInfo.grp_graduation}"></textarea></td>
+					</tr>
+					<tr style="width: 100%; height: 1px; background-color: #eee;">
+						<td colspan="10"></td>
+					</tr>
+					<!---->
+					<tr class="tr-35 font-size6">
+						<td class="td-7 center underline td-color-01 noto bold">내용</td>
+						<td class="td-13 padding-lr5 padding-tb2" colspan="9"><textarea
+								name="grp_aboutMe" id="grp_aboutMe"
+								class="width-100 height-150 noto padding-a5"
+								placeholder="${usersInfo.grp_aboutMe}"></textarea></td>
+					</tr>
+					<tr style="width: 100%; height: 1px; background-color: #eee;">
+						<td colspan="10"></td>
+					</tr>
+				</table>
+				<div class="btn-grp center margin-t10">
+					<button type="submit" class="btn-active margin-l1" id="">내용저장</button>
+					<button type="reset" class="btn-off margin-l-2" id="">새로고침</button>
+				</div>
+			</div>
+		</form>
+		<!-- 가족사항 -->
 
             <!-- 학력사항 -->
 

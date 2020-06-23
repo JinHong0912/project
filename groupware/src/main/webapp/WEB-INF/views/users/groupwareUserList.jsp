@@ -32,11 +32,11 @@
                 <span class="float-r">
                     <form method="post" action="/groupware/groupwareUserList">
                         <select name="searchOpt" id="searchOpt" class="select-150 ">
-                            <option value="all" <c:if test="${searchOpt eq 'all'}">selected</c:if> >전체</option>
+                            <option value="all"<c:if test="${searchOpt eq 'all'}">selected</c:if> >전체</option>
                             <option value="department" <c:if test="${searchOpt eq 'department'}">selected</c:if> >부서
                             </option>
                             <option value="userID" <c:if test="${searchOpt eq 'userID'}">selected</c:if> >아이디</option>
-                            <%-- 								<option value="userName" <c:if test="${searchOpt eq 'userName'}">selected</c:if> >이름</option> --%>
+                            <!-- <option value="userName" <c:if test="${searchOpt eq 'userName'}">selected</c:if> >이름</option> -->
                         </select>
                         <input type="search" name="words" id="words" class="input-150  bo-blue" value="${words}" />
                         <button type="submit" id="search-btn" class="btn-on bold bo-blue">검색</button>
@@ -70,25 +70,25 @@
                     <td>${usersList.department}</td>
                     <td>${usersList.userRank}</td>
                     <td>
-                    <a href="/groupware/getUsersView?uid=${usersList.uid}"  class="">${usersList.userName}</a>
+                        <a href="/groupware/getUsersView?uid=${usersList.uid}" class="">${usersList.userName}</a>
                     </td>
                     <td>4567</td>
                     <td>${usersList.userPhone}</td>
                     <td>${usersList.userEmail}</td>
-                        <!-- 권한부여 나중에 사용시 사용<input type="checkbox" name="team_master" class="" /> -->
+                    <!-- 권한부여 나중에 사용시 사용<input type="checkbox" name="team_master" class="" /> -->
                     <td class="">
-                        <select class="select-150" id="auth" onChange ="authUpdate(this.value,'${usersList.uid}');"
-                        <c:if test="${usersList.auth eq '관리자'}">disabled</c:if>><!--disabled : 관리자는 권한 변경 안되게 하는거 -->
-                       		 <option value="일반"
-                       		 	<c:if test="${usersList.auth eq '일반'}">selected</c:if>>일반</option>
-                            <option value="중간관리자"
-                            	<c:if test="${usersList.auth eq '중간관리자'}">selected</c:if>>중간 관리자</option>
-                            <option value="관리자"
-                            	<c:if test="${usersList.auth eq '관리자'}">selected</c:if>>관리자</option>
+                        <select class="select-150" id="auth" onChange="authUpdate(this.value,'${usersList.uid}');" <c:if
+                            test="${usersList.auth eq '관리자'}">disabled</c:if>>
+                            <!--disabled : 관리자는 권한 변경 안되게 하는거 -->
+                            <option value="일반" <c:if test="${usersList.auth eq '일반'}">selected</c:if>>일반</option>
+                            <option value="중간관리자" <c:if test="${usersList.auth eq '중간관리자'}">selected</c:if>>중간 관리자
+                            </option>
+                            <option value="관리자" <c:if test="${usersList.auth eq '관리자'}">selected</c:if>>관리자</option>
                         </select>
                     </td>
                     <td>
-                        <button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail'">상세</button>
+                        <button type="button" class="btn-off margin-l-2" id=""
+                            onClick="location.href='/groupware/groupwareUserDetail?uid=${usersList.uid}'">상세</button>
                         <button type="button" class="btn-off margin-l-2" id="" onClick="location.href=''">삭제</button>
                         <!--<button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail'">메일 보내기</button> -->
 

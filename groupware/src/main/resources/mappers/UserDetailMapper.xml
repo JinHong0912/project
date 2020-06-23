@@ -27,41 +27,71 @@
 		INSERT INTO
 		newDetailInfo
 		SET
-		udid = #{udid},
-		grp_userGender=#{grp_userGender},
-		grp_userBirth=#{grp_userBirth},
-		grp_lunarCalendar=#{grp_lunarCalendar},
-		grp_extension=#{grp_extension},
-		grp_extensionNumber=#{grp_extensionNumber},
-		grp_tele=#{grp_tele},
-		grp_telephone=#{grp_telephone},
-		grp_recruitment=#{grp_recruitment},
-		grp_hopeJob=#{grp_hopeJob},
-		grp_userHeight=#{grp_userHeight},
-		grp_userWeight=#{grp_userWeight},
-		grp_militaryService=#{grp_militaryService},
-		grp_religion=#{grp_religion},
-		grp_userHobby=#{grp_userHobby},
-		grp_userSpecialty=#{grp_userSpecialty},
-		grp_disabledCk=#{grp_disabledCk},
-		grp_veteransCk=#{grp_veteransCk},
-		grp_marriageCk=#{grp_marriageCk},
-		grp_finalEducation=#{grp_finalEducation},
-		grp_graduationYear=#{grp_graduationYear},
-		grp_graduate=#{grp_graduate},
-		grp_university=#{grp_university},
-		grp_grades=#{grp_grades},
-		grp_graduation=#{grp_graduation},
-		grp_aboutMe=#{grp_aboutMe},
-		grp_userRegdate=#{grp_userRegdate}
-		
-		
+			udid = #{udid},
+			grp_userGender=#{grp_userGender},
+			grp_userBirth=#{grp_userBirth},
+			grp_lunarCalendar=#{grp_lunarCalendar},
+			grp_extension=#{grp_extension},
+			grp_extensionNumber=#{grp_extensionNumber},
+			grp_tele=#{grp_tele},
+			grp_telephone=#{grp_telephone},
+			grp_recruitment=#{grp_recruitment},
+			grp_hopeJob=#{grp_hopeJob},
+			grp_userHeight=#{grp_userHeight},
+			grp_userWeight=#{grp_userWeight},
+			grp_militaryService=#{grp_militaryService},
+			grp_religion=#{grp_religion},
+			grp_userHobby=#{grp_userHobby},
+			grp_userSpecialty=#{grp_userSpecialty},
+			grp_disabledCk=#{grp_disabledCk},
+			grp_veteransCk=#{grp_veteransCk},
+			grp_marriageCk=#{grp_marriageCk},
+			grp_finalEducation=#{grp_finalEducation},
+			grp_graduationYear=#{grp_graduationYear},
+			grp_graduate=#{grp_graduate},
+			grp_university=#{grp_university},
+			grp_grades=#{grp_grades},
+			grp_graduation=#{grp_graduation},
+			grp_aboutMe=#{grp_aboutMe},
+			grp_userRegdate= now()
+
+
 	</insert>
 	<!-- 사원 정보 보는 리스트 -->
 	<select id="getNewUserDetail" resultType="userDetailvo">
-		SELECT * FROM newDetailInfo WHERE udid = #{uid}
+		SELECT * FROM
+		newDetailInfo WHERE udid = #{uid}
 	</select>
 
+	<!-- 사원 상세 수정 -->
+	<update id="updateDetailView">
+		
+		UPDATE newDetailInfo SET
+			
+			grp_userGender 		= #{grp_userGender},
+			grp_userBirth 		= #{grp_userBirth},
+			grp_lunarCalendar	= #{grp_lunarCalendar},
+			grp_tele 			= #{grp_tele},
+			grp_telephone 		= #{grp_telephone},
+			grp_hopeJob 		= #{grp_hopeJob},
+			grp_userHeight 		= #{grp_userHeight},
+			grp_userWeight 		= #{grp_userWeight},
+			grp_religion 		= #{grp_religion},
+			grp_userHobby 		= #{grp_userHobby},
+			grp_userSpecialty 	= #{grp_userSpecialty},
+			grp_disabledCk 		= #{grp_disabledCk},
+			grp_veteransCk	 	= #{grp_veteransCk},
+			grp_marriageCk 		= #{grp_marriageCk},
+			grp_finalEducation 	= #{grp_finalEducation},
+			grp_graduationYear 	= #{grp_graduationYear},
+			grp_graduate 		= #{grp_graduate},
+			grp_university 		= #{grp_university},
+			grp_grades 			= #{grp_grades},
+			grp_graduation 		= #{grp_graduation},
+			grp_aboutMe 		= #{grp_aboutMe}	
+			
+		WHERE udid = #{udid}
+	</update>
 
 
 	<!-- 사원 검색 및 카운팅 -->

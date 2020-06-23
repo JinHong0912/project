@@ -21,6 +21,7 @@ public interface UserDetailService {
 	//사원 상세 정보 등록 정보 보기
 	public UserDetailVO getNewUserDetail(int uid);
 	
-	
+	//사원 정보 수정 부분
+	public int updateDetailView(UserDetailVO udvo);
 
 }
