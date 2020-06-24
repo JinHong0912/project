@@ -45,7 +45,6 @@
                     </form>
 
 
-
                     <%--      <input type="search" class="input-150 margin-l-2" name="words" id="words" value="${words}" required />
                         <button type="submit" class="btn-on margin-r2 margin-l-2" id="">내용검색</button>
                     </span>
@@ -64,15 +63,25 @@
                 <td class="td-15">권한여부</td>
                 <td class="td-20">비고</td>
             </tr>
-            <c:forEach items="${usersList}" var="usersList">
-                <tr class="tr-40 tr-color-odd center">
+<%--     forEach 의 값이 2개 일 때 사용         <c:forEach items="${sumList1}" varStatus="status"> --%>
+				<%-- ${sumList1[status.index].데이터명} --%>
+				<%-- ${sumList2[status.index].데이터명} --%>
+				<%-- ${sumList3[status.index].데이터명} --%>
+<%-- 				${usersDetailList[status.index].uid} --%>
+			<%-- </c:forEach> --%>
+            
+			<c:forEach items="${usersList}" var="usersList" varStatus="status">
+					
+<%-- 					${usersDetailList.uid} --%>
+                	<tr class="tr-40 tr-color-odd center">
+<%--                     <td>${usersDetailList[status.index].uid}</td> --%>
                     <td>${usersList.uid}</td>
                     <td>${usersList.department}</td>
                     <td>${usersList.userRank}</td>
                     <td>
                         <a href="/groupware/getUsersView?uid=${usersList.uid}" class="">${usersList.userName}</a>
                     </td>
-                    <td>4567</td>
+                    <td>${usersList.companyNumber}</td>
                     <td>${usersList.userPhone}</td>
                     <td>${usersList.userEmail}</td>
                     <!-- 권한부여 나중에 사용시 사용<input type="checkbox" name="team_master" class="" /> -->
@@ -87,8 +96,39 @@
                         </select>
                     </td>
                     <td>
-                        <button type="button" class="btn-off margin-l-2" id=""
-                            onClick="location.href='/groupware/groupwareUserDetail?uid=${usersList.uid}'">상세</button>
+                    <c:choose>
+                    
+                    	<c:when test="${usersList.division > 0}">
+                    		<a class="btn-off margin-l-2" href="/groupware/getDetailUpdate?uid=${usersList.uid}">
+		                    	 <button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupDetailUpdate?uid=${usersList.uid}'">
+	                          				수정
+	                         	 </button>
+		                    </a>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<a href="/groupware/groupwareUserDetail?uid=${usersList.uid}">
+		                    	<button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail?uid=${usersList.uid}'">
+	                          				상세
+	                         	</button>
+		                    </a>
+                    	</c:otherwise>
+                    
+                    </c:choose>
+<%--                     	<c:if test="${usersList.division ne '0'}"> --%>
+<%-- 		                    <a class="btn-off margin-l-2" href="/groupware/getDetailUpdate?uid=${usersList.uid}"> --%>
+<%-- 		                    	 <button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupDetailUpdate?uid=${usersList.uid}'"> --%>
+<!-- 	                          				수정 -->
+<!-- 	                         	 </button> -->
+<!-- 		                    </a> -->
+<%-- 		                </c:if> --%>
+		                
+<%-- 		                <c:if test="${usersList.division eq '0'}"> --%>
+<%-- 		                    <a href="/groupware/groupwareUserDetail?uid=${usersList.uid}"> --%>
+<%-- 		                    	<button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail?uid=${usersList.uid}'"> --%>
+<!-- 	                          				상세 -->
+<!-- 	                         	</button> -->
+<!-- 		                    </a> -->
+<%-- 		                </c:if> --%>
                         <button type="button" class="btn-off margin-l-2" id="" onClick="location.href=''">삭제</button>
                         <!--<button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupwareUserDetail'">메일 보내기</button> -->
 

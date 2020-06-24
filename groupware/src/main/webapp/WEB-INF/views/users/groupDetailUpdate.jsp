@@ -37,10 +37,9 @@
 			
 		</div>
 		<!-- 개인 신상 -->
-		<form method="post" action="/groupware/setDetailUpdate">
+		<form method="post" action="/groupware/groupDetailUpdate">
 			<input type="hidden" name="uid" value="${usersView.uid}" />
 			<input type="hidden" name="udid" value="${usersView.uid}" />
-			<input type="text" name="division" value="1" />
 			<div id="personalIdentity" class="info show">
 				<table>
 					<tr style="width: 100%; height: 1px; background-color: #eee;">
@@ -107,17 +106,20 @@
 								class="width-100 noto" value="${usersView.userPhone}" /></td>
 						<td class="td-7 center underline td-color-01 noto bold">내선번호</td>
 						<td class="td-13 padding-lr5 font-wei1 noto bold">
-							<select name="grp_extension" id="grp_extension" class="width-30 height-30">
-								<option value="051">051</option>
-							</select>
-							<input type="text" name="grp_extensionNumber" id="grp_extensionNumber"
-								class="width-70 noto" />
-							<!-- ${usersInfo.grp_extension} - ${usersInfo.grp_extensionNumber} -->
+<!-- 							<select name="grp_extension" id="grp_extension" class="width-30 height-30"> -->
+<!-- 								<option value="051">051</option> -->
+<!-- 							</select> -->
+<!-- 							<input type="text" name="grp_extensionNumber" id="grp_extensionNumber" -->
+<!-- 								class="width-70 noto" /> -->
+							${usersInfo.grp_extension} - ${usersInfo.grp_extensionNumber}
 						</td>
 						<td class="td-7 center underline td-color-01 noto bold">Tel</td>
-						<td class="td-13 padding-lr5 noto"><select name="tele" id="tele" class="width-30 height-30">
-								<option value="0">051</option>
-							</select> <input type="text" name="telephone" id="telephone" class="width-70 noto" /></td>
+						<td class="td-13 padding-lr5 noto">
+								<select name="tele" id="tele" class="width-30 height-30">
+										<option value="0">051</option>
+								</select> 
+							<input type="text" name="telephone" id="telephone" class="width-70 noto" value="${usersInfo.grp_telephone}"/>
+						</td>
 					</tr>
 					<!-- -->
 					<tr style="width: 100%; height: 1px; background-color: #eee;">
@@ -126,14 +128,14 @@
 					<tr class="tr-35 font-size6">
 						<td class="td-7 center underline td-color-01 noto bold">채용형태</td>
 						<td class="td-13 padding-lr5 bold noto">
-							<select name="grp_recruitment" id="grp_recruitment" class="width-100 height-30">
-								<option value="인턴채용">인턴채용</option>
-								<option value="공개채용">공개채용</option>
-								<option value="특별채용">특별채용</option>
-								<option value="수시채용">수시채용</option>
-							</select>
+<!-- 							<select name="grp_recruitment" id="grp_recruitment" class="width-100 height-30"> -->
+<!-- 								<option value="인턴채용">인턴채용</option> -->
+<!-- 								<option value="공개채용">공개채용</option> -->
+<!-- 								<option value="특별채용">특별채용</option> -->
+<!-- 								<option value="수시채용">수시채용</option> -->
+<!-- 							</select> -->
 
-							<!-- ${usersInfo.grp_recruitment} -->
+							${usersInfo.grp_recruitment}
 						</td>
 						<td class="td-7 center underline td-color-01 noto bold">희망직무</td>
 						<td class="td-13 padding-lr5"><input type="text" name="grp_hopeJob" id="grp_hopeJob"
@@ -146,21 +148,23 @@
 							<!-- <input type="text" name="grp_userWeight" id="grp_userWeight" class="width-50 noto" value="${usersInfo.grp_userWeight} kg" /></td> -->
 						<td class="td-7 center underline td-color-01 noto bold">병역구분</td>
 						<td class="td-13 padding-lr5 bold noto">
-							<select name="grp_militaryService" id="grp_militaryService" class="width-100 height-30">
-                                <option value="병역필">병역필</option>
-                                <option value="병역미필">병역미필</option>
-                                <option value="공익">공익</option>
-                            </select>
-							<!-- ${usersInfo.grp_militaryService} -->
+<!-- 							<select name="grp_militaryService" id="grp_militaryService" class="width-100 height-30"> -->
+<!--                                 <option value="병역필">병역필</option> -->
+<!--                                 <option value="병역미필">병역미필</option> -->
+<!--                                 <option value="공익">공익</option> -->
+<!--                             </select> -->
+							${usersInfo.grp_militaryService}
 						</td>
 						<td class="td-7 center underline td-color-01 noto bold">종교</td>
 						<td class="td-13 padding-lr5">
 							<!-- <input type="text" name="" id="religion" class="width-50 noto" value="${usersInfo.grp_religion}" /> -->
-							<select name="grp_religion" id="grp_religion" class="width-100 height-30">
-								<option value="무교">무교</option>
-								<option value="불교">불교</option>
-								<option value="기독교">기독교</option>
-							</select></td>
+<!-- 							<select name="grp_religion" id="grp_religion" class="width-100 height-30"> -->
+<!-- 								<option value="무교">무교</option> -->
+<!-- 								<option value="불교">불교</option> -->
+<!-- 								<option value="기독교">기독교</option> -->
+<!-- 							</select> -->
+							${usersInfo.grp_religion}
+						</td>
 					</tr>
 					<!---->
 					<tr style="width: 100%; height: 1px; background-color: #eee;">
@@ -175,36 +179,41 @@
 								class="width-100 noto" value="${usersInfo.grp_userSpecialty}" /></td>
 						<td class="td-7 center underline td-color-01 noto bold">장애인여부</td>
 						<td class="td-13 padding-lr5">
-							<!-- <input type="text" name="grp_disabledCk" id="" class="width-50 noto" value="${usersInfo.grp_disabledCk}" />  -->
-							<select name="grp_disabledCk" id="grp_disabledCk" class="width-100 height-30">
-								<option value="비장애">비장애</option>
-								<option value="장애">장애</option>
-							</select></td>
+							<input type="text" name="grp_disabledCk" id="" class="width-100 noto" value="${usersInfo.grp_disabledCk}" /> 
+<!-- 							<select name="grp_disabledCk" id="grp_disabledCk" class="width-100 height-30"> -->
+<!-- 								<option value="비장애">비장애</option> -->
+<!-- 								<option value="장애">장애</option> -->
+<!-- 							</select> -->
+<%-- 								${usersInfo.grp_disabledCk} --%>
+							</td>
 						<td class="td-7 center underline td-color-01 noto bold">보훈대상자여부</td>
 						<td class="td-13 padding-lr5">
-							<!-- ${usersInfo.grp_veteransCk}  -->
-							<select name="grp_veteransCk" id="veteransCk" class="width-100 height-30">
-								<option value="비대상">비대상</option>
-								<option value="대상">대상</option>
-							</select></td>
+							${usersInfo.grp_veteransCk} 
+<!-- 							<select name="grp_veteransCk" id="veteransCk" class="width-100 height-30"> -->
+<!-- 								<option value="비대상">비대상</option> -->
+<!-- 								<option value="대상">대상</option> -->
+<!-- 							</select></td> -->
 						<td class="td-7 center underline td-color-01 noto bold">결혼여부</td>
 						<td class="td-13 padding-lr5">
 							<!-- <input type="text" name="" id=" " class="width-50 noto" value="${usersInfo.grp_marriageCk}" />  -->
 							<select name="grp_marriageCk" id="grp_marriageCk" class="width-100 height-30">
 								<option value="미혼">미혼</option>
 								<option value="기혼">기혼</option>
-							</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr class="tr-35 font-size6">
 						<td class="td-7 center underline td-color-01 noto bold">최종학력</td>
 						<td class="td-13 padding-lr5">
 							<!-- <input type="text" name="" id=" " class="width-50 noto" value="${usersInfo.grp_finalEducation}" />  -->
-							<select name="grp_finalEducation" id="grp_finalEducation" class="width-100 height-30">
-								<option value="졸업">졸업</option>
-								<option value="퇴학">퇴학</option>
-								<option value="휴학">휴학</option>
-								<option value="중퇴">중퇴</option>
-							</select></td>
+<!-- 							<select name="grp_finalEducation" id="grp_finalEducation" class="width-100 height-30"> -->
+<!-- 								<option value="졸업">졸업</option> -->
+<!-- 								<option value="퇴학">퇴학</option> -->
+<!-- 								<option value="휴학">휴학</option> -->
+<!-- 								<option value="중퇴">중퇴</option> -->
+<!-- 							</select> -->
+								${usersInfo.grp_finalEducation}
+						</td>
 						<td class="td-7 center underline td-color-01 noto bold">졸업년도</td>
 						<td class="td-13 padding-lr5"><input type="text" name="grp_graduationYear"
 								id="grp_graduationYear" class="width-100 noto"

@@ -24,4 +24,6 @@ public interface UserDetailService {
 	//사원 정보 수정 부분
 	public int updateDetailView(UserDetailVO udvo);
 
+	//사원 정보 수정 부분
+//		public List<UserDetailVO> userDetailList();
 }

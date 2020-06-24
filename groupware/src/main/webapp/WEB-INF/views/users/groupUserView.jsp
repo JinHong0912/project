@@ -34,10 +34,12 @@
             </div>
             <div class="">
                 <h3 class="noto font-14 tomato margin-t20 margin-b5"><i class="fas fa-circle"></i> 사원 정보 입니다.</h3>
-                <%--         <input type="hidden" name="audit_id" value="${auditId}" /> --%>
             </div>
             <!-- 개인 신상 -->
-            <form method="post" action="/groupware/setUserNewInfo">
+            
+                <input type="hidden" name="uid" value="${sessionScope.uid}" />
+                <input type="hidden" name="udid" value="${sessionScope.uid}" />
+                
                 <div id="personalIdentity" class="tab-content show">
                     <table>
                         <tr style="width:100%;height:1px;background-color:#eee;">
@@ -211,7 +213,7 @@
                         <button type="submit" class="btn-on margin-l1" id="">내용저장</button>
                         <button type="reset" class="btn-off margin-l-2" id="">새로고침</button>
                     </div>
-                 </form>
+                
                 </div>
     
                 <!-- 가족사항 -->

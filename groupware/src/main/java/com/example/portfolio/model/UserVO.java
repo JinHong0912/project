@@ -18,7 +18,7 @@ public class UserVO {
 //	+-------------+-------------+------+-----+---------+----------------+
 
 	private int uid;
-	private int udid;
+//	private int udid;
 	private String userID;
 	private String passwd;
 	private String department;
@@ -28,19 +28,16 @@ public class UserVO {
 	private String userPhone;
 	private String auth;
 	private String companyNumber;
-	
-	public String getCompanyNumber() {
-		return companyNumber;
-	}
-	public void setCompanyNumber(String companyNumber) {
-		this.companyNumber = companyNumber;
-	}
 	private String userRegdate;
+	private int division;
 	
 	
-	
-	
-	//getter,setter
+	public int getDivision() {
+		return division;
+	}
+	public void setDivision(int division) {
+		this.division = division;
+	}
 	public int getUid() {
 		return uid;
 	}
@@ -95,12 +92,19 @@ public class UserVO {
 	public void setAuth(String auth) {
 		this.auth = auth;
 	}
+	public String getCompanyNumber() {
+		return companyNumber;
+	}
+	public void setCompanyNumber(String companyNumber) {
+		this.companyNumber = companyNumber;
+	}
 	public String getUserRegdate() {
 		return userRegdate;
 	}
 	public void setUserRegdate(String userRegdate) {
 		this.userRegdate = userRegdate;
 	}
+	
 	
 	
 

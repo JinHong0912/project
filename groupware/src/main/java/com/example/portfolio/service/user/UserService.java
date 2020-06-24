@@ -37,4 +37,6 @@ public interface UserService {
 	public int userUpdateView(UserVO uvo);
 	
 	public int getCompanynumber(UserVO uvo);
+	
+	public void divUpdate(UserVO uvo);
 }

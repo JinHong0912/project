@@ -36,6 +36,8 @@ public interface UserDao {
 	
 	//사원번호 만들기
 	 public int getCompanynumber(UserVO uvo);
+	 
+	 public void divUpdate(UserVO uvo);
 	
 	
 }

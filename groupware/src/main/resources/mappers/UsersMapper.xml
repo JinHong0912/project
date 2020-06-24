@@ -23,12 +23,13 @@
 
 
 	<!-- register 회원가입 입력하는 부분 -->
-	<insert id="setUser" parameterType="userDetailvo">
+	<insert id="setUser" parameterType="uservo">
 		INSERT INTO
 		users
 		SET
 		userID = #{userID},
 		passwd = #{passwd},
+		division = #{division},
 		department = #{department},
 		userRank = #{userRank},
 		userName = #{userName},
@@ -43,6 +44,15 @@
 		</selectKey>
 
 	</insert>
+	
+	<update id="divUpdate">
+		UPDATE
+			users
+		SET
+			division = #{division}
+		WHERE
+			uid = #{uid}
+	</update>
 
 	<!-- 그룹웨어 로그인하기 -->
 
@@ -73,7 +83,7 @@
 	<!-- getUsersList 결과 가지고 오는 부분 -->
 	<select id="getUsersList" resultType="uservo">
 		SELECT
-		uid, userID, auth, userName, userEmail, userPhone,department, userRank,
+		uid, userID, auth, userName, userEmail, userPhone,department, userRank,companyNumber,
 		date_format(userRegdate,'%Y-%m-%d') as userRegdate
 		FROM users
 

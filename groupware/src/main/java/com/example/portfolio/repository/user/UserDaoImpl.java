@@ -92,6 +92,11 @@ public class UserDaoImpl implements UserDao{
 		// TODO Auto-generated method stub
 		return sql.selectOne(namespace + ".getCompanynumber", uvo);
 	}
+	@Override
+	public void divUpdate(UserVO uvo) {
+
+		sql.update(namespace + ".divUpdate", uvo);
+	}
 
 	
 

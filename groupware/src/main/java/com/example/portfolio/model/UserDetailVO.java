@@ -1,25 +1,15 @@
 package com.example.portfolio.model;
 
 public class UserDetailVO {
-	
+//	
 //	+---------------------+--------------+------+-----+---------+----------------+
 //	| Field               | Type         | Null | Key | Default | Extra          |
 //	+---------------------+--------------+------+-----+---------+----------------+
 //	| uid                 | int          | NO   | PRI | NULL    | auto_increment |
-//	| udid_id             | int          | NO   |     | NULL    |                |
-//	| grp_companyNumber   | varchar(50)  | NO   |     | NULL    |                |
-//	| grp_auth            | varchar(20)  | YES  |     | 일반    |                |
-//	| grp_userID          | varchar(20)  | NO   |     | NULL    |                |
-//	| grp_userPasswd      | varchar(20)  | NO   |     | NULL    |                |
-//	| grp_department      | varchar(10)  | NO   |     | NULL    |                |
-//	| grp_userRank        | varchar(10)  | NO   |     | NULL    |                |
-//	| grp_userName        | varchar(20)  | NO   |     | NULL    |                |
-//	| grp_userEmail       | varchar(50)  | YES  |     | NULL    |                |
+//	| udid                | int          | NO   |     | NULL    |                |
 //	| grp_userGender      | varchar(10)  | NO   |     | NULL    |                |
 //	| grp_userBirth       | varchar(20)  | YES  |     | NULL    |                |
 //	| grp_lunarCalendar   | varchar(20)  | YES  |     | NULL    |                |
-//	| grp_phone           | varchar(10)  | YES  |     | NULL    |                |
-//	| grp_userPhone       | char(15)     | NO   |     | NULL    |                |
 //	| grp_extension       | varchar(10)  | YES  |     | NULL    |                |
 //	| grp_extensionNumber | varchar(20)  | YES  |     | NULL    |                |
 //	| grp_tele            | varchar(10)  | YES  |     | NULL    |                |
@@ -44,8 +34,8 @@ public class UserDetailVO {
 //	| grp_aboutMe         | text         | YES  |     | NULL    |                |
 //	| grp_userRegdate     | datetime     | YES  |     | NULL    |                |
 //	+---------------------+--------------+------+-----+---------+----------------+
+//	
 	
-	private int uid;
 	private int udid;
 	private String grp_userGender;
 	private String grp_userBirth;
@@ -73,12 +63,13 @@ public class UserDetailVO {
 	private String grp_graduation;
 	private String grp_aboutMe;
 	private String grp_userRegdate;
+	private int  division;
 	
-	public int getUid() {
-		return uid;
+	public int getDivision() {
+		return division;
 	}
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setDivision(int division) {
+		this.division = division;
 	}
 	public int getUdid() {
 		return udid;

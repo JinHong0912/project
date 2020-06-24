@@ -1,6 +1,7 @@
 package com.example.portfolio.repository.group;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -39,5 +40,11 @@ public class UserDetailDaoImpl implements UserDetailDao{
 		
 		return sql.update(namespace + ".updateDetailView" , udvo);
 	}
+
+//	@Override
+//	public List<UserDetailVO> userDetailList() {
+//		// TODO Auto-generated method stub
+//		return sql.selectList(namespace +".userDetailList");
+//	}
 
 }

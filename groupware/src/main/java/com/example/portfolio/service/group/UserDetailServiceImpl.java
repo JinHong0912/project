@@ -35,6 +35,12 @@ public class UserDetailServiceImpl implements UserDetailService {
 		// TODO Auto-generated method stub
 		return dao.updateDetailView(udvo);
 	}
+//
+//	@Override
+//	public List<UserDetailVO> userDetailList() {
+//		// TODO Auto-generated method stub
+//		return dao.userDetailList();
+//	}
 
 	
 

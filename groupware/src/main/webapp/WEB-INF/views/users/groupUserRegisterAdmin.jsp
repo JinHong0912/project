@@ -37,6 +37,7 @@
         </div>
         <!-- 개인 신상 -->
         <form method="post" action="/groupware/setUserNewInfo">
+        	<input type="text" name="division" value="1" />
             <div id="personalIdentity" class="info show">
                 <table>
                     <tr style="width:100%;height:1px;background-color:#eee;">
@@ -45,8 +46,8 @@
                     <tr class="tr-35 font-size6">
                         <td class="td-7 center underline td-color-01 noto bold">회사 사번</td>
                         <td colspan="3" class="td-13 padding-lr5">
-                            <input type="text" name="companyNumber" id="companyNumber" class="width-100 noto" required
-                                autofocus />
+                            <!-- <input type="text" name="companyNumber" id="companyNumber" class="width-100 noto" required
+                                autofocus /> -->
                         </td>
                         <td class="td-7 center underline td-color-01 noto bold">권한 부여</td>
                         <td colspan="5" class="td-13 padding-lr5">
@@ -230,10 +231,10 @@
                         <td class="td-13 padding-lr5">
                             <input type="text" name="grp_university" id="grp_university" class="width-100 noto" />
                         </td>
-<!--                         <td class="td-7 center underline td-color-01 noto bold">학점</td> -->
-<!--                         <td class="td-13 padding-lr5"> -->
-<!--                             <input type="text" name="grp_grades" id="grp_grades" class="width-100 noto" /> -->
-<!--                         </td> -->
+                        <td class="td-7 center underline td-color-01 noto bold">학점(선택사항)</td>
+                         <td class="td-13 padding-lr5">
+                            <input type="text" name="grp_grades" id="grp_grades" class="width-100 noto" />
+                        </td> 
                       
                     </tr>
                     <tr class="tr-35 font-size6">

@@ -120,13 +120,18 @@
          <c:if test="${template eq 'groupware' && mypage eq 'userDetail'}">
             <%@ include file = "../users/groupwareUserDetail.jsp" %>
         </c:if>
+
+<!--          	사원  상세정보 수정 페이지  -->
+         <c:if test="${template eq 'groupware' && mypage eq 'userDetailUpdate'}">
+            <%@ include file = "../users/groupDetailUpdate.jsp" %>
+        </c:if>
         
 <!--          	사원 개인 정보 확인 페이지  -->
          <c:if test="${template eq 'groupware' && mypage eq 'userView'}">
             <%@ include file = "../users/groupUserView.jsp" %>
         </c:if>        
         
-<!--          	사원 개인 정보 확인 페이지  -->
+<!--          	사원 개인 정보 리스트 확인 페이지  -->
          <c:if test="${template eq 'groupware' && mypage eq 'userDetailView'}">
             <%@ include file = "../users/groupwareUserList.jsp" %>
         </c:if>        
