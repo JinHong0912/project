@@ -63,18 +63,11 @@
                 <td class="td-15">권한여부</td>
                 <td class="td-20">비고</td>
             </tr>
-<%--     forEach 의 값이 2개 일 때 사용         <c:forEach items="${sumList1}" varStatus="status"> --%>
-				<%-- ${sumList1[status.index].데이터명} --%>
-				<%-- ${sumList2[status.index].데이터명} --%>
-				<%-- ${sumList3[status.index].데이터명} --%>
-<%-- 				${usersDetailList[status.index].uid} --%>
-			<%-- </c:forEach> --%>
+
             
 			<c:forEach items="${usersList}" var="usersList" varStatus="status">
 					
-<%-- 					${usersDetailList.uid} --%>
                 	<tr class="tr-40 tr-color-odd center">
-<%--                     <td>${usersDetailList[status.index].uid}</td> --%>
                     <td>${usersList.uid}</td>
                     <td>${usersList.department}</td>
                     <td>${usersList.userRank}</td>
@@ -98,7 +91,7 @@
                     <td>
                     <c:choose>
                     
-                    	<c:when test="${usersList.division > 0}">
+                    	<c:when test="${udid > 0}">
                     		<a class="btn-off margin-l-2" href="/groupware/getDetailUpdate?uid=${usersList.uid}">
 		                    	 <button type="button" class="btn-off margin-l-2" id="" onClick="location.href='/groupware/groupDetailUpdate?uid=${usersList.uid}'">
 	                          				수정

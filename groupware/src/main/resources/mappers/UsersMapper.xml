@@ -120,7 +120,7 @@
 	<select id="getCompanynumber" resultType="int">
 			SELECT 
 			 	 ifnull(max(companyNumber),0)
-			FROM users WHERE department = #{department} and  userRegdate > #{userRegdate}
+			FROM users WHERE department = #{department} and userRegdate > #{userRegdate}
 	
 	</select>
 </mapper>

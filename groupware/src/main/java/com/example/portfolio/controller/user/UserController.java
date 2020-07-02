@@ -41,6 +41,7 @@ public class UserController {
 		
 		UserVO selectUvo = new UserVO();
 		selectUvo.setDepartment(uvo.getDepartment());
+//		selectUvo.setUserRank(uvo.getUserRank());
 		selectUvo.setUserRegdate(company_NumberYear+"-01-01 00:00:00");
 		int oidcompany = userService.getCompanynumber(selectUvo);
 		
@@ -58,16 +59,17 @@ public class UserController {
 		if(oidcompany==0) {
 			company_NumberYear-=2000;
 			company_Number = ""+company_NumberYear;
+			
 			if(uvo.getDepartment().equals("인사팀")) {
-				department_Numder ="10";
+				department_Numder = "10";
 			}else if(uvo.getDepartment().equals("기획팀")) {
 				department_Numder = "20";
+			}else if(uvo.getDepartment().equals("관리팀")) {
+				department_Numder = "30";
 			}
 			
-			company_Number += department_Numder+"0001";
-			
 //			if(uvo.getUserRank().equals("사원")) {
-//				userRank_Number ="10";
+//				userRank_Number = "10";
 //			}else if(uvo.getUserRank().equals("대리")) {
 //				userRank_Number = "20";
 //			}else if(uvo.getUserRank().equals("차장")) {
@@ -77,6 +79,9 @@ public class UserController {
 //			}else if(uvo.getUserRank().equals("부장")) {
 //				userRank_Number = "50";
 //			}	
+			
+			company_Number += department_Numder+"0001";
+			
 		}else {//2020년도 -01-01 00:00:00; 시에 가입 한 사람들에서 사내 번호 만들기 처음애 값이 있으면 안들어 가고 없으면 들어 간다 =.
 			oidcompany++;
 			company_Number=""+oidcompany;
@@ -163,12 +168,6 @@ public class UserController {
 		}
 		return msg;
 	}
-	
-
-	
-
-
-
 
 
 

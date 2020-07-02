@@ -142,8 +142,8 @@ public class GroupMainController {
 		//사내번호 만들기 (companyNumber)
 		String department_Numder = "";
 		String userRank_Number = "";
-		String company_Number = "";
 		
+		String company_Number = "";
 		if( oidcompany == 0) {
 			company_NumberYear -=2000;
 			company_Number = ""+company_NumberYear;

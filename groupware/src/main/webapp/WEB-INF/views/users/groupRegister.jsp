@@ -31,8 +31,8 @@
                 <select class="" name="department" id="department">
                     <option value="0">부서를 선택하세요</option>
                     <option value="인사팀">인사팀</option>
-                    <option value="기획팀">기획부</option>
-                    <option value="관리팀">총관리</option>
+                    <option value="기획팀">기획팀</option>
+                    <option value="관리팀">관리팀</option>
                 </select>
              
                 <!-- 직급부분 -->
@@ -40,7 +40,7 @@
                     <option value="0">직급을 선택하세요</option>
                     <option value="사원">사원</option>
                     <option value="대리">대리</option>
-                    <option value="차장">부장</option>
+                    <option value="차장">차장</option>
                     <option value="과장">과장</option>
                     <option value="부장">부장</option>
                 </select>
