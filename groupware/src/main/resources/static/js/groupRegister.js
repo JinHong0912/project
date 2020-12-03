@@ -189,3 +189,14 @@ $(function() {
 	});
 
 });
+
+//=========== 사용자 전화 번호 숫자만=====
+$(document).ready(function(){
+	$("input[name=userPhone]").on("keyup",function(){		
+		$(this).val(addHifon($(this).val().replace(/[^0-9]/g,"-")));
+	});	
+});
+
+function addHifon(data){
+	return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g,"-");
+}

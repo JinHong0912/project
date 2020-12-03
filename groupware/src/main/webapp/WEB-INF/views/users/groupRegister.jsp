@@ -47,7 +47,7 @@
                
                 <input type="text" name="userName" id="userName" placeholder="사용자 이름" required="required" />
                 <input type="text" name="userEmail" id="userEmail" placeholder="사용자 이메일" required="required" />
-                <input type="text" name="userPhone" id="userPhone" placeholder="사용자 휴대전화" required="required" />
+                <input type="text" name="userPhone" id="userPhone" name="userPhone" placeholder="사용자 휴대전화" required="required" />
                 <button type="submit" id="register-btn" class="btn-blockUp btn btn-primary btn-large">회원가입완료</button>
             </form>
         </div>
@@ -55,8 +55,6 @@
 </body>
 
 </html>
-
-
 
 <script src="/js/groupRegister.js"></script>
 
