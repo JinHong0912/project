@@ -85,7 +85,7 @@
         </div>
     </div>
 </body>
-</body>
+
 <!-- 글쓰기에 필요한 부분 -->
 <script>initSample();</script>
 <!-- 글쓰기에 필요한 부분 -->

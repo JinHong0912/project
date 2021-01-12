@@ -37,7 +37,7 @@
                 </div>
                 <ul id="tree">
                     <li>
-                        <img src="../css/fileImg/folder-closed.gif" />사원 정보
+                        <img src="../css/fileImg/folder-closed.gif" />사원 정보2
                         <ul>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="/groupware/getUsersView?uid=${sessionScope.uid}">사원 개인정보</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">사내 연락망 조회</a></li>
@@ -81,6 +81,14 @@
                         <ul>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">새소식</a></li>
                             <li><img src="../css/fileImg/folder.gif" /> <a href="#">공지 사항</a></li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <img src="../css/fileImg/folder-closed.gif" /> 개발자게시판
+                        <ul>
+                            <li><img src="../css/fileImg/folder.gif" /> <a href="#">게시판</a></li>
+                            
                         </ul>
 
                     </li>
@@ -149,11 +157,12 @@
         <c:if test="${template eq 'groupBoard' && mypage eq 'setBoardContents'}">
             <%@ include file = "../board/groupSetBoradContents.jsp" %>
         </c:if>        
-        
+        <c:if test="${template eq 'devBoard'}">
+            <%@ include file = "../devBoard/devBoardList.jsp" %>
+        </c:if>
         
 		<!-- 달라지는 부분 -->
- 		       
-        
+ 	
 
 
 
