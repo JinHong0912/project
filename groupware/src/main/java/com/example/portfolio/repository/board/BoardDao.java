@@ -1,6 +1,9 @@
 package com.example.portfolio.repository.board;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.example.portfolio.model.BoardVO;
+
 
 public interface BoardDao {
 

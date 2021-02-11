@@ -2,6 +2,98 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.DevBoardMapper">
 
+
+	<!-- 게시글 리스트 검색 -->
+	<select id="selectDevBoardList" resultType="hashmap" parameterType="hashmap">
+	select *
+	  from (
+	      select @ROWNUM := @ROWNUM +1 as rn
+	      		 , board_no
+				 , title
+				 , board_content
+				 , user_id 
+				 , IFNULL(view_cnt, 0) as view_cnt 
+				 , DATE_FORMAT(reg_date,'%Y-%m-%d') as reg_date 
+				 , date_format(IFNULL(mod_date, reg_date),'%Y-%m-%d') as mod_date
+			  from t_board 
+			  where (@ROWNUM:=0)=0
+			  	<if test="searchType == '01'">
+			  		and title Like CONCAT('%',#{searchText},'%')
+			  	</if>
+			  	<if test="searchType == '02'">
+			  		and board_content Like CONCAT('%',#{searchText},'%')
+			  	</if>
+			  	<if test="searchType == '03'">
+			  		and user_id Like CONCAT('%',#{searchText},'%')
+			  	</if>
+		   ) num
+	  ORDER  by rn DESC
+	</select>
+	
+	
+	<!-- 게시글 상세 검색 -->
+	<select id="getBoardDetail" resultType="com.example.portfolio.model.DevBoardVO" parameterType="com.example.portfolio.model.DevBoardVO">
+		select tb.board_no
+			  , tu.username 	 
+			  , tb.title
+			  , tb.board_content 
+			  , tb.user_id 
+			  , DATE_FORMAT(tb.reg_date,'%Y-%m-%d') as reg_date 
+			  , IFNULL(tb.mod_date, DATE_FORMAT(tb.reg_date,'%Y-%m-%d')) as mod_date
+			  , IFNULL(tb.view_cnt , 0) as view_cnt  
+		from t_user tu, t_board tb
+		where tu.user_id = tb.user_id and tb.board_no = #{boardNo}
+		
+	</select>
+
+	<!-- 조회수 업데이트  -->
+	<update id="updateBoardViewCnt" parameterType="int">
+		UPDATE t_board 
+			set view_cnt = IFNULL(view_cnt, 0) + 1
+		WHERE board_no = #{boardNo}
+	</update>
+	
+	
+	
+	<delete id="deleteBoardDetail" parameterType="com.example.portfolio.model.DevBoardVO">
+		DELETE 
+		  from t_board 
+		 where board_no = #{boardNo}
+	</delete>
+
+<!-- 게시글 작성하기 -->
+	<insert id="insertBoardDetail" parameterType="com.example.portfolio.model.DevBoardVO">
+		INSERT into 
+			t_board (
+						board_no
+					  , title
+					  , board_content
+					  , user_id
+					  , reg_date
+					 ) 
+			values (
+						(select MAX(a.board_no) + 1 from t_board a)
+						, #{title}
+						, #{boardContent}
+						, #{userId}
+						, now()
+					)
+	</insert>
+
+<!--     게시글 수정 부분 -->
+	<update id="updateBoardDetail" parameterType="com.example.portfolio.model.DevBoardVO">
+		UPDATE t_board 
+		   set title 			= #{title}
+		     , board_content 	= #{boardContent}
+		     , mod_date 		= now()
+		 where board_no 		= #{boardNo}
+	</update>
+  	
+	
+
+
+
+
 	<select id="selectDevBoardDetail" resultType="hashmap" parameterType="int">
 		select tb.board_no ,tb.title ,tb.board_content, tu.user_id ,tu.username ,tu.email ,tb.reg_date 
 		  from t_user tu ,t_board tb 
@@ -24,11 +116,7 @@
 		  from dev_board
 	</select>
 	
-	<select id="selectDevBoardList" resultType="hashmap" >
-		select *
-		  from dev_board
-		 order by seq DESC 
-	</select>
+	
 
 	<sql id="search">
 		<choose>
